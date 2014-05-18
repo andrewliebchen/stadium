@@ -1,27 +1,25 @@
 <head>
-  <title>Chatapp</title>
+  <title>Stadium</title>
 </head>
 
 <body>
-  <div>
+  <header>
     {{> loginButtons align="right"}}
-  </div>
-  <h1>Chatapp</h1>
-  {{> welcome}}
-  {{> messages}}
-  {{> input}}
+  </header>
+  <section class="messages">
+    {{> messages}}
+    <div class="message-add">
+      {{> messageInput}}
+    </div>
+  </section>
 </body>
-
-<template name="welcome">
-  <p>Welcome to Chatapp! Log in to show your username.</p>
-</template>
 
 <template name="messages">
   {{#each messages}}
     <div class="message">
       <strong>{{name}}:</strong>
       {{#if editing}}
-        <input id="message_edit" type="text" value="{{message}}">
+        <input type="text" id="message_edit" value="{{message}}">
       {{else}}
         {{message}}
       {{/if}}
@@ -31,6 +29,9 @@
   {{/each}}
 </template>
 
-<template name="input">
-  <p>Message: <input type="text" id="message"></p>
+<template name="messageInput">
+  <fieldset>
+    <label for="message_add">Message</label>
+    <input type="text" id="message_add" placeholder="Your message">
+  </fieldset>
 </template>

@@ -9,8 +9,8 @@ Template.messages.editing = function() {
   return Session.equals("editing_message", this._id);
 };
 
-Template.input.events({
-  "keydown input#message" : function(event) {
+Template.messageInput.events({
+  "keydown #message_add" : function(event) {
     if (event.which == 13) { // enter key event
       var message = document.getElementById("message");
 
@@ -45,7 +45,7 @@ Template.messages.events({
     Session.set("editing_message", this._id);
   },
 
-  "keydown input#message_edit" : function(event) {
+  "keydown #message_edit" : function(event) {
     if (event.which == 13) {
       var value = String(event.target.value || "");
       Meteor.call("editMessage", this._id, value);
