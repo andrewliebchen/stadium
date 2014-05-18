@@ -1,3 +1,4 @@
 // Models
 
-Messages = new Meteor.Collection('messages');
+Stories  = new Meteor.Collection("stories");
+Messages = new Meteor.Collection("messages");

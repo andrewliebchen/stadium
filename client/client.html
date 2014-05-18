@@ -6,6 +6,14 @@
   <header>
     {{> loginButtons align="right"}}
   </header>
+  <section class="ideas">
+  </section>
+  <section class="stories">
+    {{> stories}}
+    <div class="story-add">
+      {{> storyInput}}
+    </div>
+  </section>
   <section class="messages">
     {{> messages}}
     <div class="message-add">
@@ -13,6 +21,18 @@
     </div>
   </section>
 </body>
+
+<template name="stories">
+  {{#each stories}}
+    <article class="story">
+      {{title}}
+    </article>
+  {{/each}}
+</template>
+
+<template name="storyInput">
+  <textarea id="story_add"></textarea>
+</template>
 
 <template name="messages">
   {{#each messages}}
@@ -30,8 +50,8 @@
 </template>
 
 <template name="messageInput">
-  <fieldset>
+  <div>
     <label for="message_add">Message</label>
     <input type="text" id="message_add" placeholder="Your message">
-  </fieldset>
+  </div>
 </template>

@@ -3,6 +3,8 @@ Meteor.startup(function() {
 });
 
 Meteor.methods({
+
+  // Messages
   removeMessage : function(messageId) {
     Messages.remove(messageId);
   },
