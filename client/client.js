@@ -17,12 +17,11 @@ Template.storyInput.events({
       }
 
       if(story.value != '') {
-        Stories.insert({
+        Meteor.call('addStory', {
           name: name,
           title: story.value,
-          time: Date.now(),
-        });
-
+          time: Date.now()
+        })
         story.value = '';
       }
     }
@@ -50,12 +49,11 @@ Template.messageInput.events({
       }
 
       if (message.value != '') {
-        Messages.insert({
+        Meteor.call('addMessage', {
           name: name,
           message: message.value,
-          time: Date.now(),
+          time: Date.now()
         });
-
         message.value = '';
       }
     }

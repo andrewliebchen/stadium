@@ -3,8 +3,24 @@ Meteor.startup(function() {
 });
 
 Meteor.methods({
+  // Stories
+  addStory: function(options) {
+    Stories.insert({
+      name: options.name,
+      title: options.title,
+      time: options.time
+    });
+  },
 
   // Messages
+  addMessage : function(options) {
+    Messages.insert({
+      name: options.name,
+      message: options.message,
+      time: options.time
+    });
+  },
+
   removeMessage : function(messageId) {
     Messages.remove(messageId);
   },
