@@ -1,0 +1,36 @@
+<head>
+  <title>Chatapp</title>
+</head>
+
+<body>
+  <div>
+    {{> loginButtons align="right"}}
+  </div>
+  <h1>Chatapp</h1>
+  {{> welcome}}
+  {{> messages}}
+  {{> input}}
+</body>
+
+<template name="welcome">
+  <p>Welcome to Chatapp! Log in to show your username.</p>
+</template>
+
+<template name="messages">
+  {{#each messages}}
+    <div class="message">
+      <strong>{{name}}:</strong>
+      {{#if editing}}
+        <input id="message_edit" type="text" value="{{message}}">
+      {{else}}
+        {{message}}
+      {{/if}}
+      <a href="#" class="delete">delete</a>
+      <a href="#" class="edit">edit</a>
+    </div>
+  {{/each}}
+</template>
+
+<template name="input">
+  <p>Message: <input type="text" id="message"></p>
+</template>
