@@ -6,8 +6,12 @@ Meteor.publish('stories', function() {
   return Stories.find({});
 });
 
-Meteor.publish('messages', function() {
-  return Messages.find({});
+Meteor.publish('messages', function (story) {
+  if (story == null) {
+    return Messages.find({});
+  } else {
+    return Messages.find({story: story});
+  }
 });
 
 Meteor.methods({
@@ -34,7 +38,7 @@ Meteor.methods({
       name: options.name,
       message: options.message,
       time: options.time,
-      parent: options.parent
+      story: options.story
     });
   },
 

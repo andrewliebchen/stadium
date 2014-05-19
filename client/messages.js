@@ -1,14 +1,14 @@
 Session.setDefault('editingMessage', null);
 
 Deps.autorun(function() {
-  Meteor.subscribe('messages', {story: Session.get('current_story')});
+  Meteor.subscribe('messages', Session.get('currentStory'));
 });
 
 Template.messages.messages = function() {
   if (Session.get('currentStory') == null ) {
     return Messages.find({}, {sort: { time: 1 }});
   } else {
-    return Messages.find({parent: Session.get('currentStory')}, { sort: { time: 1 }});
+    return Messages.find({story: Session.get('currentStory')}, { sort: { time: 1 }});
   }
 };
 
@@ -32,7 +32,7 @@ Template.messageInput.events({
           name: name,
           message: message.value,
           time: Date.now(),
-          parent: Session.get('currentStory')
+          story: Session.get('currentStory')
         });
         message.value = '';
       }
@@ -41,7 +41,7 @@ Template.messageInput.events({
 });
 
 Template.messages.events({
-  'click .message-delete' : function(event) {
+  'click .messages .delete' : function(event) {
     event.preventDefault();
     Meteor.call('removeMessage', this._id);
   },
