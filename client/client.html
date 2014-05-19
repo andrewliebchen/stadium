@@ -14,6 +14,7 @@
       {{> storyInput}}
     </div>
   </section>
+  <hr>
   <section class="messages">
     {{> messages}}
     <div class="message-add">
@@ -35,6 +36,9 @@
 </template>
 
 <template name="messages">
+  {{#if story}}
+    {{> story}}
+  {{/if}}
   {{#each messages}}
     <div class="message">
       <strong>{{name}}:</strong>

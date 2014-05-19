@@ -1,4 +1,4 @@
-Session.setDefault('editing_message', null);
+Session.setDefault('editingMessage', null);
 
 // Stories
 Template.stories.stories = function() {
@@ -28,13 +28,19 @@ Template.storyInput.events({
   }
 });
 
+Template.stories.events({
+  'click .story' : function(event) {
+    event.preventDefault();
+  }
+});
+
 // Messages
 Template.messages.messages = function() {
   return Messages.find({}, { sort: { time: 1 }});
 };
 
 Template.messages.editing = function() {
-  return Session.equals('editing_message', this._id);
+  return Session.equals('editingMessage', this._id);
 };
 
 Template.messageInput.events({
@@ -68,14 +74,14 @@ Template.messages.events({
 
   'click .edit' : function(event) {
     event.preventDefault();
-    Session.set('editing_message', this._id);
+    Session.set('editingMessage', this._id);
   },
 
   'keydown #message_edit' : function(event) {
     if (event.which == 13) {
       var value = String(event.target.value || "");
       Meteor.call('editMessage', this._id, value);
-      Session.set('editing_message', null);
+      Session.set('editingMessage', null);
     }
   }
 });
