@@ -20,6 +20,14 @@ Meteor.methods({
     });
   },
 
+  removeStory : function(storyId) {
+    Stories.remove(storyId);
+  },
+
+  editStory : function(storyId, value) {
+    Stories.update(storyId, {$set: {title: value}});
+  },
+
   // Messages
   addMessage : function(options) {
     Messages.insert({

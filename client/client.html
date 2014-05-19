@@ -27,7 +27,15 @@
   <a id="all_stories">All stories</a>
   {{#each stories}}
     <article class="story">
-      {{title}}
+      {{#if editing}}
+        <textarea id="story_edit">{{title}}</textarea>
+      {{else}}
+        <a class="story-title">{{title}}</a>
+      {{/if}}
+      <div>
+        <a href="#" class="story-delete">delete</a>
+        <a href="#" class="story-edit">edit</a>
+      </div>
     </article>
   {{/each}}
 </template>
@@ -45,8 +53,8 @@
       {{else}}
         {{message}}
       {{/if}}
-      <a href="#" class="delete">delete</a>
-      <a href="#" class="edit">edit</a>
+      <a href="#" class="message-delete">delete</a>
+      <a href="#" class="message-edit">edit</a>
     </div>
   {{/each}}
 </template>
