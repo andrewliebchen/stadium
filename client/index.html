@@ -6,21 +6,22 @@
   <header>
     {{> loginButtons align="right"}}
   </header>
-  <section class="ideas">
-  </section>
-  <section class="stories">
-    {{> stories}}
-    <div class="story-add">
-      {{> storyInput}}
-    </div>
-  </section>
-  <hr>
-  <section class="messages">
-    {{> messages}}
-    <div class="message-add">
-      {{> messageInput}}
-    </div>
-  </section>
+  <div class="width-wrapper">
+    <section class="ideas">
+    </section>
+    <section class="stories">
+      {{> stories}}
+      <div class="story-add">
+        {{> storyInput}}
+      </div>
+    </section>
+    <section class="messages">
+      {{> messages}}
+      <div class="message-add">
+        {{> messageInput}}
+      </div>
+    </section>
+  </div>
 </body>
 
 <template name="stories">

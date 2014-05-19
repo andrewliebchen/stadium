@@ -1,0 +1,29 @@
+@import "packages/bourbon/bourbon";
+
+html {
+  padding: 30px;
+  font-family: $helvetica;
+}
+
+header {
+  @include clearfix;
+}
+
+.login-buttons-dropdown-align-right {
+  float: right;
+}
+
+.width-wrapper {
+  @include display-box;
+  @include box-align(start);
+  @include box-orient(horizontal);
+  @include box-pack(start);
+}
+
+.stories {
+  @include box-flex(1);
+}
+
+.messages {
+  @include box-flex(1);
+}
