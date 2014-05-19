@@ -24,6 +24,7 @@
 </body>
 
 <template name="stories">
+  <a id="all_stories">All stories</a>
   {{#each stories}}
     <article class="story">
       {{title}}
@@ -36,9 +37,6 @@
 </template>
 
 <template name="messages">
-  {{#if story}}
-    <h2>{{> story}}</h2>
-  {{/if}}
   {{#each messages}}
     <div class="message">
       <strong>{{name}}:</strong>

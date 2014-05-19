@@ -38,20 +38,25 @@ Template.stories.events({
   'click .story' : function(event) {
     event.preventDefault();
     return Session.set('currentStory', this._id);
+  },
+
+  'click #all_stories' : function(event) {
+    event.preventDefault();
+    Session.set('currentStory', null);
   }
 });
 
 // Messages
 Template.messages.messages = function() {
-  return Messages.find({}, { sort: { time: 1 }});
+  if (Session.get('currentStory') == null ) {
+    return Messages.find({}, {sort: { time: 1 }});
+  } else {
+    return Messages.find({parent: Session.get('currentStory')}, { sort: { time: 1 }});
+  }
 };
 
 Template.messages.editing = function() {
   return Session.equals('editingMessage', this._id);
-};
-
-Template.messages.story = function() {
-  var story = Session.get('currentStory');
 };
 
 Template.messageInput.events({
