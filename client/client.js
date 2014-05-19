@@ -1,8 +1,14 @@
 Session.setDefault('editingMessage', null);
+Session.setDefault('currentStory', null);
+
+Deps.autorun(function() {
+  Meteor.subscribe('stories');
+  Meteor.subscribe('messages', {story: Session.get('current_story')});
+});
 
 // Stories
 Template.stories.stories = function() {
-  return Stories.find({}, { sort: { time: -1 }});
+  return Stories.find({});
 }
 
 Template.storyInput.events({
@@ -31,6 +37,7 @@ Template.storyInput.events({
 Template.stories.events({
   'click .story' : function(event) {
     event.preventDefault();
+    return Session.set('currentStory', this._id);
   }
 });
 
@@ -41,6 +48,10 @@ Template.messages.messages = function() {
 
 Template.messages.editing = function() {
   return Session.equals('editingMessage', this._id);
+};
+
+Template.messages.story = function() {
+  var story = Session.get('currentStory');
 };
 
 Template.messageInput.events({
@@ -58,7 +69,8 @@ Template.messageInput.events({
         Meteor.call('addMessage', {
           name: name,
           message: message.value,
-          time: Date.now()
+          time: Date.now(),
+          parent: Session.get('currentStory')
         });
         message.value = '';
       }

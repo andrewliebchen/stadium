@@ -2,6 +2,14 @@ Meteor.startup(function() {
   // Do this when the server starts
 });
 
+Meteor.publish('stories', function() {
+  return Stories.find({});
+});
+
+Meteor.publish('messages', function() {
+  return Messages.find({});
+});
+
 Meteor.methods({
   // Stories
   addStory: function(options) {
@@ -17,7 +25,8 @@ Meteor.methods({
     Messages.insert({
       name: options.name,
       message: options.message,
-      time: options.time
+      time: options.time,
+      parent: options.parent
     });
   },
 
