@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  <header>
+  <header class="header-global">
     {{> loginButtons align="right"}}
   </header>
   <div class="width-wrapper">
@@ -48,6 +48,7 @@
 <template name="messages">
   {{#each messages}}
     <div class="message">
+      <img src="{{avatarUrl}}">
       <strong>{{name}}:</strong>
       {{#if editing}}
         <input type="text" id="message_edit" value="{{message}}">

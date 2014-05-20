@@ -1,12 +1,87 @@
 @import "packages/bourbon/bourbon";
+@import "helpers/reset";
 
-html {
-  padding: 30px;
-  font-family: $helvetica;
+// VARIABLES
+
+$colorGray1: #333;
+$colorGray2: #555;
+$colorGray3: #666;
+$colorGray4: #999;
+$colorGray5: #CCC;
+$colorGray6: #fefefe;
+
+$colorLink: rgb(57, 163, 255);
+
+$fontFamilyBase: $helvetica;
+$fontSizeBase: 16px;
+
+$unit: em(30);
+
+// HELPERS
+
+@function unit($multiple) {
+  @return $unit * $multiple;
 }
 
-header {
+// BASE
+* {
+  @include box-sizing(border-box);
+}
+
+html,
+body {
+  background-color: $colorGray6;
+  color: $colorGray1;
+  font-family: $fontFamilyBase;
+  font-size: 16px;
+  line-height: unit(1);
+}
+
+a {
+  color: $colorLink;
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+// FORMS
+#{$all-text-inputs},
+textarea {
+  background-color: $colorGray6;
+  border-radius: 3px;
+  border: 1px solid $colorGray5;
+  display: block;
+  height: unit(1.25);
+  line-height: unit(0.75);
+  padding: unit(0.25) unit(0.5);
+
+  @include placeholder {
+    color: $colorGray5;
+    font-family: $fontFamilyBase;
+    font-style: italic;
+  }
+}
+
+textarea {
+  min-height: unit(2.5);
+}
+
+#{$all-text-inputs-focus},
+textarea:focus {
+  background: white;
+  border-color: $colorLink;
+  box-shadow: 0 0 0 3px rgba($colorLink, 0.3);
+}
+
+
+// CONTENT
+.header-global {
   @include clearfix;
+  padding: unit(0.5) unit(1);
+  border-bottom: 1px solid $colorGray5;
+  margin-bottom: $unit;
 }
 
 .login-buttons-dropdown-align-right {
@@ -18,6 +93,7 @@ header {
   @include box-align(start);
   @include box-orient(horizontal);
   @include box-pack(start);
+  padding: 0 $unit;
 }
 
 .stories {
