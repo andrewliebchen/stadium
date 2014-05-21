@@ -9,6 +9,10 @@ Template.stories.stories = function() {
   return Stories.find({});
 }
 
+Template.stories.selected = function() {
+  return Session.equals('currentStory', this._id) ? 'is-selected' : '';
+}
+
 Template.stories.editing = function() {
   return Session.equals('editingStory', this._id);
 };
@@ -37,7 +41,7 @@ Template.storyInput.events({
 });
 
 Template.stories.events({
-  'click .story-title' : function(event) {
+  'click .story' : function(event) {
     event.preventDefault();
     return Session.set('currentStory', this._id);
   },

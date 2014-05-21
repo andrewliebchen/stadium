@@ -27,11 +27,11 @@
 <template name="stories">
   <a id="all_stories">All stories</a>
   {{#each stories}}
-    <article class="story">
+    <article class="story {{selected}}">
       {{#if editing}}
         <textarea id="story_edit">{{title}}</textarea>
       {{else}}
-        <a class="story-title">{{title}}</a>
+        <h3 class="story-title">{{title}}</h3>
       {{/if}}
       <div>
         <a href="#" class="story-delete">delete</a>
@@ -62,8 +62,5 @@
 </template>
 
 <template name="messageInput">
-  <div>
-    <label for="message_add">Message</label>
-    <input type="text" id="message_add" placeholder="Your message">
-  </div>
+  <input type="text" id="message_add" placeholder="Your message">
 </template>

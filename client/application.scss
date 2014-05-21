@@ -1,4 +1,8 @@
 @import "packages/bourbon/bourbon";
+$max-width: 100%;
+$unit: em(30);
+$gutter: $unit;
+@import "packages/neat/neat";
 @import "helpers/reset";
 
 // VARIABLES
@@ -14,8 +18,6 @@ $colorLink: rgb(57, 163, 255);
 
 $fontFamilyBase: $helvetica;
 $fontSizeBase: 16px;
-
-$unit: em(30);
 
 // HELPERS
 
@@ -35,6 +37,10 @@ body {
   font-family: $fontFamilyBase;
   font-size: 16px;
   line-height: unit(1);
+}
+
+h1, h2, h3 {
+  color: inherit;
 }
 
 a {
@@ -78,10 +84,9 @@ textarea:focus {
 
 // CONTENT
 .header-global {
-  @include clearfix;
-  padding: unit(0.5) unit(1);
+  @include outer-container;
+  @include pad(unit(0.5) default);
   border-bottom: 1px solid $colorGray5;
-  margin-bottom: $unit;
 }
 
 .login-buttons-dropdown-align-right {
@@ -89,17 +94,46 @@ textarea:focus {
 }
 
 .width-wrapper {
-  @include display-box;
-  @include box-align(start);
-  @include box-orient(horizontal);
-  @include box-pack(start);
-  padding: 0 $unit;
+  @include outer-container;
+  @include pad(default default);
 }
 
 .stories {
-  @include box-flex(1);
+  @include span-columns(6);
+}
+
+.story {
+  @include size(em(200));
+  border-radius: 2px;
+  border: 3px solid $colorGray5;
+  color: $colorGray4;
+  cursor: pointer;
+  float: left;
+  margin: 0 1em 1em 0;
+  padding: 0.5em;
+
+  &:hover,
+  &.is-selected {
+    color: $colorLink;
+    border-color: $colorLink;
+  }
 }
 
 .messages {
-  @include box-flex(1);
+  @include span-columns(6);
+  @include omega;
+  margin-bottom: unit(2);
+}
+
+.message-add {
+  @include position(fixed, 0 unit(1) 0px 0px);
+  @include shift(6);
+  background-color: white;
+  height: unit(2.5);
+  z-index: 1;
+
+  input[type="text"] {
+    @include fill-parent;
+    border-width: 2px;
+  }
 }

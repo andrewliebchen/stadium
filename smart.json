@@ -2,6 +2,7 @@
   "packages": {
     "scss": {},
     "bourbon": {},
-    "gravatar": {}
+    "gravatar": {},
+    "neat": {}
   }
 }
