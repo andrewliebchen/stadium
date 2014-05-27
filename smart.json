@@ -1,8 +1,8 @@
 {
   "packages": {
     "scss": {},
-    "bourbon": {},
     "gravatar": {},
+    "bourbon": {},
     "neat": {}
   }
 }

@@ -5,9 +5,10 @@
 
 standard-app-packages
 insecure
-jquery
 accounts-ui
 accounts-github
 scss
 gravatar
+bourbon
 neat
+jquery

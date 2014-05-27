@@ -3,8 +3,8 @@
   "dependencies": {
     "basePackages": {
       "scss": {},
-      "bourbon": {},
       "gravatar": {},
+      "bourbon": {},
       "neat": {}
     },
     "packages": {
@@ -13,15 +13,15 @@
         "tag": "v0.8.7",
         "commit": "d085b7272eacc20866abff61b25c915a22ddbcf4"
       },
-      "bourbon": {
-        "git": "https://github.com/chicagogrooves/meteor-bourbon.git",
-        "tag": "v3.1.8.1",
-        "commit": "b55f0968fe7d4a2886898cd8e81394de066a3ae1"
-      },
       "gravatar": {
         "git": "https://github.com/tmeasday/meteor-gravatar.git",
         "tag": "v0.0.4",
         "commit": "d1052ff4401725c23fb199c0e0a36e29b926bc22"
+      },
+      "bourbon": {
+        "git": "https://github.com/chicagogrooves/meteor-bourbon.git",
+        "tag": "v3.1.8.1",
+        "commit": "b55f0968fe7d4a2886898cd8e81394de066a3ae1"
       },
       "neat": {
         "git": "https://github.com/chicagogrooves/meteor-neat.git",

@@ -1,9 +1,7 @@
 
 .stories {
-  @include span-columns(3);
-  background-color: shade($colorGray6, 5%);
-  border-right: 1px solid $colorGray5;
-  @include position(fixed, 0px 0 0px 0px);
+  @include outer-container;
+  @include fill-parent;
 }
 
 %stories-endcap {
@@ -18,31 +16,55 @@
 }
 
 .stories-list {
-  @include position(absolute, 4em 0 4em 0);
-  padding: 1em 1em 0 1em;
-  overflow-y: scroll;
+  padding: 0.5em;
 }
 
 .story {
   @include fill-parent;
+  @include size(150px);
   border-radius: 3px;
   border: 1px solid $colorGray5;
   color: $colorGray4;
   cursor: pointer;
   float: left;
   margin-bottom: 1em;
-  padding: 0.5em;
+  margin: 0.25em;
+  padding: 1em;
+  overflow: hidden;
 
   &:hover,
   &.is-selected {
     color: $colorLink;
     border-color: $colorLink;
+  }
+
+  &.is-selected {
     background-color: white;
+  }
+
+  &.is-adding {
+    width: 300px;
+
+    #new_story_toggle {
+      display: none;
+    }
+
+    .story-new {
+      display: block;
+    }
   }
 }
 
-.stories-footer {
-  @extend %stories-endcap;
-  border-top: 1px solid $colorGray5;
-  @include position(absolute, 0 0px 0px 0px);
+.story-new {
+  display: none;
+
+  #{$all-text-inputs},
+  textarea {
+    @include fill-parent;
+  }
+
+  button {
+    margin-top: 1em;
+    float: right;
+  }
 }

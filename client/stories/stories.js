@@ -1,3 +1,4 @@
+Session.setDefault('addingStory', false);
 Session.setDefault('currentStory', null);
 Session.setDefault('editingStory', null);
 
@@ -5,8 +6,12 @@ Deps.autorun(function() {
   Meteor.subscribe('stories');
 });
 
+Template.storyNew.isAdding = function() {
+  return Session.equals('addingStory', true) ? 'is-adding' : '';
+}
+
 Template.stories.stories = function() {
-  return Stories.find({});
+  return Stories.find({}, { sort: { time: -1 } });
 }
 
 Template.stories.selected = function() {
@@ -17,25 +22,23 @@ Template.stories.editing = function() {
   return Session.equals('editingStory', this._id);
 };
 
-Template.storyInput.events({
-  'keydown #story_add' : function(event) {
-    if (event.which == 13) { // DRY this
-      var story = document.getElementById('story_add');
+Template.storyNew.events({
+  'click #new_story_toggle' : function(event) {
+    event.preventDefault();
+    return Session.set('addingStory', true);
+  },
 
-      if (Meteor.user()) {
-        var name = Meteor.user().profile.name;
-      } else {
-        var name = Anonymous
-      }
+  'click #add_story' : function(event) {
+    var story = document.getElementById('new_story_title');
 
-      if(story.value != '') {
-        Meteor.call('addStory', {
-          name: name,
-          title: story.value,
-          time: Date.now()
-        })
-        story.value = '';
-      }
+    if(story.value != '') {
+      Meteor.call('addStory', {
+        userId: Meteor.userId(),
+        title: story.value,
+        time: Date.now()
+      });
+
+      story.value = '';
     }
   }
 });

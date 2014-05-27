@@ -11,15 +11,10 @@
     </section>
     <section class="stories">
       {{> stories}}
-      <div class="story-add">
-        {{> storyInput}}
-      </div>
     </section>
     <section class="messages">
       {{> messages}}
-      <div class="message-add">
-        {{> messageInput}}
-      </div>
+      {{> messageInput}}
     </section>
   </div>
 </body>
@@ -36,12 +31,13 @@
     </select>
   </header>
   <div class="stories-list">
+    {{> storyNew}}
     {{#each stories}}
       <article class="story {{selected}}">
         {{#if editing}}
           <textarea id="story_edit">{{title}}</textarea>
         {{else}}
-          <h3 class="story-title">{{title}}</h3>
+          <p class="story-title">{{title}}</p>
         {{/if}}
         <div>
           <a href="#" class="story-delete">delete</a>
@@ -50,11 +46,16 @@
       </article>
     {{/each}}
   </div>
-  <footer class="stories-footer"></footer>
 </template>
 
-<template name="storyInput">
-  <textarea id="story_add"></textarea>
+<template name="storyNew">
+  <article class="story new {{isAdding}}">
+    <button id="new_story_toggle">New story</button>
+    <div class="story-new">
+      <textarea id="new_story_title"></textarea>
+      <button id="add_story">Add story</button>
+    </div>
+  </article>
 </template>
 
 <template name="messages">

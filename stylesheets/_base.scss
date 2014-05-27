@@ -4,7 +4,7 @@ $colorGray1: #333;
 $colorGray2: #555;
 $colorGray3: #666;
 $colorGray4: #999;
-$colorGray5: #CCC;
+$colorGray5: #ccc;
 $colorGray6: #fefefe;
 
 $colorLink: rgb(57, 163, 255);
@@ -34,6 +34,7 @@ body {
 
 h1, h2, h3 {
   color: inherit;
+  font-weight: bold;
 }
 
 a {
@@ -74,6 +75,22 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba($colorLink, 0.3);
 }
 
+button {
+  $height: 2em;
+  height: $height;
+  line-height: $height - em(2);
+  padding: 0 1em;
+  border: 1px solid $colorLink;
+  border-radius: 3px;
+  color: $colorLink;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    background-color: $colorLink;
+  }
+}
 
 // CONTENT
 .header-global {
@@ -89,4 +106,38 @@ textarea:focus {
 
 .width-wrapper {
   @include outer-container;
+}
+
+.modal-wrapper {
+  @include position(fixed, 0px 0px 0px 0px);
+  background-color: rgba($colorLink, 0.9);
+}
+
+.modal {
+  @include size(50%);
+  @include position(absolute, 0px 0px 0px 0px);
+  padding: 1em;
+  color: white;
+  margin: auto;
+  overflow: auto;
+}
+
+.modal-header {
+  padding-bottom: 1em;
+}
+
+.modal-footer {
+  @include row();
+  padding-top: 1em;
+
+  button {
+    border-color: white;
+    color: white;
+    float: right;
+
+    &:hover {
+      background-color: white;
+      color: $colorLink;
+    }
+  }
 }
