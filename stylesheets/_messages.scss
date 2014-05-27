@@ -1,0 +1,20 @@
+.messages {
+  @include span-columns(9);
+  @include omega;
+  @include pad(default default default 0);
+  @include shift(3);
+  margin-bottom: unit(2);
+}
+
+.message-add {
+  @include position(fixed, 0 unit(1) 0px 0px);
+  @include shift(6);
+  background-color: white;
+  height: unit(2.5);
+  z-index: 1;
+
+  input[type="text"] {
+    @include fill-parent;
+    border-width: 2px;
+  }
+}

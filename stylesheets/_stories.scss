@@ -1,0 +1,48 @@
+
+.stories {
+  @include span-columns(3);
+  background-color: shade($colorGray6, 5%);
+  border-right: 1px solid $colorGray5;
+  @include position(fixed, 0px 0 0px 0px);
+}
+
+%stories-endcap {
+  padding: 1em;
+  line-height: 2em;
+  height: 4em;
+}
+
+.stories-header {
+  @extend %stories-endcap;
+  border-bottom: 1px solid $colorGray5;
+}
+
+.stories-list {
+  @include position(absolute, 4em 0 4em 0);
+  padding: 1em 1em 0 1em;
+  overflow-y: scroll;
+}
+
+.story {
+  @include fill-parent;
+  border-radius: 3px;
+  border: 1px solid $colorGray5;
+  color: $colorGray4;
+  cursor: pointer;
+  float: left;
+  margin-bottom: 1em;
+  padding: 0.5em;
+
+  &:hover,
+  &.is-selected {
+    color: $colorLink;
+    border-color: $colorLink;
+    background-color: white;
+  }
+}
+
+.stories-footer {
+  @extend %stories-endcap;
+  border-top: 1px solid $colorGray5;
+  @include position(absolute, 0 0px 0px 0px);
+}
