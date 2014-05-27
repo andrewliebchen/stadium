@@ -25,20 +25,32 @@
 </body>
 
 <template name="stories">
-  <a id="all_stories">All stories</a>
-  {{#each stories}}
-    <article class="story {{selected}}">
-      {{#if editing}}
-        <textarea id="story_edit">{{title}}</textarea>
-      {{else}}
-        <h3 class="story-title">{{title}}</h3>
-      {{/if}}
-      <div>
-        <a href="#" class="story-delete">delete</a>
-        <a href="#" class="story-edit">edit</a>
-      </div>
-    </article>
-  {{/each}}
+  <header class="stories-header">
+    <a id="all_stories">All stories</a>
+    <select>
+      <option>Someday</option>
+      <option>Backlog</option>
+      <option>Current</option>
+      <option>Done</option>
+      <option>Archive</option>
+    </select>
+  </header>
+  <div class="stories-list">
+    {{#each stories}}
+      <article class="story {{selected}}">
+        {{#if editing}}
+          <textarea id="story_edit">{{title}}</textarea>
+        {{else}}
+          <h3 class="story-title">{{title}}</h3>
+        {{/if}}
+        <div>
+          <a href="#" class="story-delete">delete</a>
+          <a href="#" class="story-edit">edit</a>
+        </div>
+      </article>
+    {{/each}}
+  </div>
+  <footer class="stories-footer"></footer>
 </template>
 
 <template name="storyInput">
