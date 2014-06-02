@@ -12,9 +12,9 @@ $largeStory:  $storiesUnit * 9 + 1em;
 .stories-header {
   @extend %stories-endcap;
   border-bottom: 1px solid $colorGray5;
-  padding: 1em;
-  line-height: 2em;
   height: 4em;
+  line-height: 2em;
+  padding: 1em;
 }
 
 .stories-list {
@@ -25,18 +25,18 @@ $largeStory:  $storiesUnit * 9 + 1em;
   @include transition();
   @include fill-parent;
   @include size($smallStory auto);
-  margin: 0.25em;
   border-radius: 3px;
   border: 1px solid $colorGray5;
   color: $colorGray4;
   cursor: pointer;
-  padding: 1em;
+  margin: 0.25em;
   overflow: hidden;
+  padding: 1em;
 
   &:hover,
   &.is-selected {
-    color: $colorLink;
     border-color: $colorLink;
+    color: $colorLink;
   }
 
   &.is-selected {
@@ -44,8 +44,9 @@ $largeStory:  $storiesUnit * 9 + 1em;
   }
 
   &.new {
-    border-style: dashed;
     background-color: $colorGray6;
+    border-style: dashed;
+    text-align: center;
     z-index: 9999;
   }
 
@@ -80,7 +81,7 @@ $largeStory:  $storiesUnit * 9 + 1em;
   }
 
   button {
-    margin-top: 1em;
     float: right;
+    margin-top: 1em;
   }
 }

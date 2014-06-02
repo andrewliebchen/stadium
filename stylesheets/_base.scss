@@ -82,18 +82,18 @@ textarea:focus {
 
 button {
   $height: 2em;
+  border-radius: 3px;
+  border: 1px solid $colorLink;
+  color: $colorLink;
+  cursor: pointer;
+  font-weight: bold;
   height: $height;
   line-height: $height - em(2);
   padding: 0 1em;
-  border: 1px solid $colorLink;
-  border-radius: 3px;
-  color: $colorLink;
-  font-weight: bold;
-  cursor: pointer;
 
   &:hover {
-    color: white;
     background-color: $colorLink;
+    color: white;
   }
 }
 
@@ -121,10 +121,10 @@ button {
 .modal {
   @include size(50%);
   @include position(absolute, 0px 0px 0px 0px);
-  padding: 1em;
   color: white;
   margin: auto;
   overflow: auto;
+  padding: 1em;
 }
 
 .modal-header {
@@ -145,14 +145,4 @@ button {
       color: $colorLink;
     }
   }
-}
-
-// MASONRY LAYOUT
-.masonry_element {
-  // padding: 0.25em;
-}
-
-.masonry_container,
-.masonry_element{
-  @include transition();
 }
