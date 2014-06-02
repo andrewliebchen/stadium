@@ -22,23 +22,24 @@
 <template name="stories">
   <header class="stories-header">
     <a id="all_stories">All stories</a>
-    <select>
-      <option>Someday</option>
-      <option>Backlog</option>
-      <option>Current</option>
-      <option>Done</option>
-      <option>Archive</option>
+    <select class="filter">
+      <option value="*">All statuses</option>
+      <option value=".someday">Someday</option>
+      <option value=".backlog">Backlog</option>
+      <option value=".current">Current</option>
+      <option value=".done">Done</option>
     </select>
-    <select>
-      <option>Small</option>
-      <option>Medium</option>
-      <option>Large</option>
+    <select id="filter_size" class="filter">
+      <option value="*" selected>All sizes</option>
+      <option value=".small">Small</option>
+      <option value=".medium">Medium</option>
+      <option value=".large">Large</option>
     </select>
   </header>
   <div class="stories-list">
       {{> storyNew}}
       {{#each stories}}
-        <div class="story {{selected}} {{size}}">
+        <div class="story {{selected}} {{size}} {{status}}">
           {{#if editing}}
             <select id="edit_story_size">
               <option value="small">Small</option>
@@ -50,7 +51,6 @@
               <option value="backlog">Backlog</option>
               <option value="current">Current</option>
               <option value="done">Done</option>
-              <option value="archive">Archive</option>
             </select>
             <textarea id="edit_story_title">{{title}}</textarea>
             <button id="edit_story">Save story</button>

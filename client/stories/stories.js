@@ -12,6 +12,12 @@ Deps.autorun(function() {
         gutter: 50
       }
     });
+
+    $('.filter').change(function() {
+      var filterValue = $(this).val();
+      console.log(filterValue);
+      $isotopeContainer.isotope({ filter: filterValue });
+    });
   });
 });
 
@@ -38,8 +44,8 @@ Template.storyNew.events({
   },
 
   'click #add_story' : function(event) {
-    var title =  document.getElementById('new_story_title');
-    var size =   document.getElementById('new_story_size');
+    var title  = document.getElementById('new_story_title');
+    var size   = document.getElementById('new_story_size');
     var status = document.getElementById('new_story_status');
 
     if(title.value != '') {
@@ -78,8 +84,8 @@ Template.stories.events({
   },
 
   'click #edit_story' : function(event) {
-    var title =  document.getElementById('edit_story_title');
-    var size =   document.getElementById('edit_story_size');
+    var title  = document.getElementById('edit_story_title');
+    var size   = document.getElementById('edit_story_size');
     var status = document.getElementById('edit_story_status');
 
     Meteor.call('editStory', this._id, {
