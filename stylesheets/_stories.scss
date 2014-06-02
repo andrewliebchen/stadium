@@ -25,6 +25,7 @@ $largeStory:  $storiesUnit * 9 + 1em;
   @include transition();
   @include fill-parent;
   @include size($smallStory auto);
+  background-color: $colorGray6;
   border-radius: 3px;
   border: 1px solid $colorGray5;
   color: $colorGray4;
@@ -44,7 +45,6 @@ $largeStory:  $storiesUnit * 9 + 1em;
   }
 
   &.new {
-    background-color: $colorGray6;
     border-style: dashed;
     text-align: center;
     z-index: 9999;

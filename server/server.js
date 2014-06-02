@@ -21,6 +21,7 @@ Meteor.methods({
       userId: options.userId,
       title:  options.title,
       size:   options.size,
+      status: options.status,
       time:   options.time
     });
   },
@@ -31,8 +32,9 @@ Meteor.methods({
 
   editStory : function(storyId, options) {
     Stories.update(storyId, {$set: {
-      title: options.title,
-      size:  options.size
+      title:  options.title,
+      size:   options.size,
+      status: options.status
     }});
   },
 

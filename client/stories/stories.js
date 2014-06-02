@@ -38,14 +38,16 @@ Template.storyNew.events({
   },
 
   'click #add_story' : function(event) {
-    var title = document.getElementById('new_story_title');
-    var size =  document.getElementById('new_story_size');
+    var title =  document.getElementById('new_story_title');
+    var size =   document.getElementById('new_story_size');
+    var status = document.getElementById('new_story_status');
 
     if(title.value != '') {
       Meteor.call('addStory', {
         userId: Meteor.userId(),
         title:  title.value,
         size:   size.value,
+        status: status.value,
         time:   Date.now()
       });
 
@@ -65,7 +67,6 @@ Template.stories.events({
     Session.set('currentStory', null);
   },
 
-  // DRY this up
   'click .story-delete' : function(event) {
     event.preventDefault();
     Meteor.call('removeStory', this._id);
@@ -77,11 +78,14 @@ Template.stories.events({
   },
 
   'click #edit_story' : function(event) {
-    var title = document.getElementById('edit_story_title');
-    var size =  document.getElementById('edit_story_size');
+    var title =  document.getElementById('edit_story_title');
+    var size =   document.getElementById('edit_story_size');
+    var status = document.getElementById('edit_story_status');
+
     Meteor.call('editStory', this._id, {
-      title: title.value,
-      size:  size.value
+      title:  title.value,
+      size:   size.value,
+      status: status.value
     });
     Session.set('editingStory', null);
   }

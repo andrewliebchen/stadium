@@ -29,6 +29,11 @@
       <option>Done</option>
       <option>Archive</option>
     </select>
+    <select>
+      <option>Small</option>
+      <option>Medium</option>
+      <option>Large</option>
+    </select>
   </header>
   <div class="stories-list">
       {{> storyNew}}
@@ -40,10 +45,18 @@
               <option value="medium">Medium</option>
               <option value="large">Large</option>
             </select>
+            <select id="edit_story_status">
+              <option value="someday">Someday</option>
+              <option value="backlog">Backlog</option>
+              <option value="current">Current</option>
+              <option value="done">Done</option>
+              <option value="archive">Archive</option>
+            </select>
             <textarea id="edit_story_title">{{title}}</textarea>
             <button id="edit_story">Save story</button>
           {{else}}
             <small>
+              {{status}}
               <a href="#" class="story-delete">delete</a>
               <a href="#" class="story-edit">edit</a>
             </small>
@@ -62,6 +75,11 @@
           <option value="small">Small</option>
           <option value="medium">Medium</option>
           <option value="large">Large</option>
+        </select>
+        <select id="new_story_status">
+          <option value="someday" selected>Someday</option>
+          <option value="backlog">Backlog</option>
+          <option value="current">Current</option>
         </select>
         <textarea id="new_story_title"></textarea>
         <button id="add_story">Add story</button>
