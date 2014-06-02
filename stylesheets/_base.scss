@@ -113,6 +113,10 @@ button {
   @include outer-container;
 }
 
+.close {
+  @include position(absolute, 1em 1em 0 0);
+}
+
 .modal-wrapper {
   @include position(fixed, 0px 0px 0px 0px);
   background-color: rgba($colorLink, 0.9);

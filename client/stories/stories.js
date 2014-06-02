@@ -94,5 +94,11 @@ Template.stories.events({
       status: status.value
     });
     Session.set('editingStory', null);
+  },
+
+  'click .close' : function(events) {
+    event.preventDefault();
+    Session.set('addingStory', null);
+    Session.set('editingStory', null);
   }
 });
