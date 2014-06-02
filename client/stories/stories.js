@@ -3,20 +3,29 @@ Session.setDefault('currentStory', null);
 Session.setDefault('editingStory', null);
 
 Deps.autorun(function() {
-  Meteor.subscribe('stories');
+  Meteor.subscribe('stories', function(){
+    var $isotopeContainer = $('.stories-list');
+    $isotopeContainer.isotope({
+      itemSelector: '.story',
+      layoutMode: 'masonry',
+      masonry: {
+        gutter: 50
+      }
+    });
+  });
 });
 
 Template.storyNew.isAdding = function() {
   return Session.equals('addingStory', true) ? 'is-adding' : '';
-}
+};
 
 Template.stories.stories = function() {
   return Stories.find({}, { sort: { time: -1 } });
-}
+};
 
 Template.stories.selected = function() {
   return Session.equals('currentStory', this._id) ? 'is-selected' : '';
-}
+};
 
 Template.stories.editing = function() {
   return Session.equals('editingStory', this._id);
@@ -29,16 +38,18 @@ Template.storyNew.events({
   },
 
   'click #add_story' : function(event) {
-    var story = document.getElementById('new_story_title');
+    var title = document.getElementById('new_story_title');
+    var size =  document.getElementById('new_story_size');
 
-    if(story.value != '') {
+    if(title.value != '') {
       Meteor.call('addStory', {
         userId: Meteor.userId(),
-        title: story.value,
-        time: Date.now()
+        title:  title.value,
+        size:   size.value,
+        time:   Date.now()
       });
 
-      story.value = '';
+      title.value = '';
     }
   }
 });
@@ -65,11 +76,13 @@ Template.stories.events({
     Session.set('editingStory', this._id);
   },
 
-  'keydown #story_edit' : function(event) {
-    if (event.which == 13) {
-      var value = String(event.target.value || "");
-      Meteor.call('editStory', this._id, value);
-      Session.set('editingStory', null);
-    }
+  'click #edit_story' : function(event) {
+    var title = document.getElementById('edit_story_title');
+    var size =  document.getElementById('edit_story_size');
+    Meteor.call('editStory', this._id, {
+      title: title.value,
+      size:  size.value
+    });
+    Session.set('editingStory', null);
   }
 });

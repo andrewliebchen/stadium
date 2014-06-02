@@ -11,6 +11,7 @@ $colorLink: rgb(57, 163, 255);
 
 $fontFamilyBase: $helvetica;
 $fontSizeBase: 16px;
+$fontSizeSmall: em(12);
 
 // HELPERS
 
@@ -44,6 +45,10 @@ a {
 
 strong {
   font-weight: bold;
+}
+
+small {
+  font-size: $fontSizeSmall;
 }
 
 // FORMS
@@ -140,4 +145,14 @@ button {
       color: $colorLink;
     }
   }
+}
+
+// MASONRY LAYOUT
+.masonry_element {
+  // padding: 0.25em;
+}
+
+.masonry_container,
+.masonry_element{
+  @include transition();
 }

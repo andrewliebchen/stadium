@@ -18,9 +18,10 @@ Meteor.methods({
   // Stories
   addStory: function(options) {
     Stories.insert({
-      name: options.name,
-      title: options.title,
-      time: options.time
+      userId: options.userId,
+      title:  options.title,
+      size:   options.size,
+      time:   options.time
     });
   },
 
@@ -28,8 +29,11 @@ Meteor.methods({
     Stories.remove(storyId);
   },
 
-  editStory : function(storyId, value) {
-    Stories.update(storyId, {$set: {title: value}});
+  editStory : function(storyId, options) {
+    Stories.update(storyId, {$set: {
+      title: options.title,
+      size:  options.size
+    }});
   },
 
   // Messages

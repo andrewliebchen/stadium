@@ -31,31 +31,42 @@
     </select>
   </header>
   <div class="stories-list">
-    {{> storyNew}}
-    {{#each stories}}
-      <article class="story {{selected}}">
-        {{#if editing}}
-          <textarea id="story_edit">{{title}}</textarea>
-        {{else}}
-          <p class="story-title">{{title}}</p>
-        {{/if}}
-        <div>
-          <a href="#" class="story-delete">delete</a>
-          <a href="#" class="story-edit">edit</a>
+      {{> storyNew}}
+      {{#each stories}}
+        <div class="story {{selected}} {{size}}">
+          {{#if editing}}
+            <select id="edit_story_size">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+            <textarea id="edit_story_title">{{title}}</textarea>
+            <button id="edit_story">Save story</button>
+          {{else}}
+            <small>
+              <a href="#" class="story-delete">delete</a>
+              <a href="#" class="story-edit">edit</a>
+            </small>
+            <p class="story-title">{{title}}</p>
+          {{/if}}
         </div>
-      </article>
-    {{/each}}
+      {{/each}}
   </div>
 </template>
 
 <template name="storyNew">
-  <article class="story new {{isAdding}}">
-    <button id="new_story_toggle">New story</button>
-    <div class="story-new">
-      <textarea id="new_story_title"></textarea>
-      <button id="add_story">Add story</button>
+    <div id="new_story_toggle" class="story new {{isAdding}}">
+      <span>New story</span>
+      <div class="story-new">
+        <select id="new_story_size">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+        <textarea id="new_story_title"></textarea>
+        <button id="add_story">Add story</button>
+      </div>
     </div>
-  </article>
 </template>
 
 <template name="messages">

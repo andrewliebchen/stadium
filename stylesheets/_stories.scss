@@ -1,34 +1,35 @@
+$storiesUnit: em(50);
+
+$smallStory:  $storiesUnit * 3;
+$mediumStory: $storiesUnit * 6 + 0.5em;
+$largeStory:  $storiesUnit * 9 + 1em;
 
 .stories {
   @include outer-container;
   @include fill-parent;
 }
 
-%stories-endcap {
+.stories-header {
+  @extend %stories-endcap;
+  border-bottom: 1px solid $colorGray5;
   padding: 1em;
   line-height: 2em;
   height: 4em;
 }
 
-.stories-header {
-  @extend %stories-endcap;
-  border-bottom: 1px solid $colorGray5;
-}
-
 .stories-list {
-  padding: 0.5em;
+  margin: 0.75em;
 }
 
 .story {
+  @include transition();
   @include fill-parent;
-  @include size(150px);
+  @include size($smallStory auto);
+  margin: 0.25em;
   border-radius: 3px;
   border: 1px solid $colorGray5;
   color: $colorGray4;
   cursor: pointer;
-  float: left;
-  margin-bottom: 1em;
-  margin: 0.25em;
   padding: 1em;
   overflow: hidden;
 
@@ -42,8 +43,15 @@
     background-color: white;
   }
 
+  &.new {
+    border-style: dashed;
+    background-color: $colorGray6;
+    z-index: 9999;
+  }
+
   &.is-adding {
-    width: 300px;
+    @include size(em(300)+0.5em);
+    border-style: solid;
 
     #new_story_toggle {
       display: none;
@@ -53,6 +61,14 @@
       display: block;
     }
   }
+}
+
+.story.medium {
+  @include size($mediumStory);
+}
+
+.story.large {
+  @include size($largeStory);
 }
 
 .story-new {

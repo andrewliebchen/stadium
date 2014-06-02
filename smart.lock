@@ -5,7 +5,8 @@
       "scss": {},
       "gravatar": {},
       "bourbon": {},
-      "neat": {}
+      "neat": {},
+      "isotope-repackaged": {}
     },
     "packages": {
       "scss": {
@@ -27,6 +28,11 @@
         "git": "https://github.com/chicagogrooves/meteor-neat.git",
         "tag": "v1.5.0",
         "commit": "6c318cce1c02e822d6a340c547273b29b6379197"
+      },
+      "isotope-repackaged": {
+        "git": "https://github.com/mangasocial/meteor-isotope-repackaged.git",
+        "tag": "v0.0.2",
+        "commit": "b94e1f6b12237f46ef59a0f0477453e96adcd42f"
       },
       "crypto-md5": {
         "git": "https://github.com/oortcloud/meteor-crypto-md5.git",
