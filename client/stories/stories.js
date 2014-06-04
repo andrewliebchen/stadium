@@ -9,7 +9,7 @@ Deps.autorun(function() {
       itemSelector: '.story',
       layoutMode: 'masonry',
       masonry: {
-        gutter: 50
+        gutter: 60
       }
     });
 
