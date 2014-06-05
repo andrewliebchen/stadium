@@ -1,0 +1,84 @@
+<template name="stories">
+  {{> storiesHeader}}
+  <div class="stories-list">
+      {{> storyNew}}
+      {{#each stories}}
+        <div class="story {{selected}} {{size}} {{status}}">
+          {{#if editing}}
+            <a class="close">&times;</a>
+            <select id="edit_story_size">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+            </select>
+            <select id="edit_story_status">
+              <option value="someday">Someday</option>
+              <option value="backlog">Backlog</option>
+              <option value="current">Current</option>
+              <option value="done">Done</option>
+            </select>
+            <textarea id="edit_story_title">{{title}}</textarea>
+            <button id="edit_story">Save story</button>
+          {{else}}
+            <small>
+              {{status}}
+              <a href="#" class="story-delete">delete</a>
+              <a href="#" class="story-edit">edit</a>
+            </small>
+            <p class="story-title">{{title}}</p>
+          {{/if}}
+        </div>
+      {{/each}}
+  </div>
+</template>
+
+<template name="storiesHeader">
+  <header class="stories-header">
+    <div class="filters">
+      Showing
+      <select class="filter">
+        <option value="*">stories</option>
+      </select>
+      with
+      <select class="filter">
+        <option value="*">any status</option>
+        <option value=".someday">Someday</option>
+        <option value=".backlog">Backlog</option>
+        <option value=".current">Current</option>
+        <option value=".done">Done</option>
+      </select>
+      and
+      <select class="filter">
+        <option value="*" selected>any size</option>
+        <option value=".small">Small</option>
+        <option value=".medium">Medium</option>
+        <option value=".large">Large</option>
+      </select>
+      assigned to
+      <select class="filter">
+        <option value="*" selected>anyone</option>
+      </select>
+    </div>
+  </header>
+</template>
+
+<template name="storyNew">
+    <div id="new_story_toggle" class="story new {{isAdding}}">
+      <span>New story</span>
+      <div class="story-new">
+        <a class="close">&times;</a>
+        <select id="new_story_size">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+        <select id="new_story_status">
+          <option value="someday" selected>Someday</option>
+          <option value="backlog">Backlog</option>
+          <option value="current">Current</option>
+        </select>
+        <textarea id="new_story_title"></textarea>
+        <button id="add_story">Add story</button>
+      </div>
+    </div>
+</template>

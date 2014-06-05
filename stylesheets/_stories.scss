@@ -5,16 +5,12 @@ $mediumStory: $storiesUnit * 6 + 0.5em;
 $largeStory:  $storiesUnit * 9 + 1em;
 
 .stories {
-  @include outer-container;
-  @include fill-parent;
+  width: 70%;
 }
 
-.stories-header {
-  @extend %stories-endcap;
-  border-bottom: 1px solid $colorGray5;
-  height: 4em;
-  line-height: 2em;
-  padding: 1em;
+.filters {
+  display: inline-block;
+  color: $colorGray2;
 }
 
 .stories-list {

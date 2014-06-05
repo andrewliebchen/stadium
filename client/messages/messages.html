@@ -1,0 +1,24 @@
+<template name="messages">
+  <header class="messages-header">
+    <a id="all_stories">All stories</a>
+  </header>
+  <div class="messages-list">
+    {{#each messages}}
+      <div class="message">
+        <img src="{{avatarUrl}}">
+        <strong>{{name}}:</strong>
+        {{#if editing}}
+          <input type="text" id="message_edit" value="{{message}}">
+        {{else}}
+          {{message}}
+        {{/if}}
+        <a href="#" class="message-delete">delete</a>
+        <a href="#" class="message-edit">edit</a>
+      </div>
+    {{/each}}
+  </div>
+</template>
+
+<template name="messageInput">
+  <input type="text" id="message_add" placeholder="Your message">
+</template>

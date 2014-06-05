@@ -1,10 +1,13 @@
 .messages {
-  @include span-columns(9);
-  @include omega;
-  @include pad(default default default 0);
-  @include shift(3);
-  margin-bottom: unit(2);
-  display: none;
+  @include position(fixed, 0px 0px 0px 0);
+  background-color: $colorGray6;
+  border-left: 1px solid $colorGray5;
+  z-index: 100;
+  width: 30%;
+}
+
+.messages-list {
+  @include pad(default);
 }
 
 .message-add {

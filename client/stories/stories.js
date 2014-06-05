@@ -15,7 +15,6 @@ Deps.autorun(function() {
 
     $('.filter').change(function() {
       var filterValue = $(this).val();
-      console.log(filterValue);
       $isotopeContainer.isotope({ filter: filterValue });
     });
   });

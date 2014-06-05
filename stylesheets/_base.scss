@@ -7,11 +7,12 @@ $colorGray4: #999;
 $colorGray5: #ccc;
 $colorGray6: #fefefe;
 
-$colorLink: rgb(57, 163, 255);
+$colorLink:   rgb(57, 163, 255);
+$colorAction: rgb(48, 217, 76);
 
 $fontFamilyBase: $helvetica;
-$fontSizeBase: 16px;
-$fontSizeSmall: em(12);
+$fontSizeBase:   16px;
+$fontSizeSmall:  em(12);
 
 // HELPERS
 
@@ -120,6 +121,13 @@ button {
 .modal-wrapper {
   @include position(fixed, 0px 0px 0px 0px);
   background-color: rgba($colorLink, 0.9);
+}
+
+header {
+  border-bottom: 1px solid $colorGray5;
+  height: 4em;
+  line-height: 2em;
+  padding: 1em;
 }
 
 .modal {
