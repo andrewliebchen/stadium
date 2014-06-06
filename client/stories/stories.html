@@ -3,9 +3,14 @@
   <div class="stories-list">
       {{> storyNew}}
       {{#each stories}}
-        <div class="story {{selected}} {{size}} {{status}}">
+        <div class="story {{type}} {{size}} {{status}} {{selected}}">
           {{#if editing}}
             <a class="close">&times;</a>
+            <select id="edit_story_type">
+              <option value="story">Story</option>
+              <option value="defect">Defect</option>
+              <option value="task">Task</option>
+            </select>
             <select id="edit_story_size">
               <option value="small">Small</option>
               <option value="medium">Medium</option>
@@ -37,7 +42,10 @@
     <div class="filters">
       Showing
       <select class="filter">
-        <option value="*">stories</option>
+        <option value="*">all items</option>
+        <option value=".story.story">Stories</option>
+        <option value=".defect">Defects</option>
+        <option value=".task">Tasks</option>
       </select>
       with
       <select class="filter">

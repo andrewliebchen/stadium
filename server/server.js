@@ -20,6 +20,7 @@ Meteor.methods({
     Stories.insert({
       userId: options.userId,
       title:  options.title,
+      type:   options.type,
       size:   options.size,
       status: options.status,
       time:   options.time
@@ -33,6 +34,7 @@ Meteor.methods({
   editStory : function(storyId, options) {
     Stories.update(storyId, {$set: {
       title:  options.title,
+      type:   options.type,
       size:   options.size,
       status: options.status
     }});

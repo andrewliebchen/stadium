@@ -1,11 +1,7 @@
-$storiesUnit: em(60);
-
-$smallStory:  $storiesUnit * 3;
-$mediumStory: $storiesUnit * 6 + 0.5em;
-$largeStory:  $storiesUnit * 9 + 1em;
+// STORIES
 
 .stories {
-  width: 70%;
+  @include fill-parent;
 }
 
 .filters {
@@ -57,16 +53,47 @@ $largeStory:  $storiesUnit * 9 + 1em;
       display: block;
     }
   }
+
+  a {
+    color: inherit;
+  }
 }
 
-.story.medium {
-  @include size($mediumStory);
+// SIZES
+$sizes: "medium", "large";
+$sizeSizes: $mediumStory, $largeStory;
+
+.story {
+  $i: 1;
+  @each $size in $sizes {
+    &.#{$size} {
+      @include size(nth($sizeSizes, $i));
+    }
+    $i: $i + 1;
+  }
 }
 
-.story.large {
-  @include size($largeStory);
+// TYPES
+$types: "story", "defect", "task";
+$colors: $colorStory, $colorDefect, $colorTask;
+
+.story {
+  $i: 1;
+  @each $type in $types {
+    $typeColor: nth($colors, $i);
+    &.#{$type} {
+      border-color: $typeColor;
+      color: $typeColor;
+
+      &:hover {
+        box-shadow: 0 0 0 3px rgba($typeColor, 0.2);
+      }
+    }
+    $i: $i + 1;
+  }
 }
 
+// NEW STORIES
 .story-new {
   display: none;
 

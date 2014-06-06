@@ -8,11 +8,22 @@ $colorGray5: #ccc;
 $colorGray6: #fefefe;
 
 $colorLink:   rgb(57, 163, 255);
-$colorAction: rgb(48, 217, 76);
+// $colorAction: rgb(48, 217, 76);
+
+$colorStory: $colorLink;
+$colorDefect: #DB6463;
+$colorTask:  #32BF90;
+// $color-task:   #E5BC3B;
 
 $fontFamilyBase: $helvetica;
 $fontSizeBase:   16px;
 $fontSizeSmall:  em(12);
+
+
+$storiesUnit: em(60);
+$smallStory:  $storiesUnit * 3;
+$mediumStory: $storiesUnit * 6 + 0.5em;
+$largeStory:  $storiesUnit * 9 + 1em;
 
 // HELPERS
 
