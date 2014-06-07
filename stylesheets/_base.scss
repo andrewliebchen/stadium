@@ -114,17 +114,68 @@ button {
   @include outer-container;
   @include pad(unit(0.5) default);
   border-bottom: 1px solid $colorGray5;
-  display: none;
+}
+
+.nav-global {
+  width: 6em;
+  margin: 0 auto;
+}
+
+.nav-global-item {
+  $border: 1px solid $colorLink;
+  @include size(2em);
+  border-top: $border;
+  border-bottom: $border;
+  text-align: center;
+  line-height: 2em;
+  display: block;
+  float: left;
+  background-color: $colorLink;
+  color: $colorGray6;
+  cursor: default;
+
+  &:first-child {
+    @include border-left-radius(3px);
+    border-left: $border;
+  }
+
+  &:last-child {
+    @include border-right-radius(3px);
+    border-right: $border;
+  }
+
+  &.not-selected {
+    color: $colorLink;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px $colorLink;
+    }
+  }
 }
 
 .login-buttons-dropdown-align-right {
   float: right;
+  display: none !important;
 }
 
-.width-wrapper {
-  @include outer-container;
+// LAYOUT
+.scroll-container {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
+.sections {
+  width: 150vw;
+}
+
+%section {
+  width: 50vw;
+  float: left;
+}
+
+// MODALS
 .close {
   @include position(absolute, 1em 1em 0 0);
 }

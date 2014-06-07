@@ -1,7 +1,7 @@
 // STORIES
 
 .stories {
-  @include fill-parent;
+  @extend %section;
 }
 
 .filters {

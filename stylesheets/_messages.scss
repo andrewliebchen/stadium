@@ -1,9 +1,5 @@
 .messages {
-  @include position(fixed, 0px 0px 0px 0);
-  background-color: $colorGray6;
-  border-left: 1px solid $colorGray5;
-  z-index: 100;
-  display: none;
+  @extend %section;
 }
 
 .messages-list {
