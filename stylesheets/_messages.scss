@@ -2,6 +2,10 @@
   @extend %section;
 }
 
+.messages-header {
+  @extend %header;
+}
+
 .messages-list {
   @include pad(default);
 }

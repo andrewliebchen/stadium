@@ -4,25 +4,20 @@
 
 <body>
   <header class="header-global">
-    <nav class="nav-global">
-      <a class="nav-global-item is-selected">A</a>
-      <a class="nav-global-item is-selected">B</a>
-      <a class="nav-global-item">C</a>
-    </nav>
-    {{> loginButtons align="right"}}
+    {{> header}}
   </header>
-  <div class="scroll-container">
-    <div class="sections">
-      <section class="stories">
-        {{> stories}}
-      </section>
-      <section class="messages">
-        {{> messages}}
-        {{> messageInput}}
-      </section>
-      <section class="notepad">
-        There's stuff here
-      </section>
-    </div>
+  <div class="sections">
+    <section class="stories">
+      {{> stories}}
+    </section>
+    <section class="messages">
+      {{> messages}}
+      {{> messageInput}}
+    </section>
+    <section class="notepads">
+      <header class="notepads-header">
+        Notepads
+      </header>
+    </section>
   </div>
 </body>

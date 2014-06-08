@@ -2,17 +2,20 @@ Session.setDefault('addingStory', false);
 Session.setDefault('currentStory', null);
 Session.setDefault('editingStory', null);
 
+isotopeLayout = function() {
+  var $isotopeContainer = $('.stories-list');
+  $isotopeContainer.isotope({
+    itemSelector: '.story',
+    layoutMode: 'masonry',
+    masonry: {
+      gutter: 60
+    }
+  });
+}
+
 Deps.autorun(function() {
   Meteor.subscribe('stories', function(){
-    var $isotopeContainer = $('.stories-list');
-    $isotopeContainer.isotope({
-      itemSelector: '.story',
-      layoutMode: 'masonry',
-      masonry: {
-        gutter: 60
-      }
-    });
-
+    isotopeLayout();
     $('.filter').change(function() {
       var filterValue = $(this).val();
       $isotopeContainer.isotope({ filter: filterValue });
