@@ -42,7 +42,6 @@
 
 .message-add {
   @include position(fixed, 0 unit(1) 0px 0px);
-  @include shift(6);
   background-color: white;
   height: unit(2.5);
   z-index: 1;

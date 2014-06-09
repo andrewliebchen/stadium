@@ -16,6 +16,7 @@
             {{message}}
           {{/if}}
         </div>
+        {{> messageInput}}
         {{! <a href="#" class="message-delete">delete</a>
         <a href="#" class="message-edit">edit</a> }}
       </div>
@@ -24,5 +25,7 @@
 </template>
 
 <template name="messageInput">
-  <input type="text" id="message_add" placeholder="Your message">
+  <div class="message-add">
+    <input type="text" id="message_add" placeholder="Your message">
+  </div>
 </template>
