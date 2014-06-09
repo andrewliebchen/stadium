@@ -12,6 +12,10 @@ Template.messages.messages = function() {
   }
 };
 
+Template.messages.avatarUrl = function() {
+  return Gravatar.imageUrl('andrewliebchen@gmail.com');
+};
+
 Template.messages.editing = function() {
   return Session.equals('editingMessage', this._id);
 };

@@ -26,9 +26,20 @@ $mediumStory: $storiesUnit * 6 + 0.5em;
 $largeStory:  $storiesUnit * 9 + 1em;
 
 // HELPERS
-
 @function unit($multiple) {
   @return $unit * $multiple;
+}
+
+// ANIMATIONS
+@include keyframes(panelIn) {
+  0% {
+    @include transform(translate3d(100%, 0, 0));
+    opacity: 0;
+  }
+  100% {
+    @include transform(translate3d(0, 0, 0));
+    opacity: 1;
+  }
 }
 
 // BASE
@@ -167,7 +178,6 @@ button {
 }
 
 // LAYOUT
-
 .sections {
   @include outer-container;
   @include display-box;
@@ -178,7 +188,9 @@ button {
 
 %section {
   @include box-flex(1);
+  @include animation(panelIn 0.2s $ease-in-out-quad);
   width: 0; // Gives the Flex sections equal widths
+  background-color: transparent;
   display: none;
 }
 

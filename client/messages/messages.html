@@ -5,15 +5,19 @@
   <div class="messages-list">
     {{#each messages}}
       <div class="message">
-        <img src="{{avatarUrl}}">
-        <strong>{{name}}:</strong>
-        {{#if editing}}
-          <input type="text" id="message_edit" value="{{message}}">
-        {{else}}
-          {{message}}
-        {{/if}}
-        <a href="#" class="message-delete">delete</a>
-        <a href="#" class="message-edit">edit</a>
+        <div class="message-avatar">
+          <img src="{{avatarUrl}}">
+        </div>
+        <div class="message-content">
+          <small>{{name}}</small>
+          {{#if editing}}
+            <input type="text" id="message_edit" value="{{message}}">
+          {{else}}
+            {{message}}
+          {{/if}}
+        </div>
+        {{! <a href="#" class="message-delete">delete</a>
+        <a href="#" class="message-edit">edit</a> }}
       </div>
     {{/each}}
   </div>
