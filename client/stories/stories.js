@@ -84,6 +84,9 @@ Template.stories.events({
 
   'click .story-menu-toggle' : function(event) {
     event.preventDefault();
+    var $storyParent = $(event.target).closest('.story');
+    var height = $storyParent.outerHeight();
+    $storyParent.css('height', height);
     Session.set('storyMenu', this._id);
   },
 
