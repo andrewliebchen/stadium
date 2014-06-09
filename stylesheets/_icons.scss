@@ -1,18 +1,5 @@
 @include font-face(stadium, "/fonts/stadium");
 
-[data-icon]:before {
-  font-family: stadium !important;
-  content: attr(data-icon);
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-family: "stadium" !important;
@@ -22,6 +9,7 @@
   text-transform: none !important;
   speak: none;
   line-height: 1;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -41,3 +29,10 @@
 .icon-close:before {
   content: "\E004";
 }
+.icon-edit:before {
+  content: "\E005";
+}
+.icon-trash:before {
+  content: "\E006";
+}
+

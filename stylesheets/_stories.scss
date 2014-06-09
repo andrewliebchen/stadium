@@ -75,10 +75,6 @@
   @extend %story-toggle;
 }
 
-.story-close {
-  @extend %story-toggle;
-}
-
 .story-menu {
   margin-top: 1em;
 }
@@ -88,11 +84,17 @@
   display: block;
   height: 2em;
   line-height: 2em;
+  margin-bottom: 0.25em;
   padding: 0 0.5em;
   text-decoration: none;
 
   &:hover {
     background-color: $colorGray6;
+  }
+
+  &[class*="icon-"]:before {
+    margin-right: 10px;
+    top: 2px;
   }
 }
 
@@ -133,6 +135,10 @@ $colors: $colorStory, $colorDefect, $colorTask;
       }
 
       .story-menu-item:hover {
+        color: $typeColor;
+      }
+
+      .button-knockout:hover {
         color: $typeColor;
       }
     }
