@@ -30,14 +30,9 @@
   overflow: hidden;
   padding: 1em;
 
-  &:hover,
-  &.is-selected {
+  &:hover {
     border-color: $colorLink;
     color: $colorLink;
-  }
-
-  &.is-selected {
-    background-color: white;
   }
 
   &.new {
@@ -63,6 +58,44 @@
   }
 }
 
+%story-toggle {
+  @include position(absolute, 0.5em 0.5em 0 0);
+  opacity: 0;
+
+  .story:hover & {
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.story-menu-toggle {
+  @extend %story-toggle;
+}
+
+.story-close {
+  @extend %story-toggle;
+}
+
+.story-menu {
+  margin-top: 1em;
+}
+
+.story-menu-item {
+  border-radius: 3px;
+  display: block;
+  height: 2em;
+  line-height: 2em;
+  padding: 0 0.5em;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $colorGray6;
+  }
+}
+
 // SIZES
 $sizes: "medium", "large";
 $sizeSizes: $mediumStory, $largeStory;
@@ -73,6 +106,7 @@ $sizeSizes: $mediumStory, $largeStory;
     &.#{$size} {
       @include size(nth($sizeSizes, $i));
     }
+
     $i: $i + 1;
   }
 }
@@ -92,7 +126,17 @@ $colors: $colorStory, $colorDefect, $colorTask;
       &:hover {
         box-shadow: 0 0 0 3px rgba($typeColor, 0.2);
       }
+
+      &.is-selected {
+        background-color: $typeColor;
+        color: $colorGray6;
+      }
+
+      .story-menu-item:hover {
+        color: $typeColor;
+      }
     }
+
     $i: $i + 1;
   }
 }

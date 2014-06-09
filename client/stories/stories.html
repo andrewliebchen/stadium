@@ -25,12 +25,17 @@
             <textarea id="edit_story_title">{{title}}</textarea>
             <button id="edit_story">Save story</button>
           {{else}}
-            <small>
-              {{status}}
-              <a href="#" class="story-delete">delete</a>
-              <a href="#" class="story-edit">edit</a>
-            </small>
-            <p class="story-title">{{title}}</p>
+            {{#if storyMenu}}
+              <ul class="story-menu">
+                <li><a href="#" class="story-menu-item story-delete">Delete story</a></li>
+                <li><a href="#" class="story-menu-item story-edit">Edit story</a></li>
+              </ul>
+              <a class="story-close close icon-close"></a>
+            {{else}}
+              <small>{{status}}</small>
+              <p class="story-title">{{title}}</p>
+              <a class="story-menu-toggle icon-settings"></a>
+            {{/if}}
           {{/if}}
         </div>
       {{/each}}

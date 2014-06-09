@@ -1,5 +1,6 @@
 Session.setDefault('addingStory', false);
 Session.setDefault('currentStory', null);
+Session.setDefault('storyMenu', null);
 Session.setDefault('editingStory', null);
 
 isotopeLayout = function() {
@@ -33,6 +34,10 @@ Template.stories.stories = function() {
 
 Template.stories.selected = function() {
   return Session.equals('currentStory', this._id) ? 'is-selected' : '';
+};
+
+Template.stories.storyMenu = function() {
+  return Session.equals('storyMenu', this._id);
 };
 
 Template.stories.editing = function() {
@@ -77,6 +82,11 @@ Template.stories.events({
     Session.set('currentStory', null);
   },
 
+  'click .story-menu-toggle' : function(event) {
+    event.preventDefault();
+    Session.set('storyMenu', this._id);
+  },
+
   'click .story-delete' : function(event) {
     event.preventDefault();
     Meteor.call('removeStory', this._id);
@@ -107,5 +117,6 @@ Template.stories.events({
     event.preventDefault();
     Session.set('addingStory', null);
     Session.set('editingStory', null);
+    Session.set('storyMenu', null);
   }
 });
