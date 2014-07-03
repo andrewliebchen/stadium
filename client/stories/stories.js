@@ -4,7 +4,7 @@ Session.setDefault('storyMenu', null);
 Session.setDefault('editingStory', null);
 
 isotopeLayout = function() {
-  var $isotopeContainer = $('.stories-list');
+  var $isotopeContainer = $('.stories');
   $isotopeContainer.isotope({
     itemSelector: '.story',
     layoutMode: 'masonry',

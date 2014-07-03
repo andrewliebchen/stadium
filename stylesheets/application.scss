@@ -1,11 +1,9 @@
 @import "../packages/bourbon/bourbon";
 $max-width: 100%;
-$unit: em(30);
-$gutter: $unit;
+$unit: em(60);
+$gutter: $unit / 2;
 @import "../packages/neat/neat";
 @import "reset";
 @import "base";
 @import "icons";
 @import "stories";
-@import "messages";
-@import "notepads";

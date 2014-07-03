@@ -1,7 +1,7 @@
 // STORIES
 
 .stories {
-  @extend %section;
+  padding-left: 1em;
 }
 
 .stories-header {
@@ -13,9 +13,9 @@
   color: $colorGray2;
 }
 
-.stories-list {
-  margin: 0.75em;
-}
+// .stories-list {
+//   margin: 0.75em;
+// }
 
 .story {
   @include fill-parent;
@@ -25,7 +25,7 @@
   border: 1px solid $colorGray5;
   color: $colorGray4;
   cursor: pointer;
-  margin: 0.25em;
+  margin: 0 0.5em 0.5em 0;
   overflow: hidden;
   padding: 1em;
 
@@ -98,19 +98,19 @@
 }
 
 // SIZES
-$sizes: "medium", "large";
-$sizeSizes: $mediumStory, $largeStory;
-
-.story {
-  $i: 1;
-  @each $size in $sizes {
-    &.#{$size} {
-      @include size(nth($sizeSizes, $i));
-    }
-
-    $i: $i + 1;
-  }
-}
+// $sizes: "medium", "large";
+// $sizeSizes: $mediumStory, $largeStory;
+//
+// .story {
+//   $i: 1;
+//   @each $size in $sizes {
+//     &.#{$size} {
+//       @include size(nth($sizeSizes, $i));
+//     }
+//
+//     $i: $i + 1;
+//   }
+// }
 
 // TYPES
 $types: "story", "defect", "task";

@@ -1,5 +1,9 @@
-// VARIABLES
+// HELPERS
+@function unit($multiple) {
+  @return $unit * $multiple;
+}
 
+// VARIABLES
 $colorGray1: #333;
 $colorGray2: #555;
 $colorGray3: #666;
@@ -19,16 +23,9 @@ $fontFamilyBase: $helvetica;
 $fontSizeBase:   16px;
 $fontSizeSmall:  em(12);
 
-
-$storiesUnit: em(60);
-$smallStory:  $storiesUnit * 3;
-$mediumStory: $storiesUnit * 6 + 0.5em;
-$largeStory:  $storiesUnit * 9 + 1em;
-
-// HELPERS
-@function unit($multiple) {
-  @return $unit * $multiple;
-}
+$smallStory:  unit(4);
+// $mediumStory: $storiesUnit * 6 + 0.5em;
+// $largeStory:  $storiesUnit * 9 + 1em;
 
 // ANIMATIONS
 @include keyframes(panelIn) {
@@ -53,7 +50,7 @@ body {
   color: $colorGray1;
   font-family: $fontFamilyBase;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: em(22);
 }
 
 h1, h2, h3 {
@@ -131,74 +128,64 @@ button {
 }
 
 // CONTENT
-.header-global {
-  @include outer-container;
-  @include pad(unit(0.5) default);
-  border-bottom: 1px solid $colorGray5;
-}
-
-.nav-global {
-  width: 6em;
-  margin: 0 auto;
-}
-
-.nav-global-item {
-  $border: 1px solid $colorLink;
-  @include size(2em);
-  border: $border;
-  display: block;
-  float: left;
-  line-height: 2em;
-  margin-left: -1px;
-  text-align: center;
-
-  &:hover {
-    box-shadow: inset 0 0 0 1px $colorLink;
-  }
-
-  &:first-child {
-    @include border-left-radius(3px);
-    border-left: $border;
-  }
-
-  &:last-child {
-    @include border-right-radius(3px);
-    border-right: $border;
-  }
-
-  &.is-selected {
-    background-color: $colorLink;
-    color: $colorGray6;
-  }
-}
-
 .login-buttons-dropdown-align-right {
   float: right;
   display: none !important;
 }
 
 // LAYOUT
-.sections {
+.width-wrapper {
   @include outer-container;
-  @include display-box;
-  @include box-align(start);
-  @include box-orient(horizontal);
-  @include box-pack(start);
+  margin: 1em auto;
 }
 
-%section {
-  @include box-flex(1);
-  @include animation(panelIn 0.2s $ease-in-out-quad);
-  width: 0; // Gives the Flex sections equal widths
-  background-color: transparent;
-  display: none;
+.launch-bar {
+  width: unit(1);
+  @include position(fixed, 1em 0 1em 1em);
 }
 
-%header {
-  border-bottom: 1px solid $colorGray5;
-  height: 4em;
-  line-height: 2em;
-  padding: 1em;
+.main-panel {
+  padding-left: em(60) + 2em;
+}
+
+// LAUNCH BAR
+
+.launch-bar a {
+  @include size(unit(1));
+  border-radius: 3px;
+  border: 1px solid $colorGray4;
+  color: $colorGray4;
+  display: block;
+  line-height: unit(1);
+  margin-bottom: 0.5em;
+  overflow: hidden;
+  text-align: center;
+
+  &:hover {
+    box-shadow: 0 0 0 3px rgba($colorLink, 0.2);
+    border-color: $colorLink;
+    color: $colorLink;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &[class*="icon-"]:before {
+    font-size: 1.5em;
+    @include position(relative, 5px 0 0 0);
+  }
+}
+
+a.logo {
+  background-color: $colorGray4;
+  margin-bottom: 2em;
+}
+
+a.current-user {
+  @include position(absolute, 0 0 0px 0);
+  margin-bottom: 0;
 }
 
 // MODALS
