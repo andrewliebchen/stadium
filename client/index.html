@@ -4,22 +4,29 @@
 
 <body>
   <div class="width-wrapper">
-    <aside class="launch-bar">
-      <a class="logo"></a>
-      <nav class="members">
-        <a class="member team icon-bubble"></a>
-        <a class="member"><img src="http://api.randomuser.me/portraits/women/1.jpg"></a>
-        <a class="member"><img src="http://api.randomuser.me/portraits/men/1.jpg"></a>
-        <a class="member"><img src="http://api.randomuser.me/portraits/women/2.jpg"></a>
-        <a class="member"><img src="http://api.randomuser.me/portraits/men/2.jpg"></a>
-        <a class="member"><img src="http://api.randomuser.me/portraits/women/3.jpg"></a>
-        <a class="member"><img src="http://api.randomuser.me/portraits/men/3.jpg"></a>
-        <a class="member"><img src="http://api.randomuser.me/portraits/women/4.jpg"></a>
-      </nav>
-      <a class="current-user"><img src="http://api.randomuser.me/portraits/women/59.jpg"></a>
-    </aside>
-    <section class="main-panel">
+    {{> launchbar}}
+    <section class="panels">
+      <div class="panel chats">
+        Chats are here.
+      </div>
       {{> stories}}
     </section>
   </div>
 </body>
+
+<template name="launchbar">
+  <aside class="launch-bar">
+    <a class="logo"></a>
+    <nav class="members">
+      <a id="chat_all" class="member team icon-team-chat"></a>
+      <a class="member"><img src="http://api.randomuser.me/portraits/women/1.jpg"></a>
+      <a class="member"><img src="http://api.randomuser.me/portraits/men/1.jpg"></a>
+      <a class="member"><img src="http://api.randomuser.me/portraits/women/2.jpg"></a>
+      <a class="member"><img src="http://api.randomuser.me/portraits/men/2.jpg"></a>
+      <a class="member"><img src="http://api.randomuser.me/portraits/women/3.jpg"></a>
+      <a class="member"><img src="http://api.randomuser.me/portraits/men/3.jpg"></a>
+      <a class="member"><img src="http://api.randomuser.me/portraits/women/4.jpg"></a>
+    </nav>
+    <a class="current-user"><img src="http://api.randomuser.me/portraits/women/59.jpg"></a>
+  </aside>
+</template>

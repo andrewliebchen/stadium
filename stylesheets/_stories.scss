@@ -1,7 +1,12 @@
 // STORIES
 
 .stories {
+  @include transition;
   padding-left: 1em;
+
+  .show-chat & {
+    @include transform(translate3d(100%, 0, 0));
+  }
 }
 
 .stories-header {

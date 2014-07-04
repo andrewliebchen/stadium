@@ -77,11 +77,6 @@ Template.stories.events({
     return Session.set('currentStory', this._id);
   },
 
-  'click #all_stories' : function(event) {
-    event.preventDefault();
-    Session.set('currentStory', null);
-  },
-
   'click .story-menu-toggle' : function(event) {
     event.preventDefault();
     var $storyParent = $(event.target).closest('.story');

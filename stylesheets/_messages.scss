@@ -1,3 +1,14 @@
+// CHATS
+.chats {
+  display: none;
+
+  .show-chats & {
+    display: block;
+  }
+}
+
+
+// MESSAGES?
 .messages {
   @extend %section;
 }

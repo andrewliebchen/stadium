@@ -144,12 +144,20 @@ button {
   @include position(fixed, 1em 0 1em 1em);
 }
 
-.main-panel {
+.panels {
+  @include display-box;
+  @include box-align(start);
+  @include box-orient(horizontal);
+  @include box-pack(start);
   padding-left: em(60) + 2em;
 }
 
-// LAUNCH BAR
+.panel {
+  @include box-flex(1);
+  width: 0;
+}
 
+// LAUNCH BAR
 .launch-bar a {
   @include size(unit(1));
   border-radius: 3px;
@@ -161,10 +169,14 @@ button {
   overflow: hidden;
   text-align: center;
 
-  &:hover {
-    box-shadow: 0 0 0 3px rgba($colorLink, 0.2);
+  &:hover,
+  &.is-selected {
     border-color: $colorLink;
     color: $colorLink;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 3px rgba($colorLink, 0.2);
   }
 
   img {
@@ -173,8 +185,8 @@ button {
   }
 
   &[class*="icon-"]:before {
-    font-size: 1.5em;
-    @include position(relative, 5px 0 0 0);
+    font-size: 2em;
+    @include position(relative, 7px 0 0 0);
   }
 }
 
