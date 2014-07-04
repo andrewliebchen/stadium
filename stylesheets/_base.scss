@@ -140,8 +140,9 @@ button {
 }
 
 .launch-bar {
-  width: unit(1);
   @include position(fixed, 1em 0 1em 1em);
+  width: unit(1);
+  z-index: 1;
 }
 
 .panels {
@@ -166,8 +167,8 @@ button {
   display: block;
   line-height: unit(1);
   margin-bottom: 0.5em;
-  overflow: hidden;
   text-align: center;
+  position: relative;
 
   &:hover,
   &.is-selected {
@@ -177,6 +178,26 @@ button {
 
   &:hover {
     box-shadow: 0 0 0 3px rgba($colorLink, 0.2);
+  }
+
+  &.is-selected {
+    &:hover {
+      box-shadow: none;
+    }
+
+    &::after {
+      $size: 0.5em;
+      $margin: -($size / 2);
+      $border: 1px solid $colorLink;
+      @include transform(rotate(45deg));
+      content: "";
+      @include size($size);
+      @include position(absolute, 50% 0px 0 0);
+      border-bottom: $border;
+      border-left: $border;
+      margin: $margin $margin 0 0;
+      background-color: $colorGray6;
+    }
   }
 
   img {

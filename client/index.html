@@ -7,7 +7,10 @@
     {{> launchbar}}
     <section class="panels">
       <div class="panel chats">
-        Chats are here.
+        {{> messages}}
+        <div class="new-chat">
+          <input type="text">
+        </div>
       </div>
       {{> stories}}
     </section>

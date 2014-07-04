@@ -1,7 +1,4 @@
 <template name="messages">
-  <header class="messages-header">
-    <a id="all_stories">All stories</a>
-  </header>
   <div class="messages-list">
     {{#each messages}}
       <div class="message">
@@ -16,7 +13,6 @@
             {{message}}
           {{/if}}
         </div>
-        {{> messageInput}}
         {{! <a href="#" class="message-delete">delete</a>
         <a href="#" class="message-edit">edit</a> }}
       </div>

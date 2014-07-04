@@ -1,9 +1,21 @@
 // CHATS
 .chats {
+  position: relative;
   display: none;
+  height: 100vh;
+  overflow-y: scroll;
 
   .show-chats & {
     display: block;
+  }
+}
+
+.new-chat {
+  $left: unit(1) + 2em;
+  @include position(fixed, 0 0 1em $left);
+
+  input {
+    width: 100%;
   }
 }
 
