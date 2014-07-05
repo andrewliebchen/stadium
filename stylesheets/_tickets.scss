@@ -11,7 +11,7 @@
 .ticket {
   @include size($smallStory auto);
   border-radius: 3px;
-  background-color: $colorGray6;
+  background-color: $colorBackground;
   border-width: 1px;
   border-style: solid;
   cursor: pointer;
@@ -21,6 +21,8 @@
 
   &.new {
     border-style: dashed;
+    border-color: $colorGray5;
+    color: $colorGray5;
     z-index: 9999;
   }
 
@@ -40,6 +42,10 @@
   a {
     color: inherit;
   }
+}
+
+.ticket-title {
+  margin-bottom: 0.5em;
 }
 
 .ticket-menu-toggle {
@@ -69,7 +75,7 @@
   text-decoration: none;
 
   &:hover {
-    background-color: $colorGray6;
+    background-color: $colorBackground;
   }
 
   &[class*="icon-"]:before {
@@ -87,7 +93,7 @@
   }
 
   .media-image {
-    @extend %avatar-small;
+    @extend .avatar-small;
     border-color: inherit;
     color: inherit;
   }
@@ -105,7 +111,7 @@
 .ticket-size {
   @extend %block-small;
   float: right;
-  color: $colorGray6;
+  color: $colorBackground;
   font-weight: bold;
 }
 

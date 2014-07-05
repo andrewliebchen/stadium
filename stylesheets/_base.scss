@@ -18,13 +18,12 @@ $colorGray4: #999;
 $colorGray5: #ccc;
 $colorGray6: #fefefe;
 
-$colorLink:   rgb(57, 163, 255);
-// $colorAction: rgb(48, 217, 76);
+$colorLink:       rgb(57, 163, 255);
+$colorBackground: $colorGray6;
 
-$colorStory: $colorLink;
+$colorStory:  $colorLink;
 $colorDefect: #DB6463;
-$colorTask:  #32BF90;
-// $color-task:   #E5BC3B;
+$colorTask:   #32BF90;
 
 $fontFamilyBase: $helvetica;
 $fontSizeBase:   16px;
@@ -41,7 +40,7 @@ $smallStory:  unit(4);
 
 html,
 body {
-  background-color: $colorGray6;
+  background-color: $colorBackground;
   color: $colorGray1;
   font-family: $fontFamilyBase;
   font-size: 16px;
@@ -202,24 +201,22 @@ button {
   color: $colorGray4;
 }
 
-%avatar-small,
 .avatar-small {
   @extend %avatar-base;
   @extend %block-small;
 }
 
-%avatar-medium,
 .avatar-medium {
   @extend %avatar-base;
   @extend %block-medium;
+
+  &::before {
+    font-size: 1.5em;
+  }
 }
 
 // LAUNCH BAR
 .launch-bar a {
-  @extend %block-medium;
-  @include square-image;
-  border: 1px solid $colorGray4;
-  color: $colorGray4;
   margin-bottom: 0.5em;
 
   &:hover,
@@ -252,17 +249,19 @@ button {
     }
   }
 
-  &[class*="icon-"]:before {
+  &.icon-team-chat::before {
     font-size: 2em;
   }
 }
 
 a.logo {
+  @extend %block-medium;
   background-color: $colorGray4;
   margin-bottom: 2em;
 }
 
 a.current-user {
+  @extend .avatar-medium;
   @include position(absolute, 0 0 0px 0);
   margin-bottom: 0;
 }
