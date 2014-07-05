@@ -31,6 +31,8 @@ $fontSizeSmall:  em(12);
 
 $smallStory:  unit(4);
 
+$headerTransition: 0.2s $ease-in-out-circ;
+
 // ANIMATIONS
 
 // BASE
@@ -169,14 +171,18 @@ button {
 
 // LAYOUT
 .width-wrapper {
+  @include transition(margin $headerTransition);
   @include outer-container;
-  margin: 1em auto;
+  margin: unit(0.1) auto 0;
+  padding: 1em 0;
 }
 
 .launch-bar {
-  @include position(fixed, 1em 0 1em 1em);
+  @include transition(margin $headerTransition);
+  @include position(fixed, 0px 0 0px 0px);
   width: unit(1);
   z-index: 1;
+  padding: 1em 0 1em 1em;
 }
 
 .panels {
@@ -259,21 +265,11 @@ a.logo {
   @extend %block-medium;
   background-color: $colorGray4;
   margin-bottom: 2em;
-
-  &:hover {
-    @extend .icon-bulb;
-    background-color: $colorLink;
-    color: $colorBackground;
-
-    &::before {
-      font-size: 2em;
-    }
-  }
 }
 
 a.current-user {
   @extend .avatar-medium;
-  @include position(absolute, 0 0 0px 0);
+  @include position(absolute, 0 0 1em 0);
   margin-bottom: 0;
 }
 

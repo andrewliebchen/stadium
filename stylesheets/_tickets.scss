@@ -1,4 +1,4 @@
-// STORIES
+// TICKETS
 .tickets {
   @include transition;
   padding-left: 1em;
@@ -150,5 +150,35 @@ $colors: $colorStory, $colorDefect, $colorTask;
     }
 
     $i: $i + 1;
+  }
+}
+
+// TICKET HEADER
+
+.tickets-header {
+  @include outer-container;
+  @include transform(translate3d(0, -(unit(0.9)), 0));
+  @include transition(all $headerTransition);
+  @include position(fixed, 0px 0px 0 0px);
+  background-color: $colorLink;
+  height: unit(1);
+  line-height: unit(1);
+  padding: 0 1em;
+
+  &:hover {
+    @include transform(translate3d(0, 0, 0));
+
+    + .width-wrapper,
+    + .width-wrapper .launch-bar {
+      margin-top: unit(1);
+    }
+  }
+
+  .filters {
+    float: left;
+  }
+
+  button {
+
   }
 }

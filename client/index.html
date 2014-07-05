@@ -3,6 +3,7 @@
 </head>
 
 <body>
+  {{> ticketsHeader}}
   <div class="width-wrapper">
     {{> launchbar}}
     <section class="panels">
@@ -21,7 +22,7 @@
 
 <template name="launchbar">
   <aside class="launch-bar">
-    <a class="logo" data-modal-template="ticketNew"></a>
+    <a class="logo"></a>
     <nav class="members">
       <a id="chat_all" class="avatar-medium icon-team-chat"></a>
       <a class="avatar-medium"></a>
