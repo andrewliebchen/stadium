@@ -1,17 +1,22 @@
 @include font-face(stadium, "/fonts/stadium");
 
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
+%icon:before {
+  color: inherit;
   font-family: "stadium" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
   text-transform: none !important;
   speak: none;
-  line-height: 1;
+  line-height: inherit;
   position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  @extend %icon;
 }
 
 .icon-close:before {

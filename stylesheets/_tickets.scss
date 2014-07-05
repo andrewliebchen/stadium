@@ -8,35 +8,16 @@
   }
 }
 
-.tickets-header {
-  @extend %header;
-}
-
-.filters {
-  display: inline-block;
-  color: $colorGray2;
-}
-
-// .tickets-list {
-//   margin: 0.75em;
-// }
-
 .ticket {
-  @include fill-parent;
   @include size($smallStory auto);
-  background-color: $colorGray6;
   border-radius: 3px;
-  border: 1px solid $colorGray5;
-  color: $colorGray4;
+  background-color: $colorGray6;
+  border-width: 1px;
+  border-style: solid;
   cursor: pointer;
   margin: 0 0.5em 0.5em 0;
   overflow: hidden;
   padding: 1em;
-
-  &:hover {
-    border-color: $colorLink;
-    color: $colorLink;
-  }
 
   &.new {
     border-style: dashed;
@@ -61,7 +42,7 @@
   }
 }
 
-%ticket-toggle {
+.ticket-menu-toggle {
   @include position(absolute, 0.5em 0.5em 0 0);
   opacity: 0;
 
@@ -72,10 +53,6 @@
       opacity: 1;
     }
   }
-}
-
-.ticket-menu-toggle {
-  @extend %ticket-toggle;
 }
 
 .ticket-menu {
@@ -101,20 +78,36 @@
   }
 }
 
-// SIZES
-// $sizes: "medium", "large";
-// $sizeSizes: $mediumStory, $largeStory;
-//
-// .ticket {
-//   $i: 1;
-//   @each $size in $sizes {
-//     &.#{$size} {
-//       @include size(nth($sizeSizes, $i));
-//     }
-//
-//     $i: $i + 1;
-//   }
-// }
+.ticket-meta {
+  @include row();
+  margin-top: 1em;
+
+  .media {
+    float: left;
+  }
+
+  .media-image {
+    @extend %avatar-small;
+    border-color: inherit;
+    color: inherit;
+  }
+
+  small {
+    display: block;
+    line-height: 1.4em;
+  }
+}
+
+.ticket-status {
+  float: left;
+}
+
+.ticket-size {
+  @extend %block-small;
+  float: right;
+  color: $colorGray6;
+  font-weight: bold;
+}
 
 // TYPES
 $types: "story", "defect", "task";
@@ -144,13 +137,17 @@ $colors: $colorStory, $colorDefect, $colorTask;
       .button-knockout:hover {
         color: $typeColor;
       }
+
+      .ticket-size {
+        background-color: $typeColor;
+      }
     }
 
     $i: $i + 1;
   }
 }
 
-// NEW STORIES
+// NEW TICKETS
 .ticket-new {
   display: none;
 

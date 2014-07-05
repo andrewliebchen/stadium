@@ -3,6 +3,13 @@
   @return $unit * $multiple;
 }
 
+@mixin square-image {
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
 // VARIABLES
 $colorGray1: #333;
 $colorGray2: #555;
@@ -24,20 +31,8 @@ $fontSizeBase:   16px;
 $fontSizeSmall:  em(12);
 
 $smallStory:  unit(4);
-// $mediumStory: $storiesUnit * 6 + 0.5em;
-// $largeStory:  $storiesUnit * 9 + 1em;
 
 // ANIMATIONS
-@include keyframes(panelIn) {
-  0% {
-    @include transform(translate3d(100%, 0, 0));
-    opacity: 0;
-  }
-  100% {
-    @include transform(translate3d(0, 0, 0));
-    opacity: 1;
-  }
-}
 
 // BASE
 * {
@@ -63,12 +58,52 @@ a {
   cursor: pointer;
 }
 
+b,
 strong {
   font-weight: bold;
 }
 
 small {
   font-size: $fontSizeSmall;
+}
+
+// MEDIA
+%media,
+.media {
+
+}
+
+%media-image,
+.media-image {
+  float: left;
+  margin-right: 0.5em;
+}
+
+%media-body,
+.media-body {
+  float: left;
+}
+
+// BLOCKS
+%block-base {
+  border-radius: 3px;
+  display: block;
+  text-align: center;
+  position: relative;
+}
+
+%block-small {
+  $size: 2em;
+  @extend %block-base;
+  @include size($size);
+  line-height: $size;
+}
+
+%block-medium {
+  $size: unit(1);
+  @extend %block-base;
+  @include size($size);
+  line-height: $size;
 }
 
 // FORMS
@@ -158,17 +193,34 @@ button {
   width: 0;
 }
 
+// AVATAR
+%avatar-base {
+  @extend %icon;
+  @extend .icon-user;
+  border: 1px solid $colorGray4;
+  position: relative;
+  color: $colorGray4;
+}
+
+%avatar-small,
+.avatar-small {
+  @extend %avatar-base;
+  @extend %block-small;
+}
+
+%avatar-medium,
+.avatar-medium {
+  @extend %avatar-base;
+  @extend %block-medium;
+}
+
 // LAUNCH BAR
 .launch-bar a {
-  @include size(unit(1));
-  border-radius: 3px;
+  @extend %block-medium;
+  @include square-image;
   border: 1px solid $colorGray4;
   color: $colorGray4;
-  display: block;
-  line-height: unit(1);
   margin-bottom: 0.5em;
-  text-align: center;
-  position: relative;
 
   &:hover,
   &.is-selected {
@@ -189,25 +241,19 @@ button {
       $size: 0.5em;
       $margin: -($size / 2);
       $border: 1px solid $colorLink;
-      @include transform(rotate(45deg));
-      content: "";
-      @include size($size);
       @include position(absolute, 50% 0px 0 0);
+      @include size($size);
+      @include transform(rotate(45deg));
+      background-color: $colorGray6;
       border-bottom: $border;
       border-left: $border;
+      content: "";
       margin: $margin $margin 0 0;
-      background-color: $colorGray6;
     }
-  }
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
   }
 
   &[class*="icon-"]:before {
     font-size: 2em;
-    @include position(relative, 7px 0 0 0);
   }
 }
 

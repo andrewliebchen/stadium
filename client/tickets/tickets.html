@@ -4,25 +4,7 @@
       {{#each ticket}}
         <div class="ticket {{type}} {{size}} {{status}} {{selected}}">
           {{#if editing}}
-            <a class="close icon-close"></a>
-            <select id="edit_ticket_type">
-              <option value="story">Story</option>
-              <option value="defect">Defect</option>
-              <option value="task">Task</option>
-            </select>
-            <select id="edit_ticket_size">
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-            </select>
-            <select id="edit_ticket_status">
-              <option value="someday">Someday</option>
-              <option value="backlog">Backlog</option>
-              <option value="current">Current</option>
-              <option value="done">Done</option>
-            </select>
-            <textarea id="edit_ticket_title">{{title}}</textarea>
-            <button id="edit_ticket" class="button-knockout">Save {{type}}</button>
+            {{> editTicket}}
           {{else}}
             {{#if ticketMenu}}
               <ul class="ticket-menu">
@@ -31,14 +13,46 @@
               </ul>
               <a class="close icon-close"></a>
             {{else}}
-              <small>{{status}}</small>
-              <p class="ticket-title">{{title}}</p>
+              <h3 class="ticket-title">{{title}}</h3>
+              <p class="ticket-description">{{description}}</p>
+              <div class="ticket-meta">
+                <div class="media">
+                  <div class="media-image"></div>
+                  <div class="media-body">
+                    <small><b>2 people chatting</b></small>
+                    <small>{{status}}</small>
+                  </div>
+                </div>
+                <div class="ticket-size">S</div>
+              </div>
               <a class="ticket-menu-toggle icon-settings"></a>
             {{/if}}
           {{/if}}
         </div>
       {{/each}}
   </div>
+</template>
+
+<template name="editTicket">
+  <a class="close icon-close"></a>
+  <select id="edit_ticket_type">
+    <option value="story">Story</option>
+    <option value="defect">Defect</option>
+    <option value="task">Task</option>
+  </select>
+  <select id="edit_ticket_size">
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="large">Large</option>
+  </select>
+  <select id="edit_ticket_status">
+    <option value="someday">Someday</option>
+    <option value="backlog">Backlog</option>
+    <option value="current">Current</option>
+    <option value="done">Done</option>
+  </select>
+  <textarea id="edit_ticket_title">{{title}}</textarea>
+  <button id="edit_ticket" class="button-knockout">Save {{type}}</button>
 </template>
 
 <template name="ticketsHeader">
