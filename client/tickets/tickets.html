@@ -1,39 +1,39 @@
-<template name="stories">
-  <div class="panel stories">
-      {{> storyNew}}
-      {{#each stories}}
-        <div class="story {{type}} {{size}} {{status}} {{selected}}">
+<template name="tickets">
+  <div class="panel tickets">
+      {{> ticketNew}}
+      {{#each ticket}}
+        <div class="ticket {{type}} {{size}} {{status}} {{selected}}">
           {{#if editing}}
             <a class="close icon-close"></a>
-            <select id="edit_story_type">
+            <select id="edit_ticket_type">
               <option value="story">Story</option>
               <option value="defect">Defect</option>
               <option value="task">Task</option>
             </select>
-            <select id="edit_story_size">
+            <select id="edit_ticket_size">
               <option value="small">Small</option>
               <option value="medium">Medium</option>
               <option value="large">Large</option>
             </select>
-            <select id="edit_story_status">
+            <select id="edit_ticket_status">
               <option value="someday">Someday</option>
               <option value="backlog">Backlog</option>
               <option value="current">Current</option>
               <option value="done">Done</option>
             </select>
-            <textarea id="edit_story_title">{{title}}</textarea>
-            <button id="edit_story" class="button-knockout">Save {{type}}</button>
+            <textarea id="edit_ticket_title">{{title}}</textarea>
+            <button id="edit_ticket" class="button-knockout">Save {{type}}</button>
           {{else}}
-            {{#if storyMenu}}
-              <ul class="story-menu">
-                <li><a href="#" class="story-menu-item story-edit icon-edit">Edit {{type}}</a></li>
-                <li><a href="#" class="story-menu-item story-delete icon-trash">Delete {{type}}</a></li>
+            {{#if ticketMenu}}
+              <ul class="ticket-menu">
+                <li><a href="#" class="ticket-menu-item ticket-edit icon-edit">Edit {{type}}</a></li>
+                <li><a href="#" class="ticket-menu-item ticket-delete icon-trash">Delete {{type}}</a></li>
               </ul>
               <a class="close icon-close"></a>
             {{else}}
               <small>{{status}}</small>
-              <p class="story-title">{{title}}</p>
-              <a class="story-menu-toggle icon-settings"></a>
+              <p class="ticket-title">{{title}}</p>
+              <a class="ticket-menu-toggle icon-settings"></a>
             {{/if}}
           {{/if}}
         </div>
@@ -41,13 +41,13 @@
   </div>
 </template>
 
-<template name="storiesHeader">
-  <header class="stories-header">
+<template name="ticketsHeader">
+  <header class="tickets-header">
     <div class="filters">
       Showing
       <select class="filter">
         <option value="*">all items</option>
-        <option value=".story.story">Stories</option>
+        <option value=".story">Stories</option>
         <option value=".defect">Defects</option>
         <option value=".task">Tasks</option>
       </select>
@@ -74,28 +74,29 @@
   </header>
 </template>
 
-<template name="storyNew">
-    <div id="new_story_toggle" class="story new {{isAdding}}">
-      <span>New story</span>
-      <div class="story-new">
+<template name="ticketNew">
+    <div id="new_ticket_toggle" class="ticket new {{isAdding}}">
+      <span>New ticket</span>
+      <div class="ticket-new">
         <a class="close icon-close"></a>
-        <select id="new_story_type">
+        <select id="new_ticket_type">
           <option value="story">Story</option>
           <option value="defect">Defect</option>
           <option value="task">Task</option>
         </select>
-        <select id="new_story_size">
+        <select id="new_ticket_size">
           <option value="small">Small</option>
           <option value="medium">Medium</option>
           <option value="large">Large</option>
         </select>
-        <select id="new_story_status">
+        <select id="new_ticket_status">
           <option value="someday" selected>Someday</option>
           <option value="backlog">Backlog</option>
           <option value="current">Current</option>
         </select>
-        <textarea id="new_story_title"></textarea>
-        <button id="add_story">Add story</button>
+        <input type="text" id="new_ticket_title">
+        <textarea id="new_ticket_description"></textarea>
+        <button id="add_ticket">Add story</button>
       </div>
     </div>
 </template>

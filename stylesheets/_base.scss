@@ -78,9 +78,9 @@ textarea {
   border-radius: 3px;
   border: 1px solid $colorGray5;
   display: block;
-  height: unit(1.25);
-  line-height: unit(0.75);
-  padding: unit(0.25) unit(0.5);
+  height: 3em;
+  line-height: 1em;
+  padding: 1em;
 
   @include placeholder {
     color: $colorGray5;

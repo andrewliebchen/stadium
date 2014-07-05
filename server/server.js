@@ -1,38 +1,35 @@
-Meteor.startup(function() {
-  // Do this when the server starts
+Meteor.publish('tickets', function() {
+  return Tickets.find({});
 });
 
-Meteor.publish('stories', function() {
-  return Stories.find({});
-});
-
-Meteor.publish('messages', function (story) {
-  if (story == null) {
+Meteor.publish('messages', function(ticket) {
+  if (ticket == null) {
     return Messages.find({});
   } else {
-    return Messages.find({story: story});
+    return Messages.find({ticket: ticket});
   }
 });
 
 Meteor.methods({
-  // Stories
-  addStory: function(options) {
-    Stories.insert({
-      userId: options.userId,
-      title:  options.title,
-      type:   options.type,
-      size:   options.size,
-      status: options.status,
-      time:   options.time
+  // Tickets
+  addTicket: function(options) {
+    Tickets.insert({
+      userId:      options.userId,
+      title:       options.title,
+      description: options.description,
+      type:        options.type,
+      size:        options.size,
+      status:      options.status,
+      time:        options.time
     });
   },
 
-  removeStory : function(storyId) {
-    Stories.remove(storyId);
+  removeTicket : function(ticketId) {
+    Stories.remove(ticketId);
   },
 
-  editStory : function(storyId, options) {
-    Stories.update(storyId, {$set: {
+  editTicket : function(ticketId, options) {
+    Stories.update(ticketId, {$set: {
       title:  options.title,
       type:   options.type,
       size:   options.size,
@@ -46,7 +43,7 @@ Meteor.methods({
       name: options.name,
       message: options.message,
       time: options.time,
-      story: options.story
+      ticket: options.ticket
     });
   },
 

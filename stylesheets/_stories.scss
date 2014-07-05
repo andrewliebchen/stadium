@@ -1,6 +1,5 @@
 // STORIES
-
-.stories {
+.tickets {
   @include transition;
   padding-left: 1em;
 
@@ -9,7 +8,7 @@
   }
 }
 
-.stories-header {
+.tickets-header {
   @extend %header;
 }
 
@@ -18,11 +17,11 @@
   color: $colorGray2;
 }
 
-// .stories-list {
+// .tickets-list {
 //   margin: 0.75em;
 // }
 
-.story {
+.ticket {
   @include fill-parent;
   @include size($smallStory auto);
   background-color: $colorGray6;
@@ -52,7 +51,7 @@
       display: none;
     }
 
-    .story-new {
+    .ticket-new {
       display: block;
     }
   }
@@ -62,11 +61,11 @@
   }
 }
 
-%story-toggle {
+%ticket-toggle {
   @include position(absolute, 0.5em 0.5em 0 0);
   opacity: 0;
 
-  .story:hover & {
+  .ticket:hover & {
     opacity: 0.3;
 
     &:hover {
@@ -75,15 +74,15 @@
   }
 }
 
-.story-menu-toggle {
-  @extend %story-toggle;
+.ticket-menu-toggle {
+  @extend %ticket-toggle;
 }
 
-.story-menu {
+.ticket-menu {
   margin-top: 1em;
 }
 
-.story-menu-item {
+.ticket-menu-item {
   border-radius: 3px;
   display: block;
   height: 2em;
@@ -106,7 +105,7 @@
 // $sizes: "medium", "large";
 // $sizeSizes: $mediumStory, $largeStory;
 //
-// .story {
+// .ticket {
 //   $i: 1;
 //   @each $size in $sizes {
 //     &.#{$size} {
@@ -121,7 +120,7 @@
 $types: "story", "defect", "task";
 $colors: $colorStory, $colorDefect, $colorTask;
 
-.story {
+.ticket {
   $i: 1;
   @each $type in $types {
     $typeColor: nth($colors, $i);
@@ -138,7 +137,7 @@ $colors: $colorStory, $colorDefect, $colorTask;
         color: $colorGray6;
       }
 
-      .story-menu-item:hover {
+      .ticket-menu-item:hover {
         color: $typeColor;
       }
 
@@ -152,7 +151,7 @@ $colors: $colorStory, $colorDefect, $colorTask;
 }
 
 // NEW STORIES
-.story-new {
+.ticket-new {
   display: none;
 
   #{$all-text-inputs},
