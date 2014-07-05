@@ -1,4 +1,3 @@
-Session.setDefault('addingTicket', false);
 Session.setDefault('currentTicket', null);
 Session.setDefault('ticketMenu', null);
 Session.setDefault('editingTicket', null);
@@ -28,10 +27,6 @@ Template.tickets.ticket = function() {
   return Tickets.find({}, { sort: { time: -1 } });
 };
 
-Template.ticketNew.isAdding = function() {
-  return Session.equals('addingTicket', true) ? 'is-adding' : '';
-};
-
 Template.tickets.selected = function() {
   return Session.equals('currentTicket', this._id) ? 'is-selected' : '';
 };
@@ -45,11 +40,6 @@ Template.tickets.editing = function() {
 };
 
 Template.ticketNew.events({
-  'click #new_ticket_toggle' : function(event) {
-    event.preventDefault();
-    return Session.set('addingTicket', true);
-  },
-
   'click #add_ticket' : function(event, template) {
     var ticketTitle = template.find('#new_ticket_title');
     var ticketDescription = template.find('#new_ticket_description');
@@ -119,7 +109,6 @@ Template.tickets.events({
 
   'click .close' : function(events) {
     event.preventDefault();
-    Session.set('addingTicket', null);
     Session.set('editingTicket', null);
     Session.set('ticketMenu', null);
   }

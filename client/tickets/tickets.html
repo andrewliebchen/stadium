@@ -1,35 +1,34 @@
 <template name="tickets">
   <div class="panel tickets">
-      {{> ticketNew}}
-      {{#each ticket}}
-        <div class="ticket {{type}} {{size}} {{status}} {{selected}}">
-          {{#if editing}}
-            {{> editTicket}}
+    {{#each ticket}}
+      <div class="ticket {{type}} {{size}} {{status}} {{selected}}">
+        {{#if editing}}
+          {{> editTicket}}
+        {{else}}
+          {{#if ticketMenu}}
+            <ul class="ticket-menu">
+              <li><a href="#" class="ticket-menu-item ticket-edit icon-edit">Edit {{type}}</a></li>
+              <li><a href="#" class="ticket-menu-item ticket-delete icon-trash">Delete {{type}}</a></li>
+            </ul>
+            <a class="close icon-close"></a>
           {{else}}
-            {{#if ticketMenu}}
-              <ul class="ticket-menu">
-                <li><a href="#" class="ticket-menu-item ticket-edit icon-edit">Edit {{type}}</a></li>
-                <li><a href="#" class="ticket-menu-item ticket-delete icon-trash">Delete {{type}}</a></li>
-              </ul>
-              <a class="close icon-close"></a>
-            {{else}}
-              <h3 class="ticket-title">{{title}}</h3>
-              <p class="ticket-description">{{description}}</p>
-              <div class="ticket-meta">
-                <div class="media">
-                  <div class="media-image"></div>
-                  <div class="media-body">
-                    <small><b>2 people chatting</b></small>
-                    <small>{{status}}</small>
-                  </div>
+            <h3 class="ticket-title">{{title}}</h3>
+            <p class="ticket-description">{{description}}</p>
+            <div class="ticket-meta">
+              <div class="media">
+                <div class="media-image"></div>
+                <div class="media-body">
+                  <small><b>2 people chatting</b></small>
+                  <small>{{status}}</small>
                 </div>
-                <div class="ticket-size">S</div>
               </div>
-              <a class="ticket-menu-toggle icon-settings"></a>
-            {{/if}}
+              <div class="ticket-size">S</div>
+            </div>
+            <a class="ticket-menu-toggle icon-settings"></a>
           {{/if}}
-        </div>
-      {{/each}}
+        {{/if}}
+      </div>
+    {{/each}}
   </div>
 </template>
 
@@ -89,28 +88,26 @@
 </template>
 
 <template name="ticketNew">
-    <div id="new_ticket_toggle" class="ticket new {{isAdding}}">
-      <span>New ticket</span>
-      <div class="ticket-new">
-        <a class="close icon-close"></a>
-        <select id="new_ticket_type">
-          <option value="story">Story</option>
-          <option value="defect">Defect</option>
-          <option value="task">Task</option>
-        </select>
-        <select id="new_ticket_size">
-          <option value="small">Small</option>
-          <option value="medium">Medium</option>
-          <option value="large">Large</option>
-        </select>
-        <select id="new_ticket_status">
-          <option value="someday" selected>Someday</option>
-          <option value="backlog">Backlog</option>
-          <option value="current">Current</option>
-        </select>
-        <input type="text" id="new_ticket_title">
-        <textarea id="new_ticket_description"></textarea>
-        <button id="add_ticket">Add story</button>
-      </div>
-    </div>
+  <span>New ticket</span>
+  <div class="ticket-new">
+    <a class="close icon-close"></a>
+    <select id="new_ticket_type">
+      <option value="story">Story</option>
+      <option value="defect">Defect</option>
+      <option value="task">Task</option>
+    </select>
+    <select id="new_ticket_size">
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+    </select>
+    <select id="new_ticket_status">
+      <option value="someday" selected>Someday</option>
+      <option value="backlog">Backlog</option>
+      <option value="current">Current</option>
+    </select>
+    <input type="text" id="new_ticket_title">
+    <textarea id="new_ticket_description"></textarea>
+    <button id="add_ticket">Add story</button>
+  </div>
 </template>

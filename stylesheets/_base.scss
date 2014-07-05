@@ -255,9 +255,20 @@ button {
 }
 
 a.logo {
+  @extend %icon;
   @extend %block-medium;
   background-color: $colorGray4;
   margin-bottom: 2em;
+
+  &:hover {
+    @extend .icon-bulb;
+    background-color: $colorLink;
+    color: $colorBackground;
+
+    &::before {
+      font-size: 2em;
+    }
+  }
 }
 
 a.current-user {
@@ -279,33 +290,34 @@ a.current-user {
 .modal-wrapper {
   @include position(fixed, 0px 0px 0px 0px);
   background-color: rgba($colorLink, 0.9);
+  z-index: 100;
 }
 
 .modal {
   @include size(50%);
   @include position(absolute, 0px 0px 0px 0px);
-  color: white;
   margin: auto;
   overflow: auto;
   padding: 1em;
+  color: white;
 }
 
-.modal-header {
-  padding-bottom: 1em;
-}
-
-.modal-footer {
-  @include row();
-  padding-top: 1em;
-
-  button {
-    border-color: white;
-    color: white;
-    float: right;
-
-    &:hover {
-      background-color: white;
-      color: $colorLink;
-    }
-  }
-}
+// .modal-header {
+//   padding-bottom: 1em;
+// }
+//
+// .modal-footer {
+//   @include row();
+//   padding-top: 1em;
+//
+//   button {
+//     border-color: white;
+//     color: white;
+//     float: right;
+//
+//     &:hover {
+//       background-color: white;
+//       color: $colorLink;
+//     }
+//   }
+// }

@@ -15,11 +15,13 @@
       {{> tickets}}
     </section>
   </div>
+
+  {{> modal}}
 </body>
 
 <template name="launchbar">
   <aside class="launch-bar">
-    <a class="logo"></a>
+    <a class="logo" data-modal-template="ticketNew"></a>
     <nav class="members">
       <a id="chat_all" class="avatar-medium icon-team-chat"></a>
       <a class="avatar-medium"></a>
@@ -32,4 +34,14 @@
     </nav>
     <a class="current-user"></a>
   </aside>
+</template>
+
+<template name="modal">
+  {{#if activeModal}}
+    <div class="modal-wrapper">
+      <div class="modal">
+        {{> UI.dynamic template=activeModal}}
+      </div>
+    </div>
+  {{/if}}
 </template>

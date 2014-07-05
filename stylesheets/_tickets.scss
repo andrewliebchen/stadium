@@ -152,18 +152,3 @@ $colors: $colorStory, $colorDefect, $colorTask;
     $i: $i + 1;
   }
 }
-
-// NEW TICKETS
-.ticket-new {
-  display: none;
-
-  #{$all-text-inputs},
-  textarea {
-    @include fill-parent;
-  }
-
-  button {
-    float: right;
-    margin-top: 1em;
-  }
-}
