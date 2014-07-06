@@ -268,11 +268,11 @@ button {
   }
 }
 
-a.logo {
+a.team-messages {
   @extend %icon;
-  @extend %block-medium;
-  background-color: $colorGray4;
-  margin-bottom: 2em;
+  @extend .avatar-medium;
+  @extend .icon-team-chat;
+  overflow: visible;
 }
 
 a.current-user {
