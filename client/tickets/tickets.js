@@ -2,8 +2,7 @@ Session.setDefault('currentTicket', null);
 Session.setDefault('ticketMenu', null);
 Session.setDefault('editingTicket', null);
 
-isotopeLayout = function() {
-  var $isotopeContainer = $('.tickets');
+isotopeLayout = function($isotopeContainer) {
   $isotopeContainer.isotope({
     itemSelector: '.ticket',
     layoutMode: 'masonry',
@@ -15,7 +14,8 @@ isotopeLayout = function() {
 
 Deps.autorun(function() {
   Meteor.subscribe('tickets', function(){
-    isotopeLayout();
+    var $isotopeContainer = $('.tickets');
+    isotopeLayout($isotopeContainer);
     $('.filter').change(function() {
       var filterValue = $(this).val();
       $isotopeContainer.isotope({ filter: filterValue });

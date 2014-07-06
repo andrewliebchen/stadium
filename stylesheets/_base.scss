@@ -31,7 +31,7 @@ $fontSizeSmall:  em(12);
 
 $smallStory:  unit(4);
 
-$headerTransition: 0.2s $ease-in-out-circ;
+$headerTransition: 0.2s ease-in-out;
 
 // ANIMATIONS
 
@@ -173,20 +173,18 @@ button {
 
 // LAYOUT
 .width-wrapper {
-  @include transition(margin $headerTransition);
   @include outer-container;
-  margin: unit(0.1) auto 0;
+  margin: 3em auto 0;
   padding: 1em 0;
 }
 
 .launch-bar {
   $top: unit(0.1) + 1em;
   @include transition(margin $headerTransition);
-  @include position(fixed, 0px 0 0px 0px);
+  @include position(fixed, 3em 0 0px 0px);
   width: unit(1);
   z-index: 1;
   padding: 1em 0 1em 1em;
-  margin-top: unit(0.1);
 }
 
 .panels {
@@ -195,6 +193,7 @@ button {
   @include box-orient(horizontal);
   @include box-pack(start);
   padding-left: em(60) + 2em;
+  overflow: visible;
 }
 
 .panel {
@@ -290,7 +289,7 @@ a.current-user {
 
 .modal-wrapper {
   @include position(fixed, 0px 0px 0px 0px);
-  background-color: rgba($colorLink, 0.9);
+  background-color: $colorLink;
   z-index: 100;
 
   .close {

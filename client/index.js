@@ -12,7 +12,7 @@ Template.launchbar.events({
 
     $(event.target).toggleClass('is-selected');
     $('body').toggleClass('show-chats');
-    isotopeLayout();
+    isotopeLayout($('.tickets'));
 
     var chatsWidth = $('.chats').width();
     $('.new-chat').css('width', chatsWidth + 'px');
