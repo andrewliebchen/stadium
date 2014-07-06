@@ -47,7 +47,8 @@ body {
   font-family: $fontFamilyBase;
   font-size: 16px;
   line-height: em(22);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 h1, h2, h3 {
@@ -166,7 +167,6 @@ button {
 // CONTENT
 .login-buttons-dropdown-align-right {
   float: right;
-  display: none !important;
 }
 
 // LAYOUT
@@ -197,8 +197,6 @@ button {
 .panel {
   @include box-flex(1);
   width: 0;
-  overflow-y: scroll !important;
-  height: 100vh !important;
 }
 
 // AVATAR
@@ -207,7 +205,14 @@ button {
   @extend .icon-user;
   border: 1px solid $colorGray4;
   position: relative;
+  overflow: hidden;
   color: $colorGray4;
+
+  img {
+    @include position(absolute, 0px 0 0 0px);
+    max-height: 100%;
+    max-width: 100%;
+  }
 }
 
 .avatar-small {
@@ -271,7 +276,6 @@ a.logo {
 }
 
 a.current-user {
-  @extend .avatar-medium;
   @include position(absolute, 0 0 1em 0);
   margin-bottom: 0;
 }

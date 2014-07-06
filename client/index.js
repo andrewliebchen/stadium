@@ -1,5 +1,14 @@
 Session.set('currentChat', null);
 
+Meteor.subscribe('users');
+
+Template.userMenu.currentUserAvatar = function(){
+  var user = Meteor.user();
+    if (user && user.services.github.email) {
+      return '<img src="' + Gravatar.imageUrl(user.services.github.email) + '">';
+    }
+};
+
 Template.modal.helpers({
   activeModal: function() {
     return Session.get('activeModal');

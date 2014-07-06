@@ -124,8 +124,11 @@ $colors: $colorStory, $colorDefect, $colorTask;
   @each $type in $types {
     $typeColor: nth($colors, $i);
     &.#{$type} {
+      $typeColorBackground: tint($typeColor, 95%);
+
       border-color: $typeColor;
       color: $typeColor;
+      background-color: $typeColorBackground;
 
       &:hover {
         box-shadow: 0 0 0 3px rgba($typeColor, 0.2);
@@ -136,7 +139,7 @@ $colors: $colorStory, $colorDefect, $colorTask;
         color: $colorGray6;
 
         .ticket-size {
-          background-color: $colorBackground;
+          background-color: $typeColorBackground;
           color: $typeColor;
         }
       }
@@ -151,6 +154,7 @@ $colors: $colorStory, $colorDefect, $colorTask;
 
       .ticket-size {
         background-color: $typeColor;
+        color: $typeColorBackground;
       }
     }
 

@@ -6,10 +6,10 @@
 standard-app-packages
 insecure
 accounts-ui
-accounts-github
 scss
 gravatar
 bourbon
 neat
 jquery
 isotope-repackaged
+accounts-github

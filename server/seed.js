@@ -1,5 +1,6 @@
 Meteor.startup(function() {
   // Do this when the server starts
+
   if(Tickets.find().count() === 0) {
     Tickets.insert({
       userId: Meteor.userId,

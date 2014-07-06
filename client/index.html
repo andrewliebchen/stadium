@@ -27,8 +27,14 @@
       <a class="avatar-medium"></a>
       <a class="avatar-medium"></a>
     </nav>
-    <a class="current-user"></a>
+    {{> userMenu}}
   </aside>
+</template>
+
+<template name="userMenu">
+  <a class="current-user avatar-medium">
+    {{{currentUserAvatar}}}
+  </a>
 </template>
 
 <template name="modal">

@@ -10,6 +10,14 @@ Meteor.publish('messages', function(ticket) {
   }
 });
 
+Meteor.publish('users', function () {
+  if (this.userId) {
+    return Meteor.users.find({_id: this.userId});
+  } else {
+    this.ready();
+  }
+});
+
 Meteor.methods({
   // Tickets
   addTicket: function(options) {
@@ -66,6 +74,7 @@ Accounts.onCreateUser(function(options, user) {
   user.profile.github.accessToken = user.services.github.accessToken;
   user.profile.github.email = user.services.github.email;
   user.profile.github.username = user.services.github.username;
+  user.profile.github.avatar_url = user.services.github.avatar_url;
 
   return user;
 });
