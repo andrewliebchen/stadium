@@ -19,13 +19,9 @@
   <aside class="launch-bar">
     <nav class="members">
       <a id="chat_all" class="team-messages"></a>
-      <a class="avatar-medium"></a>
-      <a class="avatar-medium"></a>
-      <a class="avatar-medium"></a>
-      <a class="avatar-medium"></a>
-      <a class="avatar-medium"></a>
-      <a class="avatar-medium"></a>
-      <a class="avatar-medium"></a>
+      {{#each members}}
+        <a class="avatar-medium"></a>
+      {{/each}}
     </nav>
     {{> userMenu}}
   </aside>

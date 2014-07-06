@@ -1,12 +1,18 @@
 Session.set('currentChat', null);
 
-Meteor.subscribe('users');
+Deps.autorun(function() {
+  Meteor.subscribe('usersData');
+});
 
-Template.userMenu.currentUserAvatar = function(){
+Template.launchbar.members = function() {
+  return Meteor.users.find({_id: {$ne: Meteor.userId()}});
+};
+
+Template.userMenu.currentUserAvatar = function() {
   var user = Meteor.user();
-    if (user && user.services.github.email) {
-      return '<img src="' + Gravatar.imageUrl(user.services.github.email) + '">';
-    }
+  if (user && user.emails[0].address) {
+    return '<img src="' + Gravatar.imageUrl(user.emails[0].address) + '">';
+  }
 };
 
 Template.modal.helpers({
