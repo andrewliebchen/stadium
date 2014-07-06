@@ -40,6 +40,7 @@
 <template name="modal">
   {{#if activeModal}}
     <div class="modal-wrapper">
+      <a class="close icon-close" data-modal="close"></a>
       <div class="modal">
         {{> UI.dynamic template=activeModal}}
       </div>

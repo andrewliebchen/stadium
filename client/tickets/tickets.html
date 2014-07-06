@@ -84,31 +84,31 @@
         <option value="*" selected>anyone</option>
       </select>
     </div>
-    <button data-modal-template="ticketNew">New ticket</button>
+    <button class="button-knockout" data-modal-template="ticketNew">New ticket</button>
   </header>
 </template>
 
 <template name="ticketNew">
-  <span>New ticket</span>
   <div class="ticket-new">
-    <a class="close icon-close"></a>
-    <select id="new_ticket_type">
-      <option value="story">Story</option>
-      <option value="defect">Defect</option>
-      <option value="task">Task</option>
-    </select>
-    <select id="new_ticket_size">
-      <option value="small">Small</option>
-      <option value="medium">Medium</option>
-      <option value="large">Large</option>
-    </select>
-    <select id="new_ticket_status">
-      <option value="someday" selected>Someday</option>
-      <option value="backlog">Backlog</option>
-      <option value="current">Current</option>
-    </select>
-    <input type="text" id="new_ticket_title">
-    <textarea id="new_ticket_description"></textarea>
-    <button id="add_ticket">Add story</button>
+    <p>
+      <select id="new_ticket_type">
+        <option value="story">Story</option>
+        <option value="defect">Defect</option>
+        <option value="task">Task</option>
+      </select>
+      <select id="new_ticket_size">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+      </select>
+      <select id="new_ticket_status">
+        <option value="someday" selected>Someday</option>
+        <option value="backlog">Backlog</option>
+        <option value="current">Current</option>
+      </select>
+    </p>
+    <input type="text" id="new_ticket_title" placeholder="Add a short ticket title">
+    <textarea id="new_ticket_description" placeholder="Describe this ticket"></textarea>
+    <button id="add_ticket" class="button-knockout" data-modal="close">Create</button>
   </div>
 </template>

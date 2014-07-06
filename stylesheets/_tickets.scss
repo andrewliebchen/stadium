@@ -160,10 +160,12 @@ $colors: $colorStory, $colorDefect, $colorTask;
   @include transform(translate3d(0, -(unit(0.9)), 0));
   @include transition(all $headerTransition);
   @include position(fixed, 0px 0px 0 0px);
+  color: white;
   background-color: $colorLink;
   height: unit(1);
   line-height: unit(1);
   padding: 0 1em;
+  z-index: 99;
 
   &:hover {
     @include transform(translate3d(0, 0, 0));
@@ -179,6 +181,7 @@ $colors: $colorStory, $colorDefect, $colorTask;
   }
 
   button {
-
+    float: right;
+    margin-top: 0.75em;
   }
 }
