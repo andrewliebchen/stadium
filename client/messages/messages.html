@@ -1,27 +1,20 @@
 <template name="messages">
-  <div class="messages-list">
+  <div class="panel messages">
     {{#each messages}}
       <div class="message">
-        <div class="message-avatar">
-          <img src="{{avatarUrl}}">
-        </div>
+        <div class="avatar-small"></div>
         <div class="message-content">
           <small>{{name}}</small>
-          {{#if editing}}
-            <input type="text" id="message_edit" value="{{message}}">
-          {{else}}
-            {{message}}
-          {{/if}}
+          {{message}}
         </div>
-        {{! <a href="#" class="message-delete">delete</a>
-        <a href="#" class="message-edit">edit</a> }}
       </div>
     {{/each}}
+    {{> messageNew}}
   </div>
 </template>
 
-<template name="messageInput">
-  <div class="message-add">
-    <input type="text" id="message_add" placeholder="Your message">
+<template name="messageNew">
+  <div class="message-new">
+    <input type="text" id="new_message" placeholder="Your message">
   </div>
 </template>

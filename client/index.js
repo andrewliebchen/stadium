@@ -11,11 +11,11 @@ Template.launchbar.events({
     Session.set('currentChat', null);
 
     $(event.target).toggleClass('is-selected');
-    $('body').toggleClass('show-chats');
+    $('body').toggleClass('show-messages');
     isotopeLayout($('.tickets'));
 
-    var chatsWidth = $('.chats').width();
-    $('.new-chat').css('width', chatsWidth + 'px');
+    var messagesWidth = $('.messages').width();
+    $('.message-new').css('width', messagesWidth + 'px');
   }
 });
 

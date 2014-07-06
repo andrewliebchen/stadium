@@ -1,65 +1,33 @@
-Session.setDefault('editingMessage', null);
+Session.set('currentChatParent', null);
 
 Deps.autorun(function() {
-  Meteor.subscribe('messages', Session.get('currentStory'));
+  Meteor.subscribe('messages');
 });
 
 Template.messages.messages = function() {
-  if (Session.get('currentStory') == null ) {
-    return Messages.find({}, {sort: { time: 1 }});
+  if (Session.get('currentChatParent') == null ) {
+    return Messages.find({parent: null}, {sort: {time: 1}});
   } else {
-    return Messages.find({story: Session.get('currentStory')}, { sort: { time: 1 }});
+    return Messages.find({parent: Session.get('currentChatParent')}, {sort: {time: 1}});
   }
 };
 
-Template.messages.avatarUrl = function() {
-  return Gravatar.imageUrl('andrewliebchen@gmail.com');
-};
-
-Template.messages.editing = function() {
-  return Session.equals('editingMessage', this._id);
-};
-
-Template.messageInput.events({
-  'keydown #message_add' : function(event) {
-    if (event.which == 13) { // DRY this
-      var message = document.getElementById('message_add');
-
-      if (Meteor.user()) {
-        var name = Meteor.user().profile.name;
-      } else {
-        var name = 'Anonymous';
-      }
+Template.messageNew.events({
+  'keydown #new_message' : function(event, template) {
+    if (event.which == 13) {
+      Meteor.user() ? name = Meteor.user().profile.name : name = 'Anonymous';
+      var message = template.find('#new_message');
 
       if (message.value != '') {
         Meteor.call('addMessage', {
           name: name,
           message: message.value,
           time: Date.now(),
-          story: Session.get('currentStory')
+          parent: Session.get('currentChatParent')
         });
+
         message.value = '';
       }
-    }
-  }
-});
-
-Template.messages.events({
-  'click .messages .delete' : function(event) {
-    event.preventDefault();
-    Meteor.call('removeMessage', this._id);
-  },
-
-  'click .message-edit' : function(event) {
-    event.preventDefault();
-    Session.set('editingMessage', this._id);
-  },
-
-  'keydown #message_edit' : function(event) {
-    if (event.which == 13) {
-      var value = String(event.target.value || "");
-      Meteor.call('editMessage', this._id, value);
-      Session.set('editingMessage', null);
     }
   }
 });

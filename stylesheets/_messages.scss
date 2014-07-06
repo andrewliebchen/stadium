@@ -1,59 +1,25 @@
-// CHATS
-.chats {
+// MESSAGES
+.messages {
   position: relative;
   display: none;
-  height: 100vh;
-  overflow-y: scroll;
 
-  .show-chats & {
+  .show-messages & {
     display: block;
   }
 }
 
-.new-chat {
-  $left: unit(1) + 2em;
-  @include position(fixed, 0 0 1em $left);
-
-  input {
-    width: 100%;
-  }
-}
-
-
-// MESSAGES?
-.messages {
-  @extend %section;
-}
-
-.messages-header {
-  @extend %header;
-}
-
-.messages-list {
-  @include pad(default);
-}
-
 .message {
+  @extend .media;
   @include row();
   margin-bottom: 0.75em;
-}
 
-.message-avatar {
-  @include size(2.25em);
-  border-radius: 3px;
-  // border: 1px solid $colorGray5;
-  float: left;
-  margin-right: 0.5em;
-  overflow: hidden;
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
+  .avatar-small {
+    @extend .media-image;
   }
 }
 
 .message-content {
-  float: left;
+  @extend .media-body;
 
   small {
     color: $colorGray5;
@@ -63,14 +29,13 @@
   }
 }
 
-.message-add {
-  @include position(fixed, 0 unit(1) 0px 0px);
-  background-color: white;
-  height: unit(2.5);
-  z-index: 1;
+.message-new {
+  $left: unit(1) + 1em;
+  @include position(fixed, 0 0 0px $left);
+  padding: 1em 0 1em 1em;
+  @include background-image(linear-gradient(to top, $colorBackground 75%, transparent));
 
-  input[type="text"] {
-    @include fill-parent;
-    border-width: 2px;
+  input {
+    width: 100%;
   }
 }

@@ -40,10 +40,10 @@ Meteor.methods({
   // Messages
   addMessage : function(options) {
     Messages.insert({
-      name: options.name,
+      name:    options.name,
       message: options.message,
-      time: options.time,
-      ticket: options.ticket
+      time:    options.time,
+      parent:  options.parent
     });
   },
 

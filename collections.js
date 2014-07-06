@@ -1,4 +1,4 @@
 // Models
 
 Tickets    = new Meteor.Collection('tickets');
-Messages = new Meteor.Collection("messages");
+Messages   = new Meteor.Collection('messages');
