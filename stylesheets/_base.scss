@@ -10,6 +10,14 @@
   }
 }
 
+@mixin ellipsis {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
 // VARIABLES
 $colorGray1: #333;
 $colorGray2: #555;
