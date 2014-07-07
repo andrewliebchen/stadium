@@ -92,20 +92,18 @@ Template.tickets.events({
     Session.set('editingTicket', this._id);
   },
 
-  'click #edit_ticket' : function(event) {
-    var title  = document.getElementById('edit_ticket_title');
-    var type   = document.getElementById('edit_ticket_type');
-    var size   = document.getElementById('edit_ticket_size');
-    var status = document.getElementById('edit_ticket_status');
+  'click #edit_ticket' : function(event, template) {
+    var edits = {
+      title:  template.find('#edit_ticket_title').value,
+      type:   template.find('#edit_ticket_type').value,
+      size:   template.find('#edit_ticket_size').value,
+      status: template.find('#edit_ticket_status').value
+    };
 
-    Meteor.call('editTicket', this._id, {
-      title:  title.value,
-      type:   type.value,
-      size:   size.value,
-      status: status.value
-    });
+    Meteor.call('editTicket', this._id, edits);
 
     Session.set('editingTicket', null);
+    isotopeLayout($('.tickets'));
   },
 
   'click .close' : function(events) {

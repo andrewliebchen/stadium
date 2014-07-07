@@ -25,11 +25,11 @@ Meteor.methods({
   },
 
   removeTicket : function(ticketId) {
-    Stories.remove(ticketId);
+    Tickets.remove(ticketId);
   },
 
   editTicket : function(ticketId, options) {
-    Stories.update(ticketId, {$set: {
+    Tickets.update(ticketId, {$set: {
       title:  options.title,
       type:   options.type,
       size:   options.size,

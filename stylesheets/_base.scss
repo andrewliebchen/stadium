@@ -136,10 +136,6 @@ textarea {
   }
 }
 
-textarea {
-  min-height: unit(2.5);
-}
-
 #{$all-text-inputs-focus},
 textarea:focus {
   background: white;

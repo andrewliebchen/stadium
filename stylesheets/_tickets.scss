@@ -48,15 +48,12 @@
 }
 
 .ticket-menu-toggle {
-  @include position(absolute, 0.5em 0.5em 0 0);
+  @extend %block-small;
+  @include position(absolute, 0 0.5em 0.5em 0);
   opacity: 0;
 
   .ticket:hover & {
-    opacity: 0.3;
-
-    &:hover {
-      opacity: 1;
-    }
+    opacity: 1;
   }
 }
 
@@ -98,6 +95,7 @@
   }
 
   small {
+    @include ellipsis;
     display: block;
     line-height: 1.4em;
   }
@@ -123,9 +121,7 @@ $sizeSizes: $smallStory, $mediumStory, $largeStory;
 }
 
 .small {
-
-  .ticket-description,
-  .ticket-meta .media-body {
+  .ticket-description {
     display: none;
   }
 }
@@ -140,7 +136,6 @@ $colors: $colorStory, $colorDefect, $colorTask;
     $typeColor: nth($colors, $i);
     &.#{$type} {
       $typeColorBackground: tint($typeColor, 95%);
-
       border-color: $typeColor;
       color: $typeColor;
       background-color: $typeColorBackground;
@@ -157,6 +152,11 @@ $colors: $colorStory, $colorDefect, $colorTask;
           background-color: $typeColorBackground;
           color: $typeColor;
         }
+      }
+
+      .ticket-menu-toggle:hover {
+        background-color: $typeColor;
+        color: $typeColorBackground;
       }
 
       .ticket-menu-item:hover {
