@@ -8,14 +8,26 @@ Template.messages.messages = function() {
   if (Session.get('currentChatParent') == null ) {
     return Messages.find({parent: null}, {sort: {time: 1}});
   } else {
-    return Messages.find({parent: Session.get('currentChatParent')}, {sort: {time: 1}});
+    return Messages.find({
+      $or: [
+        {$and: [
+          {parent: Session.get('currentChatParent')},
+          {fromId: Meteor.userId()}
+        ]},
+        {$and: [
+          {fromId: Session.get('currentChatParent')},
+          {parent: Meteor.userId()}
+        ]}
+      ]},
+      {sort: {time: 1}
+    });
   }
 };
 
 Template.messageNew.events({
   'keydown #new_message' : function(event, template) {
     if (event.which == 13) {
-      Meteor.user() ? name = Meteor.user().profile.name : name = 'Anonymous';
+      Meteor.user() ? name = Meteor.user().emails[0].address : name = 'Anonymous';
       var message = template.find('#new_message');
 
       if (message.value != '') {
@@ -23,7 +35,8 @@ Template.messageNew.events({
           name: name,
           message: message.value,
           time: Date.now(),
-          parent: Session.get('currentChatParent')
+          parent: Session.get('currentChatParent'),
+          fromId: Meteor.userId()
         });
 
         message.value = '';

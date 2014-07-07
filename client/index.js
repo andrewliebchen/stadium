@@ -22,8 +22,20 @@ Template.modal.helpers({
 });
 
 Template.launchbar.events({
+  // DRY this up
   'click #chat_all' : function(event) {
-    Session.set('currentChat', null);
+    Session.set('currentChatParent', null);
+
+    $(event.target).toggleClass('is-selected');
+    $('body').toggleClass('show-messages');
+    isotopeLayout($('.tickets'));
+
+    var messagesWidth = $('.messages').width();
+    $('.message-new').css('width', messagesWidth + 'px');
+  },
+
+  'click .member' : function(event) {
+    Session.set('currentChatParent', this._id);
 
     $(event.target).toggleClass('is-selected');
     $('body').toggleClass('show-messages');

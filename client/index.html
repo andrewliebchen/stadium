@@ -18,9 +18,11 @@
 <template name="launchbar">
   <aside class="launch-bar">
     <nav class="members">
-      <a id="chat_all" class="team-messages"></a>
+      <a id="chat_all" class="member-all"></a>
       {{#each members}}
-        <a class="avatar-medium"></a>
+        <a class="member avatar-medium">
+          <img url="{{id}}">
+        </a>
       {{/each}}
     </nav>
     {{> userMenu}}
@@ -29,7 +31,7 @@
 
 <template name="userMenu">
   <a class="current-user avatar-medium">
-    {{{currentUserAvatar}}}
+    {{currentUserAvatar}}
   </a>
 </template>
 

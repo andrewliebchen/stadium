@@ -205,11 +205,11 @@ button {
   @extend .icon-user;
   border: 1px solid $colorGray4;
   position: relative;
-  overflow: hidden;
   color: $colorGray4;
 
   img {
     @include position(absolute, 0px 0 0 0px);
+    border-radius: 3px;
     max-height: 100%;
     max-width: 100%;
   }
@@ -268,7 +268,7 @@ button {
   }
 }
 
-a.team-messages {
+a.member-all {
   @extend %icon;
   @extend .avatar-medium;
   @extend .icon-team-chat;

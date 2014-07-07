@@ -2,12 +2,8 @@ Meteor.publish('tickets', function() {
   return Tickets.find({});
 });
 
-Meteor.publish('messages', function(ticket) {
-  if (ticket == null) {
-    return Messages.find({});
-  } else {
-    return Messages.find({ticket: ticket});
-  }
+Meteor.publish('messages', function() {
+  return Messages.find({});
 });
 
 Meteor.publish('usersData', function () {
@@ -47,7 +43,8 @@ Meteor.methods({
       name:    options.name,
       message: options.message,
       time:    options.time,
-      parent:  options.parent
+      parent:  options.parent,
+      fromId:  options.fromId
     });
   },
 
