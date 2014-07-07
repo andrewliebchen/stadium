@@ -16,7 +16,7 @@
   cursor: pointer;
   margin: 0 0.5em 0.5em 0;
   overflow: hidden;
-  padding: 0.5em 0.5em 3em;
+  padding-bottom: 3em;
 
   &.new {
     border-style: dashed;
@@ -43,6 +43,17 @@
   }
 }
 
+.ticket-title {
+  $size: 2em;
+  line-height: $size;
+  height: $size;
+  @include ellipsis;
+  display: block;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  padding: 0 0.5em;
+}
+
 .ticket-number {
   border-radius: 3px;
   font-family: "source code pro", $monospace;
@@ -51,9 +62,8 @@
   float: right;
 }
 
-.ticket-title {
-  @include ellipsis;
-  display: block;
+.ticket-description {
+  padding: 0.5em;
 }
 
 .ticket-menu-toggle {
@@ -93,6 +103,7 @@
 .ticket-meta {
   @include row();
   @include position(absolute, 0 0 0.5em 0);
+  padding: 0 0.5em;
 
   .media {
     float: left;
@@ -131,7 +142,8 @@ $sizeSizes: $smallStory, $mediumStory, $largeStory;
 }
 
 .small {
-  .ticket-description {
+  .ticket-description,
+  .media-image {
     display: none;
   }
 }
@@ -152,6 +164,10 @@ $colors: $colorStory, $colorDefect, $colorTask;
 
       &:hover {
         box-shadow: 0 0 0 3px rgba($typeColor, 0.2);
+      }
+
+      .ticket-title {
+        background-color: tint($typeColor, 85%);
       }
 
       .ticket-menu-toggle:hover {
