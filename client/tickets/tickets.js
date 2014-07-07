@@ -7,7 +7,8 @@ isotopeLayout = function($isotopeContainer) {
     itemSelector: '.ticket',
     layoutMode: 'masonry',
     masonry: {
-      gutter: 60
+      columnWidth: 1,
+      gutter: 8
     }
   });
 }

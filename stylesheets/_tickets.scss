@@ -9,7 +9,6 @@
 }
 
 .ticket {
-  @include size($smallStory auto);
   border-radius: 3px;
   background-color: $colorBackground;
   border-width: 2px;
@@ -18,6 +17,7 @@
   margin: 0 0.5em 0.5em 0;
   overflow: hidden;
   padding: 1em;
+  min-height: $smallStory;
 
   &.new {
     border-style: dashed;
@@ -108,11 +108,28 @@
   float: left;
 }
 
-.ticket-size {
-  @extend %block-small;
-  float: right;
-  color: $colorBackground;
-  font-weight: bold;
+// SIZES
+$sizes: "small", "medium", "large";
+$sizeSizes: $smallStory, $mediumStory, $largeStory;
+
+.ticket {
+  $i: 1;
+  @each $size in $sizes {
+    &.#{$size} {
+      width: nth($sizeSizes, $i);
+    }
+
+    $i: $i + 1;
+  }
+}
+
+.small {
+  height: $smallStory;
+
+  .ticket-description,
+  .ticket-meta .media-body {
+    display: none;
+  }
 }
 
 // TYPES
@@ -150,11 +167,6 @@ $colors: $colorStory, $colorDefect, $colorTask;
 
       .button-knockout:hover {
         color: $typeColor;
-      }
-
-      .ticket-size {
-        background-color: $typeColor;
-        color: $typeColorBackground;
       }
     }
 

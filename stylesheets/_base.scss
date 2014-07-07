@@ -29,7 +29,9 @@ $fontFamilyBase: $helvetica;
 $fontSizeBase:   16px;
 $fontSizeSmall:  em(12);
 
-$smallStory:  unit(4);
+$smallStory:  unit(2);
+$mediumStory: unit(4) + 0.5em;
+$largeStory: unit(8) + 1.5em;
 
 $headerTransition: 0.2s ease-in-out;
 
