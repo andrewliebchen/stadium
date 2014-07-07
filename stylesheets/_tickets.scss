@@ -152,36 +152,49 @@ $sizeSizes: $smallStory, $mediumStory, $largeStory;
 $types: "story", "defect", "task";
 $colors: $colorStory, $colorDefect, $colorTask;
 
-.ticket {
-  $i: 1;
-  @each $type in $types {
-    $typeColor: nth($colors, $i);
-    &.#{$type} {
-      $typeColorBackground: tint($typeColor, 95%);
-      border-color: $typeColor;
+$i: 1;
+@each $type in $types {
+  $typeColor: nth($colors, $i);
+  .ticket.#{$type} {
+    $typeColorBackground: tint($typeColor, 95%);
+    border-color: $typeColor;
+    color: $typeColor;
+    background-color: $typeColorBackground;
+
+    &:hover {
+      box-shadow: 0 0 0 3px rgba($typeColor, 0.2);
+    }
+
+    .ticket-title {
+      background-color: tint($typeColor, 85%);
+    }
+
+    .ticket-menu-toggle:hover {
+      background-color: $typeColor;
+      color: $typeColorBackground;
+    }
+
+    .ticket-menu-item:hover {
       color: $typeColor;
-      background-color: $typeColorBackground;
+    }
+  }
 
-      &:hover {
-        box-shadow: 0 0 0 3px rgba($typeColor, 0.2);
-      }
+  .modal-wrapper.#{$type} {
+    background-color: $typeColor;
 
-      .ticket-title {
-        background-color: tint($typeColor, 85%);
-      }
-
-      .ticket-menu-toggle:hover {
-        background-color: $typeColor;
-        color: $typeColorBackground;
-      }
-
-      .ticket-menu-item:hover {
-        color: $typeColor;
+    #{$all-text-inputs},
+    textarea {
+      @include placeholder {
+        color: tint($typeColor, 50%);
       }
     }
 
-    $i: $i + 1;
+    .button-knockout:hover {
+      color: $typeColor;
+    }
   }
+
+  $i: $i + 1;
 }
 
 // TICKET HEADER

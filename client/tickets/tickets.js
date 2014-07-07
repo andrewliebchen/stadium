@@ -66,6 +66,15 @@ Template.ticketNew.events({
       ticketTitle.value = '';
       ticketDescription.value = '';
     }
+  },
+
+  'change #new_ticket_type' : function(event, template) {
+    var type = template.find('#new_ticket_type').value;
+    $('.modal-wrapper')
+      .removeClass('story')
+      .removeClass('defect')
+      .removeClass('task')
+      .addClass(type);
   }
 });
 
