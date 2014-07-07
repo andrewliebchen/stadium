@@ -6,6 +6,7 @@ Meteor.startup(function() {
   if(Tickets.find().count() === 0) {
     Tickets.insert({
       userId: Meteor.userId,
+      number: 1,
       title:  'quickbooks',
       description: 'As an accountant I want Quickbooks installed so that I can update the books',
       type:   'story',
@@ -15,6 +16,7 @@ Meteor.startup(function() {
     });
     Tickets.insert({
       userId: Meteor.userId,
+      number: 2,
       title:  'robots',
       description: 'As a developer I want a robot so that the robot can do my work',
       type:   'story',
@@ -24,6 +26,7 @@ Meteor.startup(function() {
     });
     Tickets.insert({
       userId: Meteor.userId,
+      number: 3,
       title:  'reports',
       description: "As a manager I want productivity reports so that I don't have to pester my team for updates",
       type:   'story',
@@ -33,6 +36,7 @@ Meteor.startup(function() {
     });
     Tickets.insert({
       userId: Meteor.userId,
+      number: 4,
       title:  'typo',
       description: 'The homepage should say "Get your freak on," instead of "Get your frank on."',
       type:   'defect',
@@ -42,6 +46,7 @@ Meteor.startup(function() {
     });
     Tickets.insert({
       userId: Meteor.userId,
+      number: 5,
       title:  'gobutton',
       type:   'task',
       size:   'small',

@@ -15,6 +15,7 @@ Meteor.methods({
   addTicket: function(options) {
     Tickets.insert({
       userId:      options.userId,
+      number:      options.number,
       title:       options.title,
       description: options.description,
       type:        options.type,

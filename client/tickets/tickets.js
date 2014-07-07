@@ -1,6 +1,7 @@
 Session.setDefault('currentTicket', null);
 Session.setDefault('ticketMenu', null);
 Session.setDefault('editingTicket', null);
+Session.setDefault('ticketCount', null);
 
 isotopeLayout = function($isotopeContainer) {
   $isotopeContainer.isotope({
@@ -21,15 +22,13 @@ Deps.autorun(function() {
       var filterValue = $(this).val();
       $isotopeContainer.isotope({ filter: filterValue });
     });
+
+    Session.set('ticketCount', Tickets.find({}).count());
   });
 });
 
 Template.tickets.ticket = function() {
   return Tickets.find({}, { sort: { time: -1 } });
-};
-
-Template.tickets.selected = function() {
-  return Session.equals('currentTicket', this._id) ? 'is-selected' : '';
 };
 
 Template.tickets.ticketMenu = function() {
@@ -42,11 +41,13 @@ Template.tickets.editing = function() {
 
 Template.ticketNew.events({
   'click #add_ticket' : function(event, template) {
+    var ticketNumber = Session.get('ticketCount');
     var ticketTitle = template.find('#new_ticket_title');
     var ticketDescription = template.find('#new_ticket_description');
 
     var newTicket = {
       userId:      Meteor.userId(),
+      number:      ticketNumber,
       title:       ticketTitle.value,
       description: ticketDescription.value,
       type:        template.find('#new_ticket_type').value,
