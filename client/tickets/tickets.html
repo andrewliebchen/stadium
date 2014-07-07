@@ -2,40 +2,28 @@
   <div class="panel tickets">
     {{#each ticket}}
       <div class="ticket {{type}} {{size}} {{status}}">
-        {{#if editing}}
-          {{> editTicket}}
-        {{else}}
-          {{#if ticketMenu}}
-            <ul class="ticket-menu">
-              <li><a href="#" class="ticket-menu-item ticket-edit icon-edit">Edit {{type}}</a></li>
-              <li><a href="#" class="ticket-menu-item ticket-delete icon-trash">Delete {{type}}</a></li>
-            </ul>
-            <a class="close icon-close"></a>
-          {{else}}
-            <h3 class="ticket-title">
-              <span class="ticket-number">#{{number}}</span>
-              /{{title}}
-            </h3>
-            <p class="ticket-description">{{description}}</p>
-            <div class="ticket-meta">
-              <div class="media">
-                <div class="media-image"></div>
-                <div class="media-body">
-                  <small><b>2 people chatting</b></small>
-                  <small>{{status}}</small>
-                </div>
-              </div>
+        <h3 class="ticket-title">
+          <span class="ticket-number">#{{number}}</span>
+          /{{title}}
+        </h3>
+        <p class="ticket-description">{{description}}</p>
+        <div class="ticket-meta">
+          <div class="media">
+            <div class="media-image"></div>
+            <div class="media-body">
+              <small><b>2 people chatting</b></small>
+              <small>{{status}}</small>
             </div>
-            <a class="ticket-menu-toggle icon-settings"></a>
-          {{/if}}
-        {{/if}}
+          </div>
+        </div>
+        <a class="ticket-menu-toggle icon-settings" data-modal-template="editTicket"></a>
       </div>
     {{/each}}
   </div>
 </template>
 
 <template name="editTicket">
-  <a class="close icon-close"></a>
+  <h3>Edit ticket</h3>
   <select id="edit_ticket_type">
     <option value="story">Story</option>
     <option value="defect">Defect</option>
@@ -86,12 +74,12 @@
         <option value="*" selected>anyone</option>
       </select>
     </div>
-    <button data-modal-template="ticketNew">New ticket</button>
+    <button data-modal-template="newTicket">New ticket</button>
     {{> loginButtons align="right"}}
   </header>
 </template>
 
-<template name="ticketNew">
+<template name="newTicket">
   <div class="ticket-new">
     <p>
       <select id="new_ticket_type">

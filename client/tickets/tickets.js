@@ -39,7 +39,7 @@ Template.tickets.editing = function() {
   return Session.equals('editingTicket', this._id);
 };
 
-Template.ticketNew.events({
+Template.newTicket.events({
   'click #add_ticket' : function(event, template) {
     var ticketNumber = Session.get('ticketCount');
     var ticketTitle = template.find('#new_ticket_title');
