@@ -121,7 +121,7 @@ small {
 textarea {
   background-color: $colorGray6;
   border-radius: 3px;
-  border: 1px solid $colorGray5;
+  border: 1px solid $colorGray4;
   display: block;
   height: 3em;
   line-height: 1em;
@@ -130,7 +130,7 @@ textarea {
   margin-bottom: 0.5em;
 
   @include placeholder {
-    color: tint($colorLink, 50%);
+    color: $colorGray5;
     font-family: $fontFamilyBase;
     font-style: italic;
   }
@@ -284,6 +284,19 @@ a.member-all {
 a.current-user {
   @include position(absolute, 0 0 1em 0);
   margin-bottom: 0;
+}
+
+// COMMANDLINE
+.commandline {
+  @include background-image(linear-gradient(to top, $colorBackground 75%, transparent));
+  @include position(absolute, 0 0px 0px 5.5em);
+  padding: 1em 1em 1.75em 1em;
+  z-index: 999;
+
+  input[type="text"] {
+    margin: 0;
+    position: relative;
+  }
 }
 
 // MODALS
