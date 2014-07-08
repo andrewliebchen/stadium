@@ -11,9 +11,7 @@
       {{> tickets}}
     </section>
   </div>
-  <div class="commandline">
-    <input type="text" placeholder='Type "/help" for a list of commands'>
-  </div>
+  {{> commandline}}
   {{> modal}}
 </body>
 
@@ -35,6 +33,12 @@
   <a class="current-user avatar-medium">
     {{currentUserAvatar}}
   </a>
+</template>
+
+<template name="commandline">
+  <div class="commandline">
+    <input type="text" class="commandline-input" placeholder='Type "/help" for a list of commands'>
+  </div>
 </template>
 
 <template name="modal">

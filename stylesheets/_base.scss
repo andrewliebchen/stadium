@@ -288,8 +288,8 @@ a.current-user {
 
 // COMMANDLINE
 .commandline {
-  @include background-image(linear-gradient(to top, $colorBackground 75%, transparent));
-  @include position(absolute, 0 0px 0px 5.5em);
+  @include background-image(linear-gradient(to top, $colorBackground 80%, transparent));
+  @include position(fixed, 0 0px 0px 5.5em);
   padding: 1em 1em 1.75em 1em;
   z-index: 999;
 
