@@ -289,11 +289,18 @@ a.current-user {
   @include background-image(linear-gradient(to top, $colorBackground 80%, transparent));
   @include position(fixed, 0 0px 0px 5.5em);
   padding: 1em 1em 1.75em 1em;
-  z-index: 999;
+  z-index: 99;
 
   input[type="text"] {
     margin: 0;
     position: relative;
+    padding-right: 3em;
+  }
+
+  .ticket-new {
+    @include position(absolute, 1.5em 1.5em 0 0);
+    padding: 0;
+    width: 2em;
   }
 }
 
