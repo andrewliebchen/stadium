@@ -81,7 +81,7 @@ Template.newTicket.events({
 Template.tickets.events({
   'click .ticket' : function(event) {
     event.preventDefault();
-    return Session.set('currentTicket', this._id);
+    Router.go('ticketPage');
   },
 
   'click .ticket-menu-toggle' : function(event) {

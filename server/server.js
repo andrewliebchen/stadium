@@ -1,15 +1,3 @@
-Meteor.publish('tickets', function() {
-  return Tickets.find({});
-});
-
-Meteor.publish('messages', function() {
-  return Messages.find({});
-});
-
-Meteor.publish('usersData', function () {
-  return Meteor.users.find({});
-});
-
 Meteor.methods({
   // Tickets
   addTicket: function(options) {
