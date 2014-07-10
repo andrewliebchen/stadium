@@ -196,24 +196,3 @@ $i: 1;
 
   $i: $i + 1;
 }
-
-// TICKET HEADER
-.tickets-header {
-  @include outer-container;
-  @include position(fixed, 0px 0px 0 0px);
-  color: $colorGray4;
-  height: 3em;
-  line-height: 3em;
-  padding: 0 1em 0 unit(1.75);
-  @include background-image(linear-gradient(to bottom, $colorGray6 75%, transparent));
-  z-index: 99;
-
-  .filters {
-    float: left;
-  }
-
-  button {
-    float: right;
-    margin-top: 0.75em;
-  }
-}

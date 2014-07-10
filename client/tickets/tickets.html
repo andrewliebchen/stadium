@@ -44,41 +44,6 @@
   <button id="edit_ticket" class="button-knockout">Save {{type}}</button>
 </template>
 
-<template name="ticketsHeader">
-  <header class="tickets-header">
-    <div class="filters">
-      Showing
-      <select class="filter">
-        <option value="*">all items</option>
-        <option value=".story">Stories</option>
-        <option value=".defect">Defects</option>
-        <option value=".task">Tasks</option>
-      </select>
-      with
-      <select class="filter">
-        <option value="*">any status</option>
-        <option value=".someday">Someday</option>
-        <option value=".backlog">Backlog</option>
-        <option value=".current">Current</option>
-        <option value=".done">Done</option>
-      </select>
-      and
-      <select class="filter">
-        <option value="*" selected>any size</option>
-        <option value=".small">Small</option>
-        <option value=".medium">Medium</option>
-        <option value=".large">Large</option>
-      </select>
-      assigned to
-      <select class="filter">
-        <option value="*" selected>anyone</option>
-      </select>
-    </div>
-    <button data-modal-template="newTicket">New ticket</button>
-    {{> loginButtons align="right"}}
-  </header>
-</template>
-
 <template name="newTicket">
   <div class="ticket-new">
     <p>
