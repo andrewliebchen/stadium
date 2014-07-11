@@ -1,17 +1,22 @@
-// Router.map(function() {
-//   this.route('home', {
-//     path: '/'
-//   });
+Router.configure({
+  layoutTemplate: 'layout',
+  // loadingTemplate: 'loading',
+});
 
-//   this.route('ticketPage', {
-//     path: '/ticket/:_id',
-//     waitOn: function() {
-//       return [
-//         Meteor.subscribe('singleTicket', this.params._id)
-//       ];
-//     },
-//     data: function() { return Ticket.findOne(this.params._id); }
-//   });
-// });
+Router.map(function() {
+  this.route('home', {
+    path: '/'
+  });
 
-// Router.onBeforeAction('loading');
+  this.route('ticketPage', {
+    path: '/ticket/:_id',
+    waitOn: function() {
+      return [
+        Meteor.subscribe('singleTicket', this.params._id)
+      ];
+    },
+    data: function() { return Ticket.findOne(this.params._id); }
+  });
+});
+
+Router.onBeforeAction('loading');

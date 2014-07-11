@@ -4,6 +4,7 @@
     "gravatar": {},
     "bourbon": {},
     "neat": {},
-    "isotope-repackaged": {}
+    "isotope-repackaged": {},
+    "iron-router": {}
   }
 }

@@ -1,11 +1,19 @@
 <template name="layout">
   <div class="width-wrapper">
-    {{> launchbar}}
-    <section class="panels">
-      {{> messages}}
-      {{> tickets}}
-    </section>
+    {{> yield}}
   </div>
   {{> commandline}}
   {{> modal}}
+</template>
+
+<template name="home">
+  {{> launchbar}}
+  <section class="panels">
+    {{> messages}}
+    {{> tickets}}
+  </section>
+</template>
+
+<template name="loading">
+  Loading
 </template>

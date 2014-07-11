@@ -1,5 +1,9 @@
 Session.set('currentChat', null);
 
+Deps.autorun(function() {
+  Meteor.subscribe('usersData');
+});
+
 Template.launchbar.members = function() {
   return Meteor.users.find({_id: {$ne: Meteor.userId()}});
 };
