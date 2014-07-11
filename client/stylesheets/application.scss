@@ -1,8 +1,8 @@
-@import "../packages/bourbon/bourbon";
+@import "../../packages/bourbon/bourbon";
 $max-width: 100%;
 $unit: em(60);
 $gutter: $unit / 2;
-@import "../packages/neat/neat";
+@import "../../packages/neat/neat";
 @import "reset";
 @import "base";
 @import "icons";

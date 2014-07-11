@@ -9,7 +9,3 @@ Meteor.publish('singleTicket', function(id) {
 Meteor.publish('messages', function() {
   return Messages.find({});
 });
-
-Meteor.publish('usersData', function () {
-  return Meteor.users.find({});
-});

@@ -3,51 +3,5 @@
 </head>
 
 <body>
-  <div class="width-wrapper">
-    {{> launchbar}}
-    <section class="panels">
-      {{> messages}}
-      {{> tickets}}
-    </section>
-  </div>
-  {{> commandline}}
-  {{> modal}}
+  {{> layout}}
 </body>
-
-<template name="launchbar">
-  <aside class="launch-bar">
-    <nav class="members">
-      <a id="chat_all" class="member-all"></a>
-      {{#each members}}
-        <a class="member avatar-medium">
-          <img url="{{id}}">
-        </a>
-      {{/each}}
-    </nav>
-    {{> userMenu}}
-  </aside>
-</template>
-
-<template name="userMenu">
-  <a class="current-user avatar-medium">
-    {{currentUserAvatar}}
-  </a>
-</template>
-
-<template name="commandline">
-  <div class="commandline">
-    <input type="text" class="commandline-input" placeholder='Type "/help" for a list of commands'>
-    <button class="ticket-new" data-modal-template="newTicket" title="Add a new ticket">&#10010;</button>
-  </div>
-</template>
-
-<template name="modal">
-  {{#if activeModal}}
-    <div class="modal-wrapper">
-      <a class="close icon-close" data-modal="close"></a>
-      <div class="modal">
-        {{> UI.dynamic template=activeModal}}
-      </div>
-    </div>
-  {{/if}}
-</template>
