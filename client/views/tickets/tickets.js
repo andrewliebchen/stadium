@@ -79,10 +79,6 @@ Template.newTicket.events({
 });
 
 Template.tickets.events({
-  'click .ticket' : function(event) {
-    event.preventDefault();
-    Router.go('ticketPage');
-  },
 
   'click .ticket-menu-toggle' : function(event) {
     event.preventDefault();

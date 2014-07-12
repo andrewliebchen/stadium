@@ -1,7 +1,7 @@
 <template name="tickets">
   <div class="panel tickets">
     {{#each ticket}}
-      <div class="ticket {{type}} {{size}} {{status}}">
+      <a href="{{pathFor 'ticketPage'}}" class="ticket {{type}} {{size}} {{status}}">
         <h3 class="ticket-title">
           #{{title}}
           <span class="ticket-number">{{number}}</span>
@@ -16,10 +16,14 @@
             </div>
           </div>
         </div>
-        <a class="ticket-menu-toggle icon-settings" data-modal-template="editTicket"></a>
-      </div>
+        <span class="ticket-menu-toggle icon-settings" data-modal-template="editTicket"></span>
+      </a>
     {{/each}}
   </div>
+</template>
+
+<template name="ticketPage">
+  <div>This is a ticket</div>
 </template>
 
 <template name="editTicket">
