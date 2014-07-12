@@ -1,6 +1,6 @@
 Router.configure({
   layoutTemplate: 'layout',
-  // loadingTemplate: 'loading',
+  loadingTemplate: 'loading',
 });
 
 Router.map(function() {
@@ -8,14 +8,16 @@ Router.map(function() {
     path: '/'
   });
 
-  this.route('ticketPage', {
+  this.route('singleTicket', {
     path: '/ticket/:_id',
     waitOn: function() {
       return [
         Meteor.subscribe('singleTicket', this.params._id)
       ];
     },
-    data: function() { return Ticket.findOne(this.params._id); }
+    data: function() {
+      return Tickets.findOne(this.params._id);
+    }
   });
 });
 

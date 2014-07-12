@@ -1,0 +1,21 @@
+<template name="editTicket">
+  <h3>Edit ticket</h3>
+  <select id="edit_ticket_type">
+    <option value="story">Story</option>
+    <option value="defect">Defect</option>
+    <option value="task">Task</option>
+  </select>
+  <select id="edit_ticket_size">
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="large">Large</option>
+  </select>
+  <select id="edit_ticket_status">
+    <option value="someday">Someday</option>
+    <option value="backlog">Backlog</option>
+    <option value="current">Current</option>
+    <option value="done">Done</option>
+  </select>
+  <textarea id="edit_ticket_title">{{title}}</textarea>
+  <button id="edit_ticket" class="button-knockout">Save {{type}}</button>
+</template>
