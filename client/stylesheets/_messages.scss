@@ -2,6 +2,7 @@
 .messages {
   position: relative;
   display: none;
+  padding-left: 1em;
 
   .show-messages & {
     display: block;

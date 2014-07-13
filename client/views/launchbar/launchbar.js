@@ -16,26 +16,20 @@ Template.userMenu.currentUserAvatar = function() {
 };
 
 Template.launchbar.events({
-  // DRY this up
-  'click #chat_all' : function(event) {
-    Session.set('currentChatParent', null);
-
-    $(event.target).toggleClass('is-selected');
-    $('body').toggleClass('show-messages');
-    isotopeLayout($('.tickets'));
-
-    var messagesWidth = $('.messages').width();
-    $('.message-new').css('width', messagesWidth + 'px');
-  },
-
-  'click .member' : function(event) {
+  'click .chat-toggle' : function(event) {
+    $this = $(event.target);
     Session.set('currentChatParent', this._id);
 
-    $(event.target).toggleClass('is-selected');
-    $('body').toggleClass('show-messages');
-    isotopeLayout($('.tickets'));
+    if($this.hasClass('is-selected')) {
+      $('.chat-toggle.is-selected').removeClass('is-selected');
+      $('body').removeClass('show-messages');
+      $this.removeClass('is-selected');
+    } else {
+      $('.chat-toggle.is-selected').removeClass('is-selected');
+      $('body').addClass('show-messages');
+      $this.addClass('is-selected');
+    };
 
-    var messagesWidth = $('.messages').width();
-    $('.message-new').css('width', messagesWidth + 'px');
+    isotopeLayout($('.tickets'));
   }
 });

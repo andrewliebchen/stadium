@@ -2,6 +2,7 @@
 .tickets {
   @include transition;
   padding-left: 1em;
+  @include box-flex(2);
 
   .show-chat & {
     @include transform(translate3d(100%, 0, 0));
