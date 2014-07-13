@@ -49,8 +49,12 @@
 }
 
 .single-ticket {
-  margin: 0 1em 1em;
-  position: relative;
+  padding: 1em;
+
+  .ticket {
+    position: relative;
+    margin: 1em 0;
+  }
 }
 
 .ticket-title {

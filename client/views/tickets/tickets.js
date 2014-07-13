@@ -3,21 +3,8 @@ Session.setDefault('ticketMenu', null);
 Session.setDefault('editingTicket', null);
 Session.setDefault('ticketCount', null);
 
-isotopeLayout = function($isotopeContainer) {
-  $isotopeContainer.isotope({
-    itemSelector: '.ticket',
-    layoutMode: 'masonry',
-    masonry: {
-      columnWidth: 1,
-      gutter: 8
-    }
-  });
-}
-
 Deps.autorun(function() {
   Meteor.subscribe('tickets', function(){
-    var $isotopeContainer = $('.tickets');
-    isotopeLayout($isotopeContainer);
     $('.filter').change(function() {
       var filterValue = $(this).val();
       $isotopeContainer.isotope({ filter: filterValue });
@@ -37,6 +24,10 @@ Template.tickets.ticketMenu = function() {
 
 Template.tickets.editing = function() {
   return Session.equals('editingTicket', this._id);
+};
+
+Template.tickets.rendered = function(){
+    isotopeLayout($('.tickets'));
 };
 
 Template.newTicket.events({
