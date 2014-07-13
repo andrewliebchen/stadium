@@ -1,8 +1,12 @@
 // MESSAGES
 .messages {
   position: relative;
-  display: none;
-  padding-left: 1em;
+  padding: 1em;
+
+  &.panel {
+    display: none;
+    padding: 0 0 0 1em;
+  }
 
   .show-messages & {
     display: block;

@@ -1,13 +1,7 @@
 <template name="messages">
   <div class="panel messages">
     {{#each messages}}
-      <div class="message">
-        <div class="avatar-small"></div>
-        <div class="message-content">
-          <small>{{name}}</small>
-          {{message}}
-        </div>
-      </div>
+      {{> message}}
     {{/each}}
   </div>
 </template>
