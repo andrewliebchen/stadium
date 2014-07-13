@@ -24,23 +24,6 @@ Template.messages.messages = function() {
   }
 };
 
-Template.messageNew.events({
-  'keydown #new_message' : function(event, template) {
-    if (event.which == 13) {
-      Meteor.user() ? name = Meteor.user().emails[0].address : name = 'Anonymous';
-      var message = template.find('#new_message');
-
-      if (message.value != '') {
-        Meteor.call('addMessage', {
-          name: name,
-          message: message.value,
-          time: Date.now(),
-          parent: Session.get('currentChatParent'),
-          fromId: Meteor.userId()
-        });
-
-        message.value = '';
-      }
-    }
-  }
-});
+Template.singleTicket.messages = function() {
+  return Messages.find({parent: Session.get('currentChatParent')}, {sort: {time: 1}});
+};

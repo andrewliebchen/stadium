@@ -48,6 +48,11 @@
   }
 }
 
+.single-ticket {
+  margin: 0 1em;
+  position: relative;
+}
+
 .ticket-title {
   $size: 2em;
   line-height: $size;

@@ -1,0 +1,14 @@
+<template name="singleTicket">
+  <div class="ticket single-ticket {{type}} {{status}}">
+    {{> ticketContent}}
+  </div>
+  {{#each messages}}
+    <div class="message">
+      <div class="avatar-small"></div>
+      <div class="message-content">
+        <small>{{name}}</small>
+        {{message}}
+      </div>
+    </div>
+  {{/each}}
+</template>
