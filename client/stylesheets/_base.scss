@@ -184,7 +184,7 @@ button {
 
 .launch-bar {
   $top: unit(0.1) + 1em;
-  @include position(fixed, 0px 0 0px 0px);
+  @include position(fixed, 0px 0 4.75em 0px);
   width: unit(1);
   z-index: 1;
   padding: 1em 0 1em 1em;
@@ -280,20 +280,14 @@ a.member-all {
   overflow: visible;
 }
 
-a.current-user {
-  @include position(absolute, 0 0 1em 0);
-  margin-bottom: 0;
-}
-
 // COMMANDLINE
 .commandline {
   @include background-image(linear-gradient(to top, $colorBackground 80%, transparent));
-  @include position(fixed, 0 0px 0px 5.75em);
-  padding: 1em 1em 1.75em 1em;
+  @include position(fixed, 0 0px 0px 0px);
+  padding: 1em 1em 1em 6.75em;
   z-index: 99;
 
   input[type="text"] {
-    margin: 0;
     position: relative;
     padding-right: 3em;
   }
@@ -302,6 +296,11 @@ a.current-user {
     @include position(absolute, 1.5em 1.5em 0 0);
     padding: 0;
     width: 2em;
+  }
+
+  a.current-user {
+    @include position(absolute, 0 0 1em 1em);
+    margin-bottom: 0;
   }
 }
 
