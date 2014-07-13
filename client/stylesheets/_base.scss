@@ -305,6 +305,12 @@ a.current-user {
   }
 }
 
+// LOADER
+#iron-router-progress {
+  background-color: $colorLink;
+  box-shadow: none;
+}
+
 // MODALS
 .close {
   @include position(absolute, 0.5em 0.5em 0 0);
@@ -344,22 +350,3 @@ a.current-user {
   }
 }
 
-// .modal-header {
-//   padding-bottom: 1em;
-// }
-//
-// .modal-footer {
-//   @include row();
-//   padding-top: 1em;
-//
-//   button {
-//     border-color: white;
-//     color: white;
-//     float: right;
-//
-//     &:hover {
-//       background-color: white;
-//       color: $colorLink;
-//     }
-//   }
-// }

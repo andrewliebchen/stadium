@@ -5,6 +5,7 @@
     "bourbon": {},
     "neat": {},
     "isotope-repackaged": {},
-    "iron-router": {}
+    "iron-router": {},
+    "iron-router-progress": {}
   }
 }
