@@ -5,7 +5,15 @@ Router.configure({
 
 Router.map(function() {
   this.route('home', {
-    path: '/'
+    path: '/',
+    waitOn: function() {
+      return [
+        Meteor.subscribe('tickets')
+      ];
+    },
+    data: function() {
+      return Tickets.find({});
+    }
   });
 
   this.route('singleTicket', {
