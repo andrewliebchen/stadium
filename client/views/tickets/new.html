@@ -1,24 +1,34 @@
 <template name="newTicket">
-  <div class="ticket-new">
-    <p>
+  <header>
+    <h2>New ticket</h2>
+  </header>
+  <section>
+    <div>
+      <label>Type</label>
       <select id="new_ticket_type">
         <option value="story">Story</option>
         <option value="defect">Defect</option>
         <option value="task">Task</option>
       </select>
+      <label>Size</label>
       <select id="new_ticket_size">
         <option value="small">Small</option>
         <option value="medium">Medium</option>
         <option value="large">Large</option>
       </select>
+      <label>Status</label>
       <select id="new_ticket_status">
         <option value="someday" selected>Someday</option>
         <option value="backlog">Backlog</option>
         <option value="current">Current</option>
       </select>
-    </p>
+    </div>
+    <label>Title</label>
     <input type="text" id="new_ticket_title" placeholder="Add a short ticket title">
+    <label>Description</label>
     <textarea id="new_ticket_description" placeholder="Describe this ticket"></textarea>
-    <button id="add_ticket" class="button-knockout" data-modal="close">Create</button>
-  </div>
+  </section>
+  <footer>
+    <button id="add_ticket" data-modal="close">Create</button>
+  </footer>
 </template>

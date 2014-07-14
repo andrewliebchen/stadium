@@ -119,7 +119,8 @@ small {
 
 // FORMS
 #{$all-text-inputs},
-textarea {
+textarea,
+select {
   background-color: $colorGray6;
   border-radius: 3px;
   border: 1px solid $colorGray4;
@@ -138,10 +139,27 @@ textarea {
 }
 
 #{$all-text-inputs-focus},
-textarea:focus {
+textarea:focus,
+select:focus {
+  outline: none;
   background: white;
   border-color: $colorLink;
   box-shadow: 0 0 0 3px rgba($colorLink, 0.3);
+}
+
+textarea {
+  min-height: 5em;
+}
+
+select {
+  @include appearance(menulist-button);
+  margin-bottom: 1em;
+}
+
+label {
+  font-weight: bold;
+  color: $colorGray3;
+  font-size: $fontSizeSmall;
 }
 
 button {
@@ -308,44 +326,5 @@ a.member-all {
 #iron-router-progress {
   background-color: $colorLink;
   box-shadow: none;
-}
-
-// MODALS
-.close {
-  @include position(absolute, 0.5em 0.5em 0 0);
-  opacity: 0.5;
-  color: white;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-.modal-wrapper {
-  @include position(fixed, 0px 0px 0px 0px);
-  background-color: $colorLink;
-  z-index: 100;
-
-  .close {
-    font-size: 2em;
-  }
-}
-
-.modal {
-  @include size(33% 50%);
-  @include position(absolute, 0px 0px 0px 0px);
-  margin: auto;
-  overflow: auto;
-  padding: 1em;
-  color: white;
-
-  #{$all-text-inputs},
-  textarea {
-    border: 0;
-  }
-
-  button {
-    width: 100%;
-  }
 }
 

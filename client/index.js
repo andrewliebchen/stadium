@@ -4,10 +4,11 @@ Template.modal.helpers({
   }
 });
 
-UI.body.events({
+Template.layout.events({
   'click [data-modal-template]' : function(event) {
     var template = $(event.target).data('modal-template');
     Session.set('activeModal', template);
+    console.log('modal');
   },
 
   'click [data-modal="close"]' : function(event) {

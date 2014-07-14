@@ -7,7 +7,7 @@ Deps.autorun(function() {
   Meteor.subscribe('tickets', function(){
     $('.filter').change(function() {
       var filterValue = $(this).val();
-      $isotopeContainer.isotope({ filter: filterValue });
+      $('.tickets').isotope({ filter: filterValue });
     });
 
     Session.set('ticketCount', Tickets.find({}).count());
@@ -27,7 +27,7 @@ Template.tickets.editing = function() {
 };
 
 Template.tickets.rendered = function(){
-    isotopeLayout($('.tickets'));
+  isotopeLayout($('.tickets'));
 };
 
 Template.newTicket.events({
