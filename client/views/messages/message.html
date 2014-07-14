@@ -2,7 +2,7 @@
   <div class="message">
     <div class="avatar-small"></div>
     <div class="message-content">
-      <small>{{name}}</small>
+      <small>{{name}}{{#if typing}} is typing...{{/if}}</small>
       {{message}}
     </div>
   </div>
