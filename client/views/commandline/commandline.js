@@ -8,6 +8,9 @@ Template.commandline.events({
         case '/add':
           Session.set('activeModal', 'newTicket');
 
+        case '/chat':
+          showChats($('.member-all'), null);
+
         default:
           Meteor.user() ? name = Meteor.user().emails[0].address : name = 'Anonymous';
           if (messageContent != '') {

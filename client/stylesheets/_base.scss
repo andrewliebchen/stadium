@@ -177,8 +177,8 @@ label {
 button {
   $height: 2em;
   border-radius: 3px;
-  border: 1px solid $colorLink;
-  color: $colorLink;
+  background-color: $colorLink;
+  color: white;
   cursor: pointer;
   font-weight: bold;
   height: $height;
@@ -186,18 +186,7 @@ button {
   padding: 0 1em;
 
   &:hover {
-    background-color: $colorLink;
-    color: white;
-  }
-}
-
-.button-knockout {
-  border-color: $colorGray6;
-  color: $colorGray6;
-
-  &:hover {
-    background-color: $colorGray6;
-    color: $colorLink;
+    background-color: shade($colorLink, 20%);
   }
 }
 

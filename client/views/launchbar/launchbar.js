@@ -18,18 +18,6 @@ Template.launchbar.members = function() {
 
 Template.launchbar.events({
   'click .chat-toggle' : function(event) {
-    $this = $(event.target);
-    Session.set('currentChatParent', this._id);
-
-    if($this.hasClass('is-selected')) {
-      $('body').removeClass('show-messages');
-      $this.removeClass('is-selected');
-    } else {
-      $('.chat-toggle.is-selected').removeClass('is-selected');
-      $('body').addClass('show-messages');
-      $this.addClass('is-selected');
-    };
-
-    isotopeLayout($('.tickets'));
+    showChats($(event.target), this._id);
   }
 });
