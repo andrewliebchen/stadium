@@ -27,10 +27,8 @@ Template.layout.events({
 
     // Dropdown positioning
     var targetPosition = $this.offset();
-    var dropdownHeight = $('.dropdown').outerHeight();
-    var dropdownTop = targetPosition.top - dropdownHeight - 8;
     $('.dropdown').css({
-      'top': dropdownTop + 'px',
+      'top': targetPosition.top + 'px',
       'left': targetPosition.left + 'px'
     });
   }
