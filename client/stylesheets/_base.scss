@@ -18,6 +18,18 @@
   max-width: 100%;
 }
 
+// ANIMATIONS
+@include keyframes(panelIn) {
+  0% {
+    @include transform(translate3d(-50px, 0, 0));
+    opacity: 0;
+  }
+  100% {
+    @include transform(translate3d(0, 0, 0));
+    opacity: 1;
+  }
+}
+
 // VARIABLES
 $colorGray1: #333;
 $colorGray2: #555;
