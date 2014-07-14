@@ -4,14 +4,34 @@ Template.modal.helpers({
   }
 });
 
+Template.dropdown.helpers({
+  activeDropdown: function() {
+    return Session.get('activeDropdown');
+  }
+});
+
 Template.layout.events({
   'click [data-modal-template]' : function(event) {
     var template = $(event.target).data('modal-template');
     Session.set('activeModal', template);
-    console.log('modal');
   },
 
   'click [data-modal="close"]' : function(event) {
     Session.set('activeModal', null);
+  },
+
+  'click [data-dropdown-template]' : function(event) {
+    $this = $(event.target);
+    var template = $this.data('dropdown-template');
+    Session.set('activeDropdown', template);
+
+    // Dropdown positioning
+    var targetPosition = $this.offset();
+    var dropdownHeight = $('.dropdown').outerHeight();
+    var dropdownTop = targetPosition.top - dropdownHeight - 8;
+    $('.dropdown').css({
+      'top': dropdownTop + 'px',
+      'left': targetPosition.left + 'px'
+    });
   }
 });

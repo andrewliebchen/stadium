@@ -1,0 +1,22 @@
+// DROPDOWN
+
+.dropdown {
+  @include position(absolute, auto auto auto auto);
+  background-color: $colorLink;
+  max-width: 200px;
+  padding: 0.5em 0;
+  color: white;
+  border-radius: 3px;
+  z-index: 99;
+
+  a {
+    display: block;
+    color: inherit;
+    padding: 0 1em;
+    line-height: 2em;
+
+    &:hover {
+      background-color: tint($colorLink, 20%);
+    }
+  }
+}
