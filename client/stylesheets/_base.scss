@@ -256,5 +256,9 @@ button {
 #iron-router-progress {
   background-color: $colorLink;
   box-shadow: none;
+
+  &::before {
+    content: none; // can turn this off somewhere else?
+  }
 }
 
