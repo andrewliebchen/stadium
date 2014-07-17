@@ -2,7 +2,6 @@
 .tickets {
   @include box-flex(2);
   @include transition;
-  padding-left: 1em;
 }
 
 .ticket {

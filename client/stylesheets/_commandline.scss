@@ -17,6 +17,7 @@
   }
 
   a.current-user {
+    @extend %block-link;
     @include position(absolute, 0 0 1em 1em);
     margin-bottom: 0;
   }

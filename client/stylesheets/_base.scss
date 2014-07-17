@@ -40,6 +40,7 @@ $colorGray6: #fefefe;
 
 $colorLink:       rgb(57, 163, 255);
 $colorBackground: $colorGray6;
+$colorBorder:     $colorGray4;
 
 $colorStory:  $colorLink;
 $colorDefect: #DB6463;
@@ -112,6 +113,7 @@ small {
   display: block;
   text-align: center;
   position: relative;
+  border: 1px solid $colorBorder;
 }
 
 %block-small {
@@ -128,11 +130,22 @@ small {
   line-height: $size;
 }
 
+%block-link {
+  &:hover,
+  &.is-selected {
+    border-color: $colorLink;
+    color: $colorLink;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 3px rgba($colorLink, 0.2);
+  }
+}
+
 // AVATAR
 %avatar-base {
   @extend %icon;
   @extend .icon-user;
-  border: 1px solid $colorGray4;
   position: relative;
   color: $colorGray4;
 

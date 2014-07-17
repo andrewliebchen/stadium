@@ -7,18 +7,15 @@
   padding: 1em 0 1em 1em;
 }
 
+.logo {
+  @extend %block-medium;
+  @extend %block-link;
+  margin-bottom: 2em;
+}
+
 .member {
+  @extend %block-link;
   margin-bottom: 0.5em;
-
-  &:hover,
-  &.is-selected {
-    border-color: $colorLink;
-    color: $colorLink;
-  }
-
-  &:hover {
-    box-shadow: 0 0 0 3px rgba($colorLink, 0.2);
-  }
 
   &.is-selected {
     &:hover {
