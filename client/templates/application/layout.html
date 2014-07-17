@@ -1,6 +1,10 @@
 <template name="layout">
+  {{> launchbar}}
   <div class="width-wrapper">
-    {{> yield}}
+    <section class="panels">
+      {{> messages}}
+      {{> yield}}
+    </section>
   </div>
   {{> commandline}}
   {{> modal}}
@@ -8,11 +12,7 @@
 </template>
 
 <template name="home">
-  {{> launchbar}}
-  <section class="panels">
-    {{> messages}}
-    {{> tickets}}
-  </section>
+  {{> tickets}}
 </template>
 
 <template name="loading">

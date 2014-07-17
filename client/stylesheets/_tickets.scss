@@ -32,12 +32,15 @@
 }
 
 .single-ticket {
-  max-width: em(960);
-  margin: 1em auto;
+  .ticket-container {
+    width: 100%;
+    max-width: 50em;
+    margin: 0 auto;
+  }
 
   .ticket {
     position: relative;
-    margin: 1em 0;
+    margin: 0 0 2em;
   }
 }
 
@@ -69,6 +72,7 @@
   @include position(absolute, 0 0px 0px 0);
   opacity: 0;
   border-radius: 3px 0 0 0;
+  border: 0;
 
   .ticket:hover & {
     opacity: 1;
@@ -144,13 +148,9 @@ $i: 1;
       background-color: tint($typeColor, 85%);
     }
 
-    .ticket-menu-toggle:hover {
+    .ticket-options-toggle:hover {
       background-color: $typeColor;
       color: $typeColorBackground;
-    }
-
-    .ticket-menu-item:hover {
-      color: $typeColor;
     }
   }
 

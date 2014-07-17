@@ -1,13 +1,20 @@
 <template name="singleTicket">
-  <section class="single-ticket">
-    <a href="{{pathFor 'home'}}">Home</a>
-    <div class="ticket {{type}} {{status}}">
-      {{> ticketContent}}
+  <div class="panel single-ticket">
+    <div class="ticket-container">
+      <div class="ticket {{type}} {{status}}">
+        {{> ticketContent}}
+      </div>
+      <div class="ticket-messages">
+        {{#each ticketMessages}}
+          <div class="message">
+            <div class="avatar-small media-image"></div>
+            <div class="message-content media-body">
+              <small>{{name}}{{#if typing}} is typing...{{/if}}</small>
+              {{message}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
     </div>
-    <div class="messages">
-      {{#each messages}}
-        {{> message}}
-      {{/each}}
-    </div>
-  </section>
+  </div>
 </template>

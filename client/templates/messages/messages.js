@@ -24,6 +24,6 @@ Template.messages.messages = function() {
   }
 };
 
-Template.singleTicket.messages = function() {
-  return Messages.find({parent: Session.get('currentChatParent')}, {sort: {time: 1}});
+Template.singleTicket.ticketMessages = function() {
+  return Messages.find({parent: Session.get('currentTicket')}, {sort: {time: 1}});
 };

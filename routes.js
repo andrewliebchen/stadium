@@ -24,7 +24,7 @@ Router.map(function() {
       ];
     },
     data: function() {
-      Session.set('currentChatParent', this.params._id);
+      Session.set('currentTicket', this.params._id);
       return Tickets.findOne(this.params._id);
     }
   });
