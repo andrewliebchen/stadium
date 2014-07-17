@@ -15,33 +15,14 @@
 }
 
 .message {
-  @extend .media;
   @include row();
   margin-bottom: 0.75em;
-
-  .avatar-small {
-    @extend .media-image;
-  }
 }
 
 .message-content {
-  @extend .media-body;
-
   small {
-    color: $colorGray5;
     display: block;
     font-weight: bold;
     line-height: 1;
-  }
-}
-
-.message-new {
-  $left: unit(1) + 1em;
-  @include position(fixed, 0 0 0px $left);
-  padding: 1em 0 1em 1em;
-  @include background-image(linear-gradient(to top, $colorBackground 75%, transparent));
-
-  input {
-    width: 100%;
   }
 }

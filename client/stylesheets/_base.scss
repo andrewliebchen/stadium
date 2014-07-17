@@ -51,7 +51,7 @@ $fontSizeSmall:  em(12);
 
 $smallTicket:  unit(2);
 $mediumTicket: unit(4) + 0.5em;
-$largeTicket: unit(8) + 1.5em;
+$largeTicket:  unit(8) + 1.5em;
 
 $headerTransition: 0.2s ease-in-out;
 
@@ -73,7 +73,9 @@ body {
   overflow-y: scroll;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: inherit;
   font-weight: bold;
 }
@@ -91,13 +93,10 @@ strong {
 
 small {
   font-size: $fontSizeSmall;
+  color: $colorGray5;
 }
 
-// MEDIA
-.media {
-
-}
-
+// MEDIA OBJECT
 .media-image {
   float: left;
   margin-right: 0.5em;
@@ -127,6 +126,36 @@ small {
   @extend %block-base;
   @include size($size);
   line-height: $size;
+}
+
+// AVATAR
+%avatar-base {
+  @extend %icon;
+  @extend .icon-user;
+  border: 1px solid $colorGray4;
+  position: relative;
+  color: $colorGray4;
+
+  img {
+    @include position(absolute, 0px 0 0 0px);
+    border-radius: 3px;
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+.avatar-small {
+  @extend %avatar-base;
+  @extend %block-small;
+}
+
+.avatar-medium {
+  @extend %avatar-base;
+  @extend %block-medium;
+
+  &::before {
+    font-size: 1.5em;
+  }
 }
 
 // FORMS
@@ -190,23 +219,10 @@ button {
   }
 }
 
-// CONTENT
-.login-buttons-dropdown-align-right {
-  float: right;
-}
-
 // LAYOUT
 .width-wrapper {
   @include outer-container;
-  margin: 1em auto;
-}
-
-.launch-bar {
-  $top: unit(0.1) + 1em;
-  @include position(fixed, 0px 0 4.75em 0px);
-  width: unit(1);
-  z-index: 1;
-  padding: 1em 0 1em 1em;
+  padding: 1em;
 }
 
 .panels {
@@ -223,38 +239,16 @@ button {
   width: 0;
 }
 
-// AVATAR
-%avatar-base {
-  @extend %icon;
-  @extend .icon-user;
-  border: 1px solid $colorGray4;
-  position: relative;
-  color: $colorGray4;
-
-  img {
-    @include position(absolute, 0px 0 0 0px);
-    border-radius: 3px;
-    max-height: 100%;
-    max-width: 100%;
-  }
-}
-
-.avatar-small {
-  @extend %avatar-base;
-  @extend %block-small;
-}
-
-.avatar-medium {
-  @extend %avatar-base;
-  @extend %block-medium;
-
-  &::before {
-    font-size: 1.5em;
-  }
-}
-
 // LAUNCH BAR
-.launch-bar a {
+.launch-bar {
+  $top: unit(0.1) + 1em;
+  @include position(fixed, 0px 0 4.75em 0px);
+  width: unit(1);
+  z-index: 1;
+  padding: 1em 0 1em 1em;
+}
+
+.member {
   margin-bottom: 0.5em;
 
   &:hover,
@@ -287,16 +281,13 @@ button {
     }
   }
 
-  &.icon-team-chat::before {
-    font-size: 2em;
-  }
-}
+  &.member-all {
+    overflow: visible;
 
-a.member-all {
-  @extend %icon;
-  @extend .avatar-medium;
-  @extend .icon-team-chat;
-  overflow: visible;
+    &::before {
+      font-size: 2em;
+    }
+  }
 }
 
 // COMMANDLINE

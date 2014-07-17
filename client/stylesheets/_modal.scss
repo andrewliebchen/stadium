@@ -21,14 +21,13 @@
 
 .modal {
   $width: 600px;
-  background-color: white;
+  background-color: $colorGray6;
   border-radius: 5px;
-  box-shadow: 0 1px 5px rgba(black, 0.2), 0 2px 20px rgba(black, 0.1);
-  margin: unit(2) auto unit(1);
+  margin: unit(1) auto;
   padding: 1em;
   width: $width;
+}
 
-  section {
-    padding: 1em 0;
-  }
+.modal-content {
+  padding: 1em 0;
 }

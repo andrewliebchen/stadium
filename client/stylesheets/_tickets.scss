@@ -3,10 +3,6 @@
   @include box-flex(2);
   @include transition;
   padding-left: 1em;
-
-  .show-chat & {
-    @include transform(translate3d(100%, 0, 0));
-  }
 }
 
 .ticket {
@@ -30,19 +26,6 @@
     z-index: 9999;
   }
 
-  &.is-adding {
-    @include size(em(300)+0.5em);
-    border-style: solid;
-
-    #new_story_toggle {
-      display: none;
-    }
-
-    .ticket-new {
-      display: block;
-    }
-  }
-
   a {
     color: inherit;
   }
@@ -59,12 +42,12 @@
 
 .ticket-title {
   $size: 2em;
-  line-height: $size;
-  height: $size;
   @include ellipsis;
-  display: block;
-  border-bottom-width: 1px;
   border-bottom-style: solid;
+  border-bottom-width: 1px;
+  display: block;
+  height: $size;
+  line-height: $size;
   padding: 0 0.5em;
 }
 
@@ -80,7 +63,7 @@
   padding: 0.5em;
 }
 
-.ticket-menu-toggle {
+.ticket-options-toggle {
   @extend %block-small;
   @include position(absolute, 0 0px 0px 0);
   opacity: 0;
@@ -88,29 +71,6 @@
 
   .ticket:hover & {
     opacity: 1;
-  }
-}
-
-.ticket-menu {
-  margin-top: 1em;
-}
-
-.ticket-menu-item {
-  border-radius: 3px;
-  display: block;
-  height: 2em;
-  line-height: 2em;
-  margin-bottom: 0.25em;
-  padding: 0 0.5em;
-  text-decoration: none;
-
-  &:hover {
-    background-color: $colorBackground;
-  }
-
-  &[class*="icon-"]:before {
-    margin-right: 10px;
-    top: 2px;
   }
 }
 

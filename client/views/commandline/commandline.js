@@ -7,9 +7,11 @@ Template.commandline.events({
       switch(messageContent) {
         case '/add':
           Session.set('activeModal', 'newTicket');
+          break;
 
         case '/chat':
           showChats($('.member-all'), null);
+          break;
 
         default:
           Meteor.user() ? name = Meteor.user().emails[0].address : name = 'Anonymous';
@@ -21,9 +23,10 @@ Template.commandline.events({
               parent: Session.get('currentChatParent'),
               fromId: Meteor.userId()
             });
-            message.val('');
           };
       };
+
+      message.val('');
     }
   }
 });
