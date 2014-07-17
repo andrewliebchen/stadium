@@ -1,4 +1,4 @@
-// HELPERS
+// UTILITIES
 @function unit($multiple) {
   @return $unit * $multiple;
 }
@@ -237,81 +237,6 @@ button {
 .panel {
   @include box-flex(1);
   width: 0;
-}
-
-// LAUNCH BAR
-.launch-bar {
-  $top: unit(0.1) + 1em;
-  @include position(fixed, 0px 0 4.75em 0px);
-  width: unit(1);
-  z-index: 1;
-  padding: 1em 0 1em 1em;
-}
-
-.member {
-  margin-bottom: 0.5em;
-
-  &:hover,
-  &.is-selected {
-    border-color: $colorLink;
-    color: $colorLink;
-  }
-
-  &:hover {
-    box-shadow: 0 0 0 3px rgba($colorLink, 0.2);
-  }
-
-  &.is-selected {
-    &:hover {
-      box-shadow: none;
-    }
-
-    &::after {
-      $size: 0.5em;
-      $margin: -($size / 2);
-      $border: 1px solid $colorLink;
-      @include position(absolute, 50% 0px 0 0);
-      @include size($size);
-      @include transform(rotate(45deg));
-      background-color: $colorGray6;
-      border-bottom: $border;
-      border-left: $border;
-      content: "";
-      margin: $margin $margin 0 0;
-    }
-  }
-
-  &.member-all {
-    overflow: visible;
-
-    &::before {
-      font-size: 2em;
-    }
-  }
-}
-
-// COMMANDLINE
-.commandline {
-  @include background-image(linear-gradient(to top, $colorBackground 80%, transparent));
-  @include position(fixed, 0 0px 0px 0px);
-  padding: 1em 1em 1em 6.75em;
-  z-index: 99;
-
-  input[type="text"] {
-    position: relative;
-    padding-right: 3em;
-  }
-
-  .ticket-new {
-    @include position(absolute, 1.5em 1.5em 0 0);
-    padding: 0;
-    width: 2em;
-  }
-
-  a.current-user {
-    @include position(absolute, 0 0 1em 1em);
-    margin-bottom: 0;
-  }
 }
 
 // LOADER

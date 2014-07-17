@@ -1,0 +1,50 @@
+// LAUNCH BAR
+.launch-bar {
+  $top: unit(0.1) + 1em;
+  @include position(fixed, 0px 0 4.75em 0px);
+  width: unit(1);
+  z-index: 1;
+  padding: 1em 0 1em 1em;
+}
+
+.member {
+  margin-bottom: 0.5em;
+
+  &:hover,
+  &.is-selected {
+    border-color: $colorLink;
+    color: $colorLink;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0 3px rgba($colorLink, 0.2);
+  }
+
+  &.is-selected {
+    &:hover {
+      box-shadow: none;
+    }
+
+    &::after {
+      $size: 0.5em;
+      $margin: -($size / 2);
+      $border: 1px solid $colorLink;
+      @include position(absolute, 50% 0px 0 0);
+      @include size($size);
+      @include transform(rotate(45deg));
+      background-color: $colorGray6;
+      border-bottom: $border;
+      border-left: $border;
+      content: "";
+      margin: $margin $margin 0 0;
+    }
+  }
+
+  &.member-all {
+    overflow: visible;
+
+    &::before {
+      font-size: 2em;
+    }
+  }
+}

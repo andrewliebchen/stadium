@@ -1,12 +1,21 @@
+// VENDOR
 @import "../../packages/bourbon/bourbon";
 $max-width: 100%;
 $unit: em(60);
 $gutter: $unit / 2;
 @import "../../packages/neat/neat";
+
+// BASE
 @import "reset";
 @import "base";
+
+// HELPERS
 @import "icons";
 @import "modal";
 @import "dropdown";
+
+// TEMPLATES
+@import "launchbar";
+@import "commandline";
 @import "tickets";
 @import "messages";

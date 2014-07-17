@@ -26,13 +26,15 @@
     z-index: 9999;
   }
 
-  a {
+  a,
+  small {
     color: inherit;
   }
 }
 
 .single-ticket {
-  padding: 1em;
+  max-width: em(960);
+  margin: 1em auto;
 
   .ticket {
     position: relative;

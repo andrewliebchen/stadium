@@ -1,0 +1,23 @@
+// COMMANDLINE
+.commandline {
+  @include background-image(linear-gradient(to top, $colorBackground 80%, transparent));
+  @include position(fixed, 0 0px 0px 0px);
+  padding: 1em 1em 1em 6.75em;
+  z-index: 99;
+
+  input[type="text"] {
+    position: relative;
+    padding-right: 3em;
+  }
+
+  .ticket-new {
+    @include position(absolute, 1.5em 1.5em 0 0);
+    padding: 0;
+    width: 2em;
+  }
+
+  a.current-user {
+    @include position(absolute, 0 0 1em 1em);
+    margin-bottom: 0;
+  }
+}
