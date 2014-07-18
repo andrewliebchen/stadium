@@ -19,5 +19,6 @@ Template.launchbar.members = function() {
 Template.launchbar.events({
   'click .chat-toggle' : function(event) {
     showChats($(event.target), this._id);
+    Session.set('currentChatParent', this._id);
   }
 });

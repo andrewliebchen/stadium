@@ -103,9 +103,15 @@ Template.tickets.events({
     isotopeLayout($('.tickets'));
   },
 
-  'click .close' : function(events) {
+  'click .close' : function(event) {
     event.preventDefault();
     Session.set('editingTicket', null);
     Session.set('ticketMenu', null);
+  }
+});
+
+Template.singleTicket.events({
+  'click .single-ticket .ticket' : function(event) {
+    Session.set('currentChatParent', this._id);
   }
 });
