@@ -14,101 +14,103 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[data-icon] {
   @extend %icon;
 }
 
-.icon-close:before {
+[data-icon="more"]:before {
+  content: "\e002";
+}
+[data-icon="close"]:before {
   content: "\e004";
 }
-.icon-edit:before {
+[data-icon="edit"]:before {
   content: "\e005";
 }
-.icon-trash:before {
+[data-icon="trash"]:before {
   content: "\e006";
 }
-.icon-bubble:before {
+[data-icon="bubble"]:before {
   content: "\e007";
 }
-.icon-settings:before {
+[data-icon="settings"]:before {
   content: "\e003";
 }
-.icon-clip:before {
+[data-icon="clip"]:before {
   content: "\e008";
 }
-.icon-clock:before {
+[data-icon="clock"]:before {
   content: "\e009";
 }
-.icon-heart:before {
+[data-icon="heart"]:before {
   content: "\e00a";
 }
-.icon-lab:before {
+[data-icon="lab"]:before {
   content: "\e00b";
 }
-.icon-like:before {
+[data-icon="like"]:before {
   content: "\e00c";
 }
-.icon-location:before {
+[data-icon="location"]:before {
   content: "\e00d";
 }
-.icon-mail:before {
+[data-icon="mail"]:before {
   content: "\e00e";
 }
-.icon-megaphone:before {
+[data-icon="megaphone"]:before {
   content: "\e00f";
 }
-.icon-note:before {
+[data-icon="note"]:before {
   content: "\e010";
 }
-.icon-params:before {
+[data-icon="params"]:before {
   content: "\e011";
 }
-.icon-paperplane:before {
+[data-icon="paperplane"]:before {
   content: "\e012";
 }
-.icon-search:before {
+[data-icon="search"]:before {
   content: "\e013";
 }
-.icon-t-shirt:before {
+[data-icon="t-shirt"]:before {
   content: "\e014";
 }
-.icon-user:before {
+[data-icon="user"]:before {
   content: "\e015";
 }
-.icon-world:before {
+[data-icon="world"]:before {
   content: "\e016";
 }
-.icon-bulb:before {
+[data-icon="bulb"]:before {
   content: "\e017";
 }
-.icon-camera:before {
+[data-icon="camera"]:before {
   content: "\e018";
 }
-.icon-cloud:before {
+[data-icon="cloud"]:before {
   content: "\e019";
 }
-.icon-cup:before {
+[data-icon="cup"]:before {
   content: "\e01a";
 }
-.icon-key:before {
+[data-icon="key"]:before {
   content: "\e01b";
 }
-.icon-lock:before {
+[data-icon="lock"]:before {
   content: "\e01c";
 }
-.icon-photo:before {
+[data-icon="photo"]:before {
   content: "\e01d";
 }
-.icon-stack:before {
+[data-icon="stack"]:before {
   content: "\e01e";
 }
-.icon-tag:before {
+[data-icon="tag"]:before {
   content: "\e01f";
 }
-.icon-team-chat:before {
+[data-icon="team-chat"]:before {
   content: "\E000";
 }
-.icon-menu:before {
+[data-icon="menu"]:before {
   content: "\E001";
 }

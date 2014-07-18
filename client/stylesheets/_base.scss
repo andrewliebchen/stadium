@@ -145,7 +145,7 @@ small {
 // AVATAR
 %avatar-base {
   @extend %icon;
-  @extend .icon-user;
+  @extend [data-icon="user"];
   position: relative;
   color: $colorGray4;
 
