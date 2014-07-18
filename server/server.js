@@ -4,7 +4,7 @@ Meteor.methods({
     Tickets.insert({
       userId:      options.userId,
       number:      options.number,
-      title:       options.title,
+      tag:         options.tag,
       description: options.description,
       type:        options.type,
       size:        options.size,
@@ -19,7 +19,7 @@ Meteor.methods({
 
   editTicket : function(ticketId, options) {
     Tickets.update(ticketId, {$set: {
-      title:  options.title,
+      tag:    options.tag,
       type:   options.type,
       size:   options.size,
       status: options.status

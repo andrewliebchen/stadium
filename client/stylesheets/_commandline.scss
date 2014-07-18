@@ -2,6 +2,7 @@
 .commandline {
   @include background-image(linear-gradient(to top, $colorBackground 80%, transparent));
   @include position(fixed, 0 0px 0px 0px);
+  height: 5.75em;
   padding: 1em 1em 1em 6.75em;
   z-index: 99;
 

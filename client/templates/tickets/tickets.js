@@ -32,14 +32,14 @@ Template.tickets.rendered = function(){
 
 Template.newTicket.events({
   'click #add_ticket' : function(event, template) {
-    var ticketNumber = Session.get('ticketCount');
-    var ticketTitle = template.find('#new_ticket_title');
+    var ticketNumber      = Session.get('ticketCount');
+    var ticketTag         = template.find('#new_ticket_tag');
     var ticketDescription = template.find('#new_ticket_description');
 
     var newTicket = {
       userId:      Meteor.userId(),
       number:      ticketNumber,
-      title:       ticketTitle.value,
+      tag:         ticketTag.value,
       description: ticketDescription.value,
       type:        template.find('#new_ticket_type').value,
       size:        template.find('#new_ticket_size').value,
@@ -91,7 +91,7 @@ Template.tickets.events({
 
   'click #edit_ticket' : function(event, template) {
     var edits = {
-      title:  template.find('#edit_ticket_title').value,
+      tag:    template.find('#edit_ticket_tag').value,
       type:   template.find('#edit_ticket_type').value,
       size:   template.find('#edit_ticket_size').value,
       status: template.find('#edit_ticket_status').value
