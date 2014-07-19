@@ -5,30 +5,30 @@
   <section class="modal-content">
     <div>
       <label>Type</label>
-      <select id="new_ticket_type">
+      <select class="mrt_new-ticket_type">
         <option value="story">Story</option>
         <option value="defect">Defect</option>
         <option value="task">Task</option>
       </select>
       <label>Size</label>
-      <select id="new_ticket_size">
+      <select class="mrt_new-ticket_size">
         <option value="small">Small</option>
         <option value="medium">Medium</option>
         <option value="large">Large</option>
       </select>
       <label>Status</label>
-      <select id="new_ticket_status">
-        <option value="someday" selected>Someday</option>
+      <select class="mrt_new-ticket_status">
+        <option value="someday">Someday</option>
         <option value="backlog">Backlog</option>
         <option value="current">Current</option>
       </select>
     </div>
     <label>Tag</label>
-    <input type="text" id="new_ticket_tag" placeholder="Tags help organized your tickets">
+    <input type="text" class="mrt_new-ticket_tag" placeholder="Tags help organized your tickets">
     <label>Description</label>
-    <textarea id="new_ticket_description" placeholder="Describe this ticket"></textarea>
+    <textarea class="mrt_new-ticket_description" placeholder="Describe this ticket"></textarea>
   </section>
   <footer>
-    <button id="add_ticket" data-modal="close">Create</button>
+    <button class="mrt_add-ticket" data-modal="close">Create</button>
   </footer>
 </template>
