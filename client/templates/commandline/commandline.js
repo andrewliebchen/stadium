@@ -1,5 +1,5 @@
 Template.commandline.events({
-  'keydown .commandline-input' : function(event) {
+  'keydown .mrt_commandline-input' : function(event) {
     if (event.which == 13) {
       var message = $(event.target);
       var messageContent = message.val();
