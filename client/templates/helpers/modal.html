@@ -1,7 +1,7 @@
 <template name="modal">
   {{#if activeModal}}
-    <div class="modal-wrapper">
-      <a class="close" data-icon="close" data-modal="close"></a>
+    <div class="modal__wrapper">
+      <a class="modal__close" data-icon="close" data-modal="close"></a>
       <div class="modal">
         {{> UI.dynamic template=activeModal}}
       </div>

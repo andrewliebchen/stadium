@@ -1,16 +1,14 @@
 <template name="ticketContent">
-  <h3 class="ticket-tag">
+  <h3 class="ticket__tag">
     #{{tag}}
-    <span class="ticket-number">{{number}}</span>
+    <span class="ticket__number">{{number}}</span>
   </h3>
-  <p class="ticket-description">{{description}}</p>
-  <div class="ticket-meta">
-    <div class="media">
-      <div class="media-image"></div>
-      <div class="media-body">
-        <small><b>2 people chatting</b></small>
-        <small>{{status}}</small>
-      </div>
+  <p class="ticket__description">{{description}}</p>
+  <div class="ticket__meta">
+    <div class="ticket__meta__image"></div>
+    <div class="ticket__meta__content">
+      <small><b>2 people chatting</b></small>
+      <small>{{status}}</small>
     </div>
   </div>
 </template>

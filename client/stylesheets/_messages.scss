@@ -5,7 +5,7 @@
 
   &.panel {
     display: none;
-    padding: 0 1em 0 0;
+    padding: 0 2em 0 0;
   }
 
   .show-messages & {
@@ -16,11 +16,19 @@
 
 .message {
   @include row();
-  margin-bottom: 0.75em;
+  margin-bottom: 1.25em;
 }
 
-.message-content {
+.message__image {
+  @extend %media__image;
+  @extend %avatar_small;
+}
+
+.message__content {
+  @extend %media__body;
+
   small {
+    margin-bottom: 0.25em;
     display: block;
     font-weight: bold;
     line-height: 1;

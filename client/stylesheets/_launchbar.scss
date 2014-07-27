@@ -8,15 +8,14 @@
 }
 
 .logo {
-  @extend %block-medium;
-  @extend %block-link;
+  @extend %block_medium;
+  @extend %block_link;
   margin-bottom: 2em;
 }
 
-.toggle-chat_ticket,
-.toggle-chat_member,
-.toggle-chat_team {
-  @extend %block-link;
+%chat-toggle {
+  @extend %block_link;
+  @extend %avatar_medium;
   margin-bottom: 0.5em;
 
   &.is-selected {
@@ -41,5 +40,14 @@
 }
 
 .toggle-chat_ticket {
+  @extend %chat-toggle;
   margin-bottom: 2em;
+}
+
+.toggle-chat_member {
+  @extend %chat-toggle;
+}
+
+.toggle-chat_team {
+  @extend %chat-toggle;
 }

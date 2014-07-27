@@ -24,14 +24,14 @@
   }
 }
 
-.single-ticket {
+.single_ticket {
   .ticket {
     position: relative;
     margin: 0 0 2em;
   }
 }
 
-.ticket-tag {
+.ticket__tag {
   $size: 2em;
   @include ellipsis;
   border-bottom-style: solid;
@@ -42,7 +42,7 @@
   padding: 0 0.5em;
 }
 
-.ticket-number {
+.ticket__number {
   border-radius: 3px;
   padding-left: 3px;
   font-weight: normal;
@@ -50,12 +50,12 @@
   float: right;
 }
 
-.ticket-description {
+.ticket__description {
   padding: 0.5em;
 }
 
-.ticket-options-toggle {
-  @extend %block-small;
+.ticket__options-toggle {
+  @extend %block_small;
   @include position(absolute, 0 0px 0px 0);
   opacity: 0;
   border-radius: 3px 0 0 0;
@@ -66,30 +66,27 @@
   }
 }
 
-.ticket-meta {
+.ticket__meta {
   @include row();
   @include position(absolute, 0 0 0.5em 0);
   padding: 0 0.5em;
+}
 
-  .media {
-    float: left;
-  }
+.ticket__meta__image {
+  @extend %media__image;
+  @extend %avatar_small;
+  border-color: inherit;
+  color: inherit;
+}
 
-  .media-image {
-    @extend .avatar-small;
-    border-color: inherit;
-    color: inherit;
-  }
+.ticket__meta__content {
+  @extend %media__body;
 
   small {
     @include ellipsis;
     display: block;
     line-height: 1.4em;
   }
-}
-
-.ticket-status {
-  float: left;
 }
 
 // SIZES
@@ -108,8 +105,8 @@ $sizeSizes: $smallTicket, $mediumTicket, $largeTicket;
 }
 
 .small {
-  .ticket-description,
-  .media-image {
+  .ticket__description,
+  .ticket__meta__image {
     display: none;
   }
 }
@@ -131,11 +128,7 @@ $i: 1;
       box-shadow: 0 0 0 3px rgba($typeColor, 0.2);
     }
 
-    .ticket-title {
-      background-color: tint($typeColor, 85%);
-    }
-
-    .ticket-options-toggle:hover {
+    .ticket__options-toggle:hover {
       background-color: $typeColor;
       color: $typeColorBackground;
     }

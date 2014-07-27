@@ -3,11 +3,11 @@
     <a href="{{pathFor 'home'}}" class="logo"></a>
     <nav class="members">
       {{#if ticketChat}}
-        <a class="toggle-chat_ticket avatar-medium mrt_toggle-chat is-selected" data-icon="ticket-chat"></a>
+        <a class="toggle-chat_ticket mrt_toggle-chat is-selected" data-icon="ticket-chat"></a>
       {{/if}}
-      <a class="toggle-chat_team avatar-medium mrt_toggle-chat" data-icon="team-chat"></a>
+      <a class="toggle-chat_team mrt_toggle-chat" data-icon="team-chat"></a>
       {{#each members}}
-        <a class="toggle-chat_member avatar-medium mrt_toggle-chat">
+        <a class="toggle-chat_member mrt_toggle-chat">
           <img url="{{id}}">
         </a>
       {{/each}}

@@ -98,13 +98,21 @@ small {
 }
 
 // MEDIA OBJECT
-.media-image {
+%media__image {
   float: left;
   margin-right: 0.5em;
 }
 
-.media-body {
+%media__body {
   overflow: auto;
+}
+
+.media__image {
+  @extend %media__image;
+}
+
+.media__body {
+  @extend %media__body;
 }
 
 // BLOCKS
@@ -116,21 +124,21 @@ small {
   border: 1px solid $colorBorder;
 }
 
-%block-small {
+%block_small {
   $size: 2em;
   @extend %block-base;
   @include size($size);
   line-height: $size;
 }
 
-%block-medium {
+%block_medium {
   $size: unit(1);
   @extend %block-base;
   @include size($size);
   line-height: $size;
 }
 
-%block-link {
+%block_link {
   &:hover,
   &.is-selected {
     border-color: $colorLink;
@@ -157,18 +165,26 @@ small {
   }
 }
 
-.avatar-small {
+%avatar_small {
   @extend %avatar-base;
-  @extend %block-small;
+  @extend %block_small;
 }
 
-.avatar-medium {
+%avatar_medium {
   @extend %avatar-base;
-  @extend %block-medium;
+  @extend %block_medium;
 
   &::before {
     font-size: 1.5em;
   }
+}
+
+.avatar_small {
+  @extend %avatar_small;
+}
+
+.avatar_medium {
+  @extend %avatar_medium;
 }
 
 // FORMS
