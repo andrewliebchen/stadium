@@ -4,17 +4,6 @@
       <div class="ticket {{type}} {{status}}">
         {{> ticketContent}}
       </div>
-      <div class="ticket-messages">
-        {{#each ticketMessages}}
-          <div class="message">
-            <div class="avatar-small media-image"></div>
-            <div class="message-content media-body">
-              <small>{{name}}{{#if typing}} is typing...{{/if}}</small>
-              {{message}}
-            </div>
-          </div>
-        {{/each}}
-      </div>
     </div>
   </div>
 </template>

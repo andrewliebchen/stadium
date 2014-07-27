@@ -10,7 +10,7 @@ Template.commandline.events({
           break;
 
         case '/chat':
-          showChats($('.member-all'), null);
+          showChats($('.toggle-chat_team'), null);
           break;
 
         default:

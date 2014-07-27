@@ -13,7 +13,9 @@
   margin-bottom: 2em;
 }
 
-.member {
+.toggle-chat_ticket,
+.toggle-chat_member,
+.toggle-chat_team {
   @extend %block-link;
   margin-bottom: 0.5em;
 
@@ -36,12 +38,8 @@
       margin: $margin $margin 0 0;
     }
   }
+}
 
-  &.member-all {
-    overflow: visible;
-
-    &::before {
-      font-size: 2em;
-    }
-  }
+.toggle-chat_ticket {
+  margin-bottom: 2em;
 }

@@ -12,6 +12,9 @@ Router.map(function() {
       ];
     },
     data: function() {
+      Session.set('currentTicket', null);
+      Session.set('currentChatParent', null);
+      $('body').removeClass('show-messages');
       return Tickets.find({});
     }
   });
@@ -25,7 +28,7 @@ Router.map(function() {
     },
     data: function() {
       Session.set('currentTicket', this.params._id);
-      Session.set('currentChatParent', this.params._id);
+      showChats($('.toggle-chat_ticket'), this.params._id);
       return Tickets.findOne(this.params._id);
     }
   });

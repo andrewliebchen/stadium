@@ -23,7 +23,3 @@ Template.messages.messages = function() {
     });
   }
 };
-
-Template.singleTicket.ticketMessages = function() {
-  return Messages.find({parent: Session.get('currentTicket')}, {sort: {time: 1}});
-};
