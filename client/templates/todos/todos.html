@@ -5,15 +5,15 @@
       <a class="todos__actions" data-icon="more"></a>
     </div>
     {{#each todo}}
-      <div class="todo">
+      <div class="todo {{checkedClass}}">
         <label>
-          <input type="checkbox">
+          <input type="checkbox" class="mrt_todo-checkbox" checked={{checked}}>
           {{label}}
         </label>
       </div>
     {{/each}}
     <div class="todo_new">
-      <input type="text" class="mrt_new-todo">
+      <input type="text" class="mrt_new-todo" checked>
     </div>
   </div>
 </template>

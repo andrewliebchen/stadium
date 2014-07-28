@@ -6,7 +6,15 @@ Template.todos.todo = function() {
   return Todos.find({});
 };
 
+Template.todos.checkedClass = function() {
+  return this.checked ? 'is-checked' : '';
+}
+
 Template.todos.events({
+  'click .mrt_todo-checkbox' : function(event) {
+    Todos.update(this._id, {$set: {checked: !this.checked}});
+  },
+
   'keydown .mrt_new-todo' : function(event){
     if (event.which == 13) {
       var todo = $(event.target);

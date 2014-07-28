@@ -4,6 +4,27 @@
 
 }
 
+.todo {
+  margin-bottom: 0.5em;
+  position: relative;
+  padding-left: 1.5em;
+
+  label {
+    font-size: 1em;
+    font-weight: normal;
+    color: inherit;
+  }
+
+  input[type="checkbox"] {
+    @include position(absolute, 2px 0 0 0px)
+  }
+
+  &.is-checked {
+    color: $colorGray5;
+    text-decoration: line-through;
+  }
+}
+
 .todo__title {
   @include row();
   margin-bottom: 0.5em;
