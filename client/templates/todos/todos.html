@@ -1,19 +1,16 @@
 <template name="todos">
   <div class="todos">
-    <div class="todo__title">
-      <h3>To do's</h3>
-      <a class="todos__actions" data-icon="more"></a>
-    </div>
     {{#each todo}}
       <div class="todo {{checkedClass}}">
         <label>
           <input type="checkbox" class="mrt_todo-checkbox" checked={{checked}}>
           {{label}}
         </label>
+        <a class="todo__actions" data-icon="more"></a>
       </div>
     {{/each}}
     <div class="todo_new">
-      <input type="text" class="mrt_new-todo" checked>
+      <input type="text" class="mrt_new-todo" placeholder="Add a new task to do, and press enter">
     </div>
   </div>
 </template>

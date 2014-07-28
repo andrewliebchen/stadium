@@ -1,22 +1,25 @@
 // TODOS
 
 .todos {
-
+  margin-bottom: 1.5em;
 }
 
 .todo {
+  @include row();
   margin-bottom: 0.5em;
   position: relative;
   padding-left: 1.5em;
+  border-radius: 3px;
 
   label {
     font-size: 1em;
     font-weight: normal;
     color: inherit;
+    cursor: pointer;
   }
 
   input[type="checkbox"] {
-    @include position(absolute, 2px 0 0 0px)
+    @include position(absolute, 3px 0 0 0px);
   }
 
   &.is-checked {
@@ -25,19 +28,24 @@
   }
 }
 
-.todo__title {
-  @include row();
-  margin-bottom: 0.5em;
+.todo__actions {
+  @include position(absolute, 0px 0px 0 0);
+  @include size(1.5em 1.5em);
+  line-height: 1.5em;
+  opacity: 0;
+  text-align: center;
+  border-radius: 3px;
 
-  h3 {
-    float: left;
+  &:hover {
+    background-color: $colorLink;
+    color: $colorBackground;
+  }
+
+  .todo:hover & {
+    opacity: 1;
   }
 }
 
-.todos__actions {
-  float: right;
-}
-
-.todo {
-
+.todo_new {
+  padding-top: 0.5em;
 }
