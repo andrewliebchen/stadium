@@ -48,10 +48,11 @@ Meteor.methods({
   // Todos
   addTodo : function(options) {
     Todos.insert({
-      label:   options.label,
-      checked: options.status,
-      parent:  options.parent,
-      time:    options.time
+      label:    options.label,
+      checked:  options.status,
+      parent:   options.parent,
+      time:     options.time,
+      position: options.position
     });
   }
 });

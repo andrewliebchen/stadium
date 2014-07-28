@@ -3,7 +3,7 @@ Deps.autorun(function() {
 });
 
 Template.todos.todo = function() {
-  return Todos.find({});
+  return Todos.find({}, { sort: { position: 1 }});
 };
 
 Template.todos.checkedClass = function() {
@@ -19,13 +19,15 @@ Template.todos.events({
     if (event.which == 13) {
       var todo = $(event.target);
       var todoContent = todo.val();
+      var position = Todos.find({}).count();
 
       if (todoContent != '') {
         Meteor.call('addTodo', {
-          label:   todoContent,
-          checked: false,
-          parent:  Session.get('currentTicket'),
-          time:    Date.now()
+          label:    todoContent,
+          checked:  false,
+          parent:   Session.get('currentTicket'),
+          time:     Date.now(),
+          position: position
         });
       };
 
