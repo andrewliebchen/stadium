@@ -10,6 +10,10 @@ Meteor.publish('messages', function() {
   return Messages.find({});
 });
 
-Meteor.publish('usersData', function () {
+Meteor.publish('todos', function(id) {
+  return id && Todos.find({parent: id});
+});
+
+Meteor.publish('usersData', function() {
   return Meteor.users.find({});
 });

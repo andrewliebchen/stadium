@@ -43,6 +43,16 @@ Meteor.methods({
 
   editMessage : function(messageId, value) {
     Messages.update(messageId, {$set: {message: value}});
+  },
+
+  // Todos
+  addTodo : function(options) {
+    Todos.insert({
+      label:   options.label,
+      checked: options.status,
+      parent:  options.parent,
+      time:    options.time
+    });
   }
 });
 

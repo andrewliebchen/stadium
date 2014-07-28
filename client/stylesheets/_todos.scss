@@ -1,0 +1,22 @@
+// TODOS
+
+.todos {
+
+}
+
+.todo__title {
+  @include row();
+  margin-bottom: 0.5em;
+
+  h3 {
+    float: left;
+  }
+}
+
+.todos__actions {
+  float: right;
+}
+
+.todo {
+
+}
