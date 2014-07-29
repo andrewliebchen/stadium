@@ -3,7 +3,13 @@ Deps.autorun(function() {
 });
 
 Template.todos.todo = function() {
-  return Todos.find({}, { sort: { position: 1 }});
+  return Todos.find({}, { sort: { time: 1 }});
+};
+
+Template.todos.todoProgressWidth = function() {
+  var progressTotal = Todos.find({}).count();
+  var progressFill = ((Todos.find({checked: true}).count()) / progressTotal) * 100;
+  return progressFill;
 };
 
 Template.todos.checkedClass = function() {

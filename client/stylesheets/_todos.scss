@@ -1,9 +1,5 @@
 // TODOS
 
-.todos {
-  margin-bottom: 1.5em;
-}
-
 .todo {
   @include row();
   margin-bottom: 0.5em;
@@ -48,4 +44,8 @@
 
 .todo_new {
   padding-top: 0.5em;
+
+  input {
+    border-color: shade($colorGray6, 10%);
+  }
 }

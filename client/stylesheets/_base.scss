@@ -261,8 +261,8 @@ label {
 
 button {
   $height: 2em;
-  border-radius: 3px;
   background-color: $colorLink;
+  border-radius: 3px;
   color: white;
   cursor: pointer;
   font-weight: bold;
@@ -287,12 +287,28 @@ button {
   @include box-orient(horizontal);
   @include box-pack(start);
   padding-left: em(60) + 2em;
+  padding-bottom: 5em;
   overflow: visible;
 }
 
 .panel {
   @include box-flex(1);
   width: 0;
+}
+
+// PROGRESS
+.progress {
+  @include row();
+  @include size(100% 0.5em);
+  background-color: tint($colorLink, 80%);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 2em;
+}
+
+.progress__fill {
+  background-color: $colorLink;
+  height: 1em;
 }
 
 // LOADER
