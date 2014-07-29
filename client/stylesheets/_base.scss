@@ -301,7 +301,7 @@ button {
   @include row();
   @include size(100% 0.5em);
   background-color: tint($colorLink, 80%);
-  border-radius: 3px;
+  border-radius: 2px;
   overflow: hidden;
   margin-bottom: 2em;
 }
