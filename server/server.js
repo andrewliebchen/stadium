@@ -26,25 +26,6 @@ Meteor.methods({
     }});
   },
 
-  // Messages
-  addMessage : function(options) {
-    Messages.insert({
-      name:    options.name,
-      message: options.message,
-      time:    options.time,
-      parent:  options.parent,
-      fromId:  options.fromId
-    });
-  },
-
-  removeMessage : function(messageId) {
-    Messages.remove(messageId);
-  },
-
-  editMessage : function(messageId, value) {
-    Messages.update(messageId, {$set: {message: value}});
-  },
-
   // Todos
   addTodo : function(options) {
     Todos.insert({

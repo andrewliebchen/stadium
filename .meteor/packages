@@ -6,13 +6,10 @@
 standard-app-packages
 insecure
 accounts-ui
-scss
-gravatar
-bourbon
-neat
 jquery
 isotope-repackaged
 accounts-github
 accounts-password
-iron-router
-iron-router-progress
+iron:router
+mrt:iron-router-progress
+fourseven:scss

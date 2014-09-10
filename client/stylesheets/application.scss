@@ -1,9 +1,6 @@
 // VENDOR
-@import "../../packages/bourbon/bourbon";
-$max-width: 100%;
+@import "packages/andrewliebchen:meteor-bourbon/bourbon";
 $unit: em(60);
-$gutter: $unit / 2;
-@import "../../packages/neat/neat";
 
 // BASE
 @import "reset";
@@ -15,8 +12,5 @@ $gutter: $unit / 2;
 @import "dropdown";
 
 // TEMPLATES
-@import "launchbar";
-@import "commandline";
 @import "tickets";
-@import "messages";
 @import "todos";

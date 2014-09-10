@@ -1,6 +1,6 @@
 Meteor.startup(function() {
 
-  // Tickets.remove({});
+  Tickets.remove({});
 
   if(Tickets.find().count() === 0) {
     Tickets.insert({

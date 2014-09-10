@@ -277,7 +277,6 @@ button {
 
 // LAYOUT
 .width-wrapper {
-  @include outer-container;
   padding: 1em;
 }
 
@@ -298,7 +297,7 @@ button {
 
 // PROGRESS
 .progress {
-  @include row();
+  @include clearfix;
   @include size(100% 0.5em);
   background-color: tint($colorLink, 80%);
   border-radius: 2px;
