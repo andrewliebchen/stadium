@@ -86,6 +86,14 @@ small {
   color: $colorGray5;
 }
 
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
 // MEDIA OBJECT
 %media__image {
   float: left;

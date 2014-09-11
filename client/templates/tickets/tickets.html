@@ -3,7 +3,7 @@
     {{#each ticket}}
       <a href="{{pathFor 'singleTicket'}}" class="ticket {{type}} {{size}} {{status}}">
         {{> ticketContent}}
-        <span class="ticket__options-toggle" data-icon="settings" data-modal-template="editTicket"></span>
+        <span class="ticket__action">Start</span>
       </a>
     {{/each}}
   </div>
