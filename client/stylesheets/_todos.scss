@@ -15,7 +15,7 @@
   }
 
   input[type="checkbox"] {
-    @include position(absolute, 3px 0 0 0px);
+    @include position(absolute, 3px null null 0);
   }
 
   &.is-checked {
@@ -25,7 +25,7 @@
 }
 
 .todo__actions {
-  @include position(absolute, 0px 0px 0 0);
+  @include position(absolute, 0 0 null null);
   @include size(1.5em 1.5em);
   line-height: 1.5em;
   opacity: 0;

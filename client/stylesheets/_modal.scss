@@ -1,6 +1,6 @@
 // MODALS
 .modal__close {
-  @include position(absolute, 0.5em 0.5em 0 0);
+  @include position(absolute, 0.5em 0.5em null null);
   color: white;
   opacity: 0.5;
   font-size: 2em;
@@ -11,7 +11,7 @@
 }
 
 .modal__wrapper {
-  @include position(fixed, 0px 0px 0px 0px);
+  @include position(fixed, 0 0 0 0);
   background-color: rgba($colorLink, 0.8);
   z-index: 100;
 }

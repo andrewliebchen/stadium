@@ -1,5 +1,5 @@
 <template name="tickets">
-  <div class="panel tickets">
+  <div class="tickets">
     {{#each ticket}}
       <a href="{{pathFor 'singleTicket'}}" class="ticket {{type}} {{size}} {{status}}">
         {{> ticketContent}}

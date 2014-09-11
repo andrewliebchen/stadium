@@ -2,6 +2,8 @@
 .tickets {
   @include box-flex(2);
   @include transition;
+  overflow-y: visible !important;
+  overflow-x: visible !important;
 }
 
 .ticket {
@@ -56,7 +58,7 @@
 
 .ticket__options-toggle {
   @extend %block_small;
-  @include position(absolute, 0 0px 0px 0);
+  @include position(absolute, null 0 0 null);
   opacity: 0;
   border-radius: 3px 0 0 0;
   border: 0;
@@ -68,7 +70,7 @@
 
 .ticket__meta {
   @include clearfix;
-  @include position(absolute, 0 0 0.5em 0);
+  @include position(absolute, null 0 0.5em 0);
   padding: 0 0.5em;
 }
 
