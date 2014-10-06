@@ -7,10 +7,11 @@
 }
 
 .ticket {
-  border-radius: 3px;
   background-color: $colorBackground;
-  border-width: 2px;
   border-style: solid;
+  border-width: 1px;
+  border-top-width: 5px;
+  border-radius: 3px;
   cursor: pointer;
   margin: 0 0.5em 0.5em 0;
   overflow: hidden;
@@ -36,8 +37,8 @@
 .ticket__tag {
   $size: 2em;
   @include ellipsis;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
+  // border-bottom-style: solid;
+  // border-bottom-width: 1px;
   display: block;
   height: $size;
   line-height: $size;
@@ -131,6 +132,10 @@ $i: 1;
 
     &:hover {
       box-shadow: 0 0 0 3px rgba($typeColor, 0.2);
+    }
+
+    .ticket__tag {
+      background-color: tint($typeColor, 75%);
     }
 
     .ticket__action {
