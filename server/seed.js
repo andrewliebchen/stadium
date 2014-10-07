@@ -10,7 +10,7 @@ Meteor.startup(function() {
       description: 'As an accountant I want Quickbooks installed so that I can update the books',
       type:   'story',
       size:   'small',
-      status: 'someday',
+      status: 'Done',
       time:   Date.now()
     });
     Tickets.insert({
@@ -20,7 +20,7 @@ Meteor.startup(function() {
       description: 'As a developer I want a robot so that the robot can do my work',
       type:   'story',
       size:   'small',
-      status: 'backlog',
+      status: 'To do',
       time:   Date.now()
     });
     Tickets.insert({
@@ -30,7 +30,7 @@ Meteor.startup(function() {
       description: "As a manager I want productivity reports so that I don't have to pester my team for updates",
       type:   'story',
       size:   'medium',
-      status: 'current',
+      status: 'Testing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -40,7 +40,7 @@ Meteor.startup(function() {
       description: 'The homepage should say "Get your freak on," instead of "Get your frank on."',
       type:   'defect',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -49,7 +49,7 @@ Meteor.startup(function() {
       tag:  'gobutton',
       type:   'task',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -59,7 +59,7 @@ Meteor.startup(function() {
       description: 'As an accountant I want Quickbooks installed so that I can update the books',
       type:   'story',
       size:   'small',
-      status: 'someday',
+      status: 'Done',
       time:   Date.now()
     });
     Tickets.insert({
@@ -69,7 +69,7 @@ Meteor.startup(function() {
       description: 'As a developer I want a robot so that the robot can do my work',
       type:   'story',
       size:   'medium',
-      status: 'backlog',
+      status: 'To do',
       time:   Date.now()
     });
     Tickets.insert({
@@ -79,7 +79,7 @@ Meteor.startup(function() {
       description: "As a manager I want productivity reports so that I don't have to pester my team for updates",
       type:   'story',
       size:   'medium',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -89,7 +89,7 @@ Meteor.startup(function() {
       description: 'The homepage should say "Get your freak on," instead of "Get your frank on."',
       type:   'defect',
       size:   'small',
-      status: 'current',
+      status: 'Testing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -98,7 +98,7 @@ Meteor.startup(function() {
       tag:  'gobutton',
       type:   'task',
       size:   'small',
-      status: 'current',
+      status: 'Done',
       time:   Date.now()
     });
     Tickets.insert({
@@ -108,7 +108,7 @@ Meteor.startup(function() {
       description: 'As an accountant I want Quickbooks installed so that I can update the books',
       type:   'story',
       size:   'small',
-      status: 'someday',
+      status: 'Done',
       time:   Date.now()
     });
     Tickets.insert({
@@ -118,7 +118,7 @@ Meteor.startup(function() {
       description: 'As a developer I want a robot so that the robot can do my work',
       type:   'story',
       size:   'small',
-      status: 'backlog',
+      status: 'To do',
       time:   Date.now()
     });
     Tickets.insert({
@@ -128,7 +128,7 @@ Meteor.startup(function() {
       description: "As a manager I want productivity reports so that I don't have to pester my team for updates",
       type:   'story',
       size:   'medium',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -138,7 +138,7 @@ Meteor.startup(function() {
       description: 'The homepage should say "Get your freak on," instead of "Get your frank on."',
       type:   'defect',
       size:   'large',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -147,7 +147,7 @@ Meteor.startup(function() {
       tag:  'gobutton',
       type:   'task',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -157,7 +157,7 @@ Meteor.startup(function() {
       description: 'As an accountant I want Quickbooks installed so that I can update the books',
       type:   'story',
       size:   'small',
-      status: 'someday',
+      status: 'Done',
       time:   Date.now()
     });
     Tickets.insert({
@@ -167,7 +167,7 @@ Meteor.startup(function() {
       description: 'As a developer I want a robot so that the robot can do my work',
       type:   'story',
       size:   'small',
-      status: 'backlog',
+      status: 'To do',
       time:   Date.now()
     });
     Tickets.insert({
@@ -177,7 +177,7 @@ Meteor.startup(function() {
       description: "As a manager I want productivity reports so that I don't have to pester my team for updates",
       type:   'story',
       size:   'medium',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -187,7 +187,7 @@ Meteor.startup(function() {
       description: 'The homepage should say "Get your freak on," instead of "Get your frank on."',
       type:   'defect',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -196,7 +196,7 @@ Meteor.startup(function() {
       tag:  'gobutton',
       type:   'task',
       size:   'medium',
-      status: 'current',
+      status: 'Testing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -206,7 +206,7 @@ Meteor.startup(function() {
       description: 'As an accountant I want Quickbooks installed so that I can update the books',
       type:   'story',
       size:   'small',
-      status: 'someday',
+      status: 'Done',
       time:   Date.now()
     });
     Tickets.insert({
@@ -216,7 +216,7 @@ Meteor.startup(function() {
       description: 'As a developer I want a robot so that the robot can do my work',
       type:   'story',
       size:   'small',
-      status: 'backlog',
+      status: 'To do',
       time:   Date.now()
     });
     Tickets.insert({
@@ -226,7 +226,7 @@ Meteor.startup(function() {
       description: "As a manager I want productivity reports so that I don't have to pester my team for updates",
       type:   'story',
       size:   'medium',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -236,7 +236,7 @@ Meteor.startup(function() {
       description: 'The homepage should say "Get your freak on," instead of "Get your frank on."',
       type:   'defect',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -245,7 +245,7 @@ Meteor.startup(function() {
       tag:  'gobutton',
       type:   'task',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -255,7 +255,7 @@ Meteor.startup(function() {
       description: 'As an accountant I want Quickbooks installed so that I can update the books',
       type:   'story',
       size:   'small',
-      status: 'someday',
+      status: 'Done',
       time:   Date.now()
     });
     Tickets.insert({
@@ -265,7 +265,7 @@ Meteor.startup(function() {
       description: 'As a developer I want a robot so that the robot can do my work',
       type:   'story',
       size:   'small',
-      status: 'backlog',
+      status: 'To do',
       time:   Date.now()
     });
     Tickets.insert({
@@ -275,7 +275,7 @@ Meteor.startup(function() {
       description: "As a manager I want productivity reports so that I don't have to pester my team for updates",
       type:   'story',
       size:   'medium',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -285,7 +285,7 @@ Meteor.startup(function() {
       description: 'The homepage should say "Get your freak on," instead of "Get your frank on."',
       type:   'defect',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -294,7 +294,7 @@ Meteor.startup(function() {
       tag:  'gobutton',
       type:   'task',
       size:   'small',
-      status: 'current',
+      status: 'Testing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -304,7 +304,7 @@ Meteor.startup(function() {
       description: 'As an accountant I want Quickbooks installed so that I can update the books',
       type:   'story',
       size:   'small',
-      status: 'someday',
+      status: 'Done',
       time:   Date.now()
     });
     Tickets.insert({
@@ -314,7 +314,7 @@ Meteor.startup(function() {
       description: 'As a developer I want a robot so that the robot can do my work',
       type:   'story',
       size:   'small',
-      status: 'backlog',
+      status: 'To do',
       time:   Date.now()
     });
     Tickets.insert({
@@ -324,7 +324,7 @@ Meteor.startup(function() {
       description: "As a manager I want productivity reports so that I don't have to pester my team for updates",
       type:   'story',
       size:   'medium',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -334,7 +334,7 @@ Meteor.startup(function() {
       description: 'The homepage should say "Get your freak on," instead of "Get your frank on."',
       type:   'defect',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -343,7 +343,7 @@ Meteor.startup(function() {
       tag:  'gobutton',
       type:   'task',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -353,7 +353,7 @@ Meteor.startup(function() {
       description: 'As an accountant I want Quickbooks installed so that I can update the books',
       type:   'story',
       size:   'small',
-      status: 'someday',
+      status: 'Done',
       time:   Date.now()
     });
     Tickets.insert({
@@ -363,7 +363,7 @@ Meteor.startup(function() {
       description: 'As a developer I want a robot so that the robot can do my work',
       type:   'story',
       size:   'small',
-      status: 'backlog',
+      status: 'To do',
       time:   Date.now()
     });
     Tickets.insert({
@@ -373,7 +373,7 @@ Meteor.startup(function() {
       description: "As a manager I want productivity reports so that I don't have to pester my team for updates",
       type:   'story',
       size:   'medium',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -383,7 +383,7 @@ Meteor.startup(function() {
       description: 'The homepage should say "Get your freak on," instead of "Get your frank on."',
       type:   'defect',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -392,7 +392,7 @@ Meteor.startup(function() {
       tag:  'gobutton',
       type:   'task',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -402,7 +402,7 @@ Meteor.startup(function() {
       description: 'As an accountant I want Quickbooks installed so that I can update the books',
       type:   'story',
       size:   'small',
-      status: 'someday',
+      status: 'Done',
       time:   Date.now()
     });
     Tickets.insert({
@@ -412,7 +412,7 @@ Meteor.startup(function() {
       description: 'As a developer I want a robot so that the robot can do my work',
       type:   'story',
       size:   'small',
-      status: 'backlog',
+      status: 'To do',
       time:   Date.now()
     });
     Tickets.insert({
@@ -422,7 +422,7 @@ Meteor.startup(function() {
       description: "As a manager I want productivity reports so that I don't have to pester my team for updates",
       type:   'story',
       size:   'large',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -432,7 +432,7 @@ Meteor.startup(function() {
       description: 'The homepage should say "Get your freak on," instead of "Get your frank on."',
       type:   'defect',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -441,7 +441,7 @@ Meteor.startup(function() {
       tag:  'gobutton',
       type:   'task',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -451,7 +451,7 @@ Meteor.startup(function() {
       description: 'As an accountant I want Quickbooks installed so that I can update the books',
       type:   'story',
       size:   'small',
-      status: 'someday',
+      status: 'Done',
       time:   Date.now()
     });
     Tickets.insert({
@@ -461,7 +461,7 @@ Meteor.startup(function() {
       description: 'As a developer I want a robot so that the robot can do my work',
       type:   'story',
       size:   'small',
-      status: 'backlog',
+      status: 'To do',
       time:   Date.now()
     });
     Tickets.insert({
@@ -471,7 +471,7 @@ Meteor.startup(function() {
       description: "As a manager I want productivity reports so that I don't have to pester my team for updates",
       type:   'story',
       size:   'medium',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -481,7 +481,7 @@ Meteor.startup(function() {
       description: 'The homepage should say "Get your freak on," instead of "Get your frank on."',
       type:   'defect',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
     Tickets.insert({
@@ -490,7 +490,7 @@ Meteor.startup(function() {
       tag:  'gobutton',
       type:   'task',
       size:   'small',
-      status: 'current',
+      status: 'Doing',
       time:   Date.now()
     });
   }

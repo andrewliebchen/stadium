@@ -78,6 +78,10 @@
   }
 }
 
+.ticket__asigned-to {
+  font-weight: bold;
+}
+
 .ticket__actions {
   @include clearfix;
   @include position(absolute, null 0 0 0);
