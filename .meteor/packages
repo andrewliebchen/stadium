@@ -6,7 +6,6 @@
 standard-app-packages
 insecure
 accounts-ui
-jquery
 isotope-repackaged
 accounts-github
 accounts-password
@@ -14,4 +13,5 @@ iron:router
 mrt:iron-router-progress
 fourseven:scss
 wolves:bourbon
+jquery
 

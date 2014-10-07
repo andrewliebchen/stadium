@@ -1,3 +1,7 @@
+Template.background.background = function() {
+  return Session.get('currentTicket');
+};
+
 Template.modal.helpers({
   activeModal: function() {
     return Session.get('activeModal');

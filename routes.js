@@ -19,19 +19,19 @@ Router.map(function() {
     }
   });
 
-  this.route('singleTicket', {
-    path: '/ticket/:_id',
-    waitOn: function() {
-      return [
-        Meteor.subscribe('singleTicket', this.params._id)
-      ];
-    },
-    data: function() {
-      Session.set('currentTicket', this.params._id);
-      showChats($('.toggle-chat_ticket'), this.params._id);
-      return Tickets.findOne(this.params._id);
-    }
-  });
+  // this.route('singleTicket', {
+  //   path: '/ticket/:_id',
+  //   waitOn: function() {
+  //     return [
+  //       Meteor.subscribe('singleTicket', this.params._id)
+  //     ];
+  //   },
+  //   data: function() {
+  //     Session.set('currentTicket', this.params._id);
+  //     showChats($('.toggle-chat_ticket'), this.params._id);
+  //     return Tickets.findOne(this.params._id);
+  //   }
+  // });
 });
 
 Router.onBeforeAction('loading');

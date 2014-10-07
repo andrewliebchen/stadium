@@ -4,6 +4,7 @@
   </div>
   {{> modal}}
   {{> dropdown}}
+  {{> background}}
 </template>
 
 <template name="home">
@@ -12,4 +13,10 @@
 
 <template name="loading">
   Loading
+</template>
+
+<template name="background">
+  {{#if background}}
+    <div class="background"></div>
+  {{/if}}
 </template>
