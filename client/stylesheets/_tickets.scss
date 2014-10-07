@@ -37,8 +37,6 @@
 .ticket__tag {
   $size: 2em;
   @include ellipsis;
-  // border-bottom-style: solid;
-  // border-bottom-width: 1px;
   display: block;
   height: $size;
   line-height: $size;
@@ -55,21 +53,6 @@
 
 .ticket__description {
   padding: 0.5em;
-}
-
-.ticket__action {
-  @extend %block_small;
-  @include position(absolute, null 0.5em 0.5em null);
-  opacity: 0;
-  padding: 0 1em;
-  width: 6.25em;
-  text-align: left;
-  z-index: 1;
-  border-color: inherit;
-
-  .ticket:hover & {
-    opacity: 1;
-  }
 }
 
 .ticket__meta {
@@ -92,6 +75,28 @@
     @include ellipsis;
     display: block;
     line-height: 1.4em;
+  }
+}
+
+.ticket__actions {
+  @include clearfix;
+  @include position(absolute, null 0 0 0);
+  display: none;
+  padding: 0.5em;
+  z-index: 1;
+
+  .ticket:hover & {
+    display: block;
+  }
+
+  button {
+    float: right;
+  }
+
+  [data-icon="settings"] {
+    @include size(2em);
+    float: left;
+    line-height: 2em;
   }
 }
 
@@ -138,16 +143,22 @@ $i: 1;
       background-color: tint($typeColor, 75%);
     }
 
-    .ticket__action {
+    .ticket__actions {
+      background-color: tint($typeColor, 80%);
+    }
+
+    button {
+      background-color: $typeColor;
+      color: $typeColorBackground;
+
       &:hover {
-        background-color: $typeColor;
-        color: $typeColorBackground;
+        background-color: shade($typeColor, 10%);
       }
     }
   }
 
   .modal-wrapper.#{$type} {
-    background-color: rgba($typeColor, 0.8);
+    background-color: tint($typeColor, 90%);
   }
 
   $i: $i + 1;

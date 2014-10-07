@@ -264,7 +264,8 @@ button {
   cursor: pointer;
   font-weight: bold;
   height: $height;
-  line-height: $height - em(2);
+  line-height: $height;
+  font-weight: bold;
   padding: 0 1em;
 
   &:hover {

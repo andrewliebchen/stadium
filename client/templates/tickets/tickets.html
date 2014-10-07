@@ -3,7 +3,10 @@
     {{#each ticket}}
       <a href="{{pathFor 'singleTicket'}}" class="ticket {{type}} {{size}} {{status}}">
         {{> ticketContent}}
-        <span class="ticket__action">Start</span>
+        <div class="ticket__actions">
+          <a data-icon="settings"></a>
+          <button>Start</button>
+        </div>
       </a>
     {{/each}}
   </div>
