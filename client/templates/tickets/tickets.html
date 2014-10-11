@@ -5,10 +5,9 @@
         {{> ticketContent}}
         {{#if showTicketActions}}
           <div class="ticket__actions">
-            <button class="primary">Start</button>
+            <button>Start</button>
             <a>Edit this ticket</a>
           </div>
-          <a class="ticket__close mtr_close-ticket" data-icon="close"></a>
         {{/if}}
       </a>
     {{/each}}
@@ -18,6 +17,7 @@
 
 <template name="ticketsBackground">
   {{#if background}}
+    <a class="ticket__close mtr_close-ticket" data-icon="close"></a>
     <div class="tickets__background"></div>
   {{/if}}
 </template>

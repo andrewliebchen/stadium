@@ -1,26 +1,20 @@
 // MODALS
 .modal__close {
-  @include position(absolute, 0.5em 0.5em null null);
+  @extend %close;
   color: white;
-  opacity: 0.5;
-  font-size: 2em;
-
-  &:hover {
-    opacity: 1;
-  }
 }
 
 .modal__wrapper {
   @include position(fixed, 0 0 0 0);
   background-color: rgba($colorLink, 0.8);
-  z-index: 100;
+  z-index: 99;
 }
 
 .modal {
   $width: 600px;
   background-color: $colorGray6;
-  border-radius: 5px;
-  margin: unit(1) auto;
+  border-radius: 0 0 3px 3px;
+  margin: 0 auto;
   padding: 1em;
   width: $width;
 }

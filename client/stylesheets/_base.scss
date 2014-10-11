@@ -94,6 +94,17 @@ small {
   float: left;
 }
 
+%close {
+  @include position(fixed, 0.5em 0.5em null null);
+  opacity: 0.5;
+  font-size: 2em;
+  z-index: 99;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 // MEDIA OBJECT
 %media__image {
   float: left;
@@ -259,25 +270,18 @@ label {
 button {
   $height: 2em;
   border-radius: 3px;
-  border: 1px solid $colorLink;
-  color: $colorLink;
+  color: white;
   cursor: pointer;
   font-weight: bold;
   height: $height;
-  line-height: $height - em(1);
+  line-height: $height;
   font-weight: bold;
   padding: 0 1em;
+  background-color: $colorLink;
 
   &:hover {
-    border-color: shade($colorLink, 20%);
     background-color: shade($colorLink, 20%);
-    color: white !important;
-  }
-
-  &.primary {
-    background-color: $colorLink;
-    line-height: $height;
-    color: white !important;
+    color: white;
   }
 }
 
@@ -289,9 +293,10 @@ button {
 .header {
   @include position(fixed, 0 0 null 0);
   background-color: rgba(white, 0.9);
-  z-index: 99;
+  z-index: 9;
   height: $unit;
   line-height: $unit;
+  padding: 0 1em;
 }
 
 // PROGRESS
