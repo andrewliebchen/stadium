@@ -1,9 +1,8 @@
 // TICKETS
 .tickets {
-  @include box-flex(2);
-  @include transition;
   overflow-y: visible !important;
   overflow-x: visible !important;
+  margin-top: $unit;
 }
 
 .ticket {

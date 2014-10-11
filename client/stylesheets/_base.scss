@@ -284,6 +284,14 @@ button {
   padding: 1em;
 }
 
+.header {
+  @include position(fixed, 0 0 null 0);
+  background-color: rgba(white, 0.9);
+  z-index: 99;
+  height: $unit;
+  line-height: $unit;
+}
+
 // PROGRESS
 .progress {
   @include clearfix;
