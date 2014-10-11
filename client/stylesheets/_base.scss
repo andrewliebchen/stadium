@@ -258,25 +258,27 @@ label {
 
 button {
   $height: 2em;
-  background-color: $colorLink;
   border-radius: 3px;
-  color: white;
+  border: 1px solid $colorLink;
+  color: $colorLink;
   cursor: pointer;
   font-weight: bold;
   height: $height;
-  line-height: $height;
+  line-height: $height - em(1);
   font-weight: bold;
   padding: 0 1em;
 
   &:hover {
+    border-color: shade($colorLink, 20%);
     background-color: shade($colorLink, 20%);
+    color: white !important;
   }
-}
 
-.background {
-  @include position(fixed, 0 0 0 0);
-  background-color: rgba(white, 0.8);
-  z-index: 9;
+  &.primary {
+    background-color: $colorLink;
+    line-height: $height;
+    color: white !important;
+  }
 }
 
 // LAYOUT

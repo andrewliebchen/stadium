@@ -5,6 +5,12 @@
   margin-top: $unit;
 }
 
+.tickets__background {
+  @include position(fixed, 0 0 0 0);
+  background-color: rgba(white, 0.9);
+  z-index: 9;
+}
+
 .ticket {
   background-color: $colorBackground;
   border-style: solid;
@@ -26,6 +32,20 @@
   a,
   small {
     color: inherit;
+  }
+}
+
+.ticket__close {
+  $size: 2em;
+  @include position(absolute, 0 -2.5em null null);
+  @include size($size);
+  line-height: $size;
+  display: block;
+  text-align: center;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
   }
 }
 
@@ -121,11 +141,18 @@ $sizeSizes: $smallTicket, $mediumTicket, $largeTicket;
 }
 
 .small {
-  .ticket__description,
-  .ticket__meta__image {
-    display: none;
+  &:not(.is-focused) {
+    .ticket__description,
+    .ticket__meta__image {
+      display: none;
+    }
+  }
+
+  &.is-focused {
+    width: $mediumTicket;
   }
 }
+
 
 // TYPES
 $types: "story", "defect", "task";
@@ -149,11 +176,18 @@ $i: 1;
     }
 
     button {
-      background-color: $typeColor;
-      color: $typeColorBackground;
+      border-color: $typeColor;
+      color: $typeColor;
 
-      &:hover {
+      &:hover,
+      &.primary:hover {
+        border-color: shade($typeColor, 10%);
         background-color: shade($typeColor, 10%);
+        color: white;
+      }
+
+      &.primary {
+        background-color: $typeColor;
       }
     }
   }

@@ -28,10 +28,14 @@ Template.tickets.editing = function() {
 
 Template.tickets.showTicketActions = function() {
   return Session.equals('currentTicket', this._id);
-}
+};
 
 Template.tickets.rendered = function(){
   isotopeLayout($('.tickets'));
+};
+
+Template.ticketsBackground.background = function() {
+  return Session.get('currentTicket');
 };
 
 Template.newTicket.events({
@@ -66,15 +70,17 @@ Template.newTicket.events({
 });
 
 Template.tickets.events({
-  'click .ticket' : function(event, template) {
+  'click .ticket' : function(event) {
     event.preventDefault();
-    var $ticket = $(event.target).closest('.ticket');
-
-    $ticket.addClass('is-focused');
     Session.set('currentTicket', this._id);
   },
 
-  'click .mrt_edit-ticket' : function(event, template) {
+  'click .mtr_close-ticket' : function(event) {
+    event.stopPropagation();
+    Session.set('currentTicket', null);
+  },
+
+  'click .mtr_edit-ticket' : function(event, template) {
     var edits = {
       tag:    template.find('.mrt_edit-ticket_tag').value,
       type:   template.find('.mrt_edit-ticket_type').value,
