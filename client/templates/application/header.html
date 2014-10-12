@@ -1,5 +1,31 @@
 <template name="header">
   <header class="header">
-    <button data-modal-template="newTicket">New</button>
+    {{> filters}}
+    <div class="pull-right">
+      <button data-modal-template="newTicket">New</button>
+    </div>
   </header>
+</template>
+
+<template name="filters">
+  <div class="filters">
+    <select class="filter">
+      <option value="*">All statuses</option>
+      <option value=".To.do">To do</option>
+      <option value=".Doing">Doing</option>
+      <option value=".Done">Done</option>
+      <option value=".Archive">Archive</option>
+    </select>
+    <select class="filter">
+      <option value="*">All sizes</option>
+      <option value=".small">Small</option>
+      <option value=".medium">Medium</option>
+      <option value=".large">Large</option>
+    </select>
+    <select class="filter">
+      <option value="*">All users</option>
+      <option value="*">Andrew Liebchen</option>
+      <option value="*">Unassigned</option>
+    </select>
+  </div>
 </template>

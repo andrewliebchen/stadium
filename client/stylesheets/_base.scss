@@ -258,6 +258,8 @@ input[type="checkbox"] {
 
 select {
   @include appearance(menulist-button);
+  display: inline-block;
+  width: auto;
   margin-bottom: 1em;
 }
 
@@ -288,15 +290,6 @@ button {
 // LAYOUT
 .width-wrapper {
   padding: 1em;
-}
-
-.header {
-  @include position(fixed, 0 0 null 0);
-  background-color: rgba(white, 0.9);
-  z-index: 9;
-  height: $unit;
-  line-height: $unit;
-  padding: 0 1em;
 }
 
 // PROGRESS

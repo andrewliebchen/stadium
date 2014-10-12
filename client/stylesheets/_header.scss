@@ -1,0 +1,12 @@
+.header {
+  @include position(fixed, 0 0 null 0);
+  background-color: rgba(white, 0.9);
+  z-index: 9;
+  height: $unit;
+  line-height: $unit;
+  padding: 0 1em;
+}
+
+.filters {
+  float: left;
+}
