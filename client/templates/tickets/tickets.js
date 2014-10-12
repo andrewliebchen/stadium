@@ -43,24 +43,23 @@ Template.newTicket.events({
     var ticketNumber      = Session.get('ticketCount');
     var ticketTag         = template.find('.mrt_new-ticket_tag');
     var ticketDescription = template.find('.mrt_new-ticket_description');
-    console.log(ticketTag + ticketDescription);
 
     var newTicket = {
       userId:      Meteor.userId(),
       number:      ticketNumber,
       tag:         ticketTag.value,
       description: ticketDescription.value,
-      type:        template.find('.mrt_new-ticket_type').value,
       size:        template.find('.mrt_new-ticket_size').value,
-      status:      template.find('.mrt_new-ticket_status').value,
+      status:      'To do',
+      type:        'story',
       time:        Date.now()
     }
 
     if(newTicket.tag != '') {
       Meteor.call('addTicket', newTicket, function(err, id) {
-        if(err) {
+        if(err)
           console.log(err);
-        }
+        $('.tickets').isotope('reloadItems'); // This doesn't quite work
       });
 
       ticketTag.value = '';

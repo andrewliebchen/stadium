@@ -2,32 +2,24 @@
   <header>
     <h2>New ticket</h2>
   </header>
-  <section class="modal__content">
-    <div>
-      <label>Type</label>
-      <select class="mrt_new-ticket_type">
-        <option value="story">Story</option>
-        <option value="defect">Defect</option>
-        <option value="task">Task</option>
-      </select>
+  <div class="modal__content">
+    <fieldset>
       <label>Size</label>
       <select class="mrt_new-ticket_size">
         <option value="small">Small</option>
         <option value="medium">Medium</option>
         <option value="large">Large</option>
       </select>
-      <label>Status</label>
-      <select class="mrt_new-ticket_status">
-        <option value="someday">Someday</option>
-        <option value="backlog">Backlog</option>
-        <option value="current">Current</option>
-      </select>
-    </div>
-    <label>Tag</label>
-    <input type="text" class="mrt_new-ticket_tag" placeholder="Tags help organized your tickets">
-    <label>Description</label>
-    <textarea class="mrt_new-ticket_description" placeholder="Describe this ticket"></textarea>
-  </section>
+    </fieldset>
+    <fieldset>
+      <label>Tag</label>
+      <input type="text" class="mrt_new-ticket_tag" placeholder="Tags help organized your tickets">
+    </fieldset>
+    <fieldset>
+      <label>Description</label>
+      <textarea class="mrt_new-ticket_description" placeholder="Describe this ticket"></textarea>
+    </fieldset>
+  </div>
   <footer>
     <button class="mrt_add-ticket" data-modal="close">Create ticket</button>
   </footer>
