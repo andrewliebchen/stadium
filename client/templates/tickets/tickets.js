@@ -1,5 +1,4 @@
 Session.setDefault('currentTicket', null);
-Session.setDefault('ticketMenu', null);
 Session.setDefault('editingTicket', null);
 Session.setDefault('ticketCount', null);
 
@@ -16,14 +15,6 @@ Deps.autorun(function() {
 
 Template.tickets.ticket = function() {
   return Tickets.find({}, { sort: { time: -1 } });
-};
-
-Template.tickets.ticketMenu = function() {
-  return Session.equals('ticketMenu', this._id);
-};
-
-Template.tickets.editing = function() {
-  return Session.equals('editingTicket', this._id);
 };
 
 Template.tickets.showTicketActions = function() {
@@ -50,7 +41,7 @@ Template.newTicket.events({
       tag:         ticketTag.value,
       description: ticketDescription.value,
       size:        template.find('.mrt_new-ticket_size').value,
-      status:      'To do',
+      status:      template.find('.mrt_new-ticket_status').value,
       type:        'story',
       time:        Date.now()
     }
@@ -80,11 +71,14 @@ Template.tickets.events({
   },
 
   'click .mtr_edit-ticket' : function(event, template) {
+
+  },
+
+  'click .mtr_save-ticket' : function(event, template) {
     var edits = {
-      tag:    template.find('.mrt_edit-ticket_tag').value,
-      type:   template.find('.mrt_edit-ticket_type').value,
-      size:   template.find('.mrt_edit-ticket_size').value,
-      status: template.find('.mrt_edit-ticket_status').value
+      description: ticketDescription.value,
+      size:        template.find('.mrt_new-ticket_size').value,
+      status:      template.find('.mrt_new-ticket_status').value,
     };
 
     Meteor.call('editTicket', this._id, edits);
