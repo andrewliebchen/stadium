@@ -5,7 +5,7 @@ Session.setDefault('ticketCount', null);
 Deps.autorun(function() {
   Meteor.subscribe('tickets', function(){
     $('.filter').change(function() {
-      var filterValue = $(this).val();
+      // bootstrap dropdown will work better here.
       $('.tickets').isotope({ filter: filterValue });
     });
 
